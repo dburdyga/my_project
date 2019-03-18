@@ -96,7 +96,7 @@
         margin: 5rem 5rem 0rem;
     }
     .table-data {
-        background-color: rgba(248, 249, 250, 0.7);
+        background-color: rgba(248, 249, 250, 0.6);
     }
 
 </style>

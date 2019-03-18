@@ -85,7 +85,7 @@
     .table-status {
         border: none;
         text-align: left;
-        background-color: rgba(248, 249, 250, 0.7);
+        background-color: rgba(248, 249, 250, 0.6);
     }
     .table-button {
         background: #ff6600;
@@ -93,5 +93,8 @@
         border: none;
         margin: 10px 10px;
         border-radius: 3px;
+    }
+    .table-data {
+        background-color: rgba(248, 249, 250, 0.6);
     }
 </style>

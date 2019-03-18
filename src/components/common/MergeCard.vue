@@ -24,7 +24,7 @@
             </tbody>
         </table>
         <br><br/>
-        <table class="table-list" border="1" width="100%" cellpadding="5">
+        <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>
                 <th>Sub Tasks</th>
@@ -80,6 +80,15 @@
 
 
 <style lang="scss" scoped>
-
-
+    .card {
+        margin: 5rem 5rem 0rem;
+    }
+    .table-status {
+        border: none;
+        text-align: left;
+        background-color: rgba(248, 249, 250, 0.6);
+    }
+    .table-data {
+        background-color: rgba(248, 249, 250, 0.6);
+    }
 </style>
