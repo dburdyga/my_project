@@ -1,23 +1,43 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Login from './components/root/login/Login.vue';
+import List from '../src/components/common/List.vue';
+import Card from './components/common/Card.vue';
+import MergeCard from './components/common/MergeCard.vue';
+
 
 Vue.use(Router);
 
-export default new Router({
+export enum Routes {
+  HOME = 'Home',
+  LOGIN = 'Login',
+  CARD = 'Card',
+}
+
+
+const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: Routes.HOME,
+      component: List,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/login',
+      name: Routes.LOGIN,
+      component: Login,
+    },
+    {
+      path: '/card',
+      name: Routes.CARD,
+      component: Card,
+    },
+    {
+      path: '/mergecard',
+      name: 'mergecard',
+      component: MergeCard,
     },
   ],
 });
+
+export default router;
