@@ -44,6 +44,8 @@
 </script>
 
 <style lang="scss" scoped>
+    $orange-color: #ff6600;
+
     .login {
         border: none;
         border-radius: 10px;
@@ -82,7 +84,7 @@
             button {
                 color: white;
                 padding: .5rem;
-                background-color: #ff6600;
+                background-color: $orange-color;
                 border: none;
                 border-radius: 3px;
                 cursor: pointer;

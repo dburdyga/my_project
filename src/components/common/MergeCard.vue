@@ -80,6 +80,8 @@
 
 
 <style lang="scss" scoped>
+    $orange-color: #ff6600;
+
     .card {
         margin: 5rem 5rem 0rem;
     }
@@ -93,7 +95,9 @@
         border-collapse: collapse;
     }
     .table-button {
-        background: #ff6600;
+        height: 25px;
+        width: 70px;
+        background: $orange-color;
         color: white;
         border: none;
         margin: 10px 10px;
