@@ -21,13 +21,13 @@
             </tr>
             </tbody>
         </table>
-        <h2 class="vue-title">Tasks</h2>
+        <h3 class="vue-title">Tasks</h3>
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>
                 <th>Sub Tasks</th>
                 <th>Description</th>
-                <th>Aufwand</th>
+                <th>Effort</th>
                 <th>Estimator</th>
                 <th>DVK</th>
                 <th>IMP</th>
@@ -38,26 +38,26 @@
             </thead>
             <tbody>
             <tr>
-                <td>1234</td>
-                <td>1234</td>
+                <td>Write integration tests</td>
+                <td>Write integration tests for Ethereum payment</td>
                 <td>ARS</td>
                 <td>Username</td>
                 <td>11</td>
                 <td>34</td>
                 <td>1</td>
                 <td>-</td>
-                <td></td>
+                <td>Edit/Delete</td>
             </tr>
             <tr>
-                <td>1234</td>
-                <td>1234</td>
+                <td>Add missing scenarios</td>
+                <td>Add missing scenarios for the Ethereum Storage</td>
                 <td>JS</td>
                 <td>Username</td>
                 <td>11</td>
                 <td>34</td>
                 <td>1</td>
                 <td>-</td>
-                <td></td>
+                <td>Edit/Delete</td>
             </tr>
             </tbody>
         </table>

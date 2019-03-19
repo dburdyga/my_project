@@ -66,74 +66,74 @@
 
 
 <script lang="ts">
-    import Vue from 'vue';
-    import Pagination from './Pagination.vue';
-    import generateMockData from '../../data';
+import Vue from 'vue';
+import Pagination from './Pagination.vue';
+import generateMockData from '../../data';
 
 
-    export default Vue.extend({
-        data:{
-            cats:[],
-            currentSort:'name',
-            currentSortDir:'asc'
+export default Vue.extend({
+    data: {
+        cats: [],
+        currentSort: 'name',
+        currentSortDir: 'asc',
+    },
+    created() {
+        this.$store.dispatch('getRequirements');
+    },
+    data() {
+        return {
+            tasks: generateMockData(),
+        };
+    },
+    computed: {
+        requirements() {
+            return this.$store.getters.requirements;
         },
-        created() {
-            this.$store.dispatch('getRequirements');
-        },
-        data() {
-            return {
-                tasks: generateMockData(),
-            };
-        },
-        computed: {
-            requirements() {
-                return this.$store.getters.requirements;
+        filterCrNumber: {
+            get(): string {
+                return this.$store.getters.filter.crNumber;
             },
-            filterCrNumber: {
-                get(): string {
-                    return this.$store.getters.filter.crNumber;
-                },
-                set(value: string) {
-                    this.$store.commit('updateFilterCrNumber', value);
-                },
-            },
-            filterCrTitle: {
-                get(): string {
-                    return this.$store.getters.filter.crTitle;
-                },
-                set(value: string) {
-                    this.$store.commit('updateFilterCrTitle', value);
-                },
-            },
-            filterCrStatus: {
-                get(): string {
-                    return this.$store.getters.filter.crStatus;
-                },
-                set(value: string) {
-                    this.$store.commit('updateFilterCrStatus', value);
-                },
-            },
-            filterCrProject: {
-                get(): string {
-                    return this.$store.getters.filter.crProject;
-                },
-                set(value: string) {
-                    this.$store.commit('updateFilterCrProject', value);
-                },
-            },
-            filterCrDate: {
-                get(): number {
-                    return this.$store.getters.filter.crDate;
-                },
-                set(value: number) {
-                    this.$store.commit('updateFilterCrDate', value);
-                },
+            set(value: string) {
+                this.$store.commit('updateFilterCrNumber', value);
             },
         },
-        components: {
-            Pagination,
+        filterCrTitle: {
+            get(): string {
+                return this.$store.getters.filter.crTitle;
+            },
+            set(value: string) {
+                this.$store.commit('updateFilterCrTitle', value);
+            },
         },
-    });
+        filterCrStatus: {
+            get(): string {
+                return this.$store.getters.filter.crStatus;
+            },
+            set(value: string) {
+                this.$store.commit('updateFilterCrStatus', value);
+            },
+        },
+        filterCrProject: {
+            get(): string {
+                return this.$store.getters.filter.crProject;
+            },
+            set(value: string) {
+                this.$store.commit('updateFilterCrProject', value);
+            },
+        },
+        filterCrDate: {
+            get(): number {
+                return this.$store.getters.filter.crDate;
+            },
+            set(value: number) {
+                this.$store.commit('updateFilterCrDate', value);
+            },
+        },
+    },
+    components: {
+        Pagination,
+    },
+});
 </script>
 
 
