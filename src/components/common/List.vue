@@ -9,16 +9,24 @@
                             type="text" placeholder="CR Number"/>
                 </td>
                 <td>
-                    <input type="text" placeholder="Title"/>
+                    <input
+                            v-model="filterCrTitle"
+                            type="text" placeholder="Title"/>
                 </td>
                 <td>
-                    <input type="text" placeholder="Status"/>
+                    <input
+                            v-model="filterCrStatus"
+                            type="text" placeholder="Status"/>
                 </td>
                 <td>
-                    <input type="text" placeholder="Project"/>
+                    <input
+                            v-model="filterCrProject"
+                            type="text" placeholder="Project"/>
                 </td>
                 <td>
-                    <input type="text" placeholder="Created at"/>
+                    <input
+                            v-model="filterCrDate"
+                            type="text" placeholder="Created at"/>
                 </td>
             </tr>
         </table>
@@ -43,10 +51,10 @@
                 <td>{{ task.title }}</td>
                 <td>{{ task.status }}</td>
                 <td>{{ task.project }}</td>
-                <td>{{task.owner}}</td>
-                <td>{{task.version}}</td>
-                <td>{{task.createdAt}}</td>
-                <td>{{task.actions}}</td>
+                <td>{{ task.owner }}</td>
+                <td>{{ task.version }}</td>
+                <td>{{ task.createdAt }}</td>
+                <td>{{ task.actions }}</td>
             </tr>
             </tbody>
         </table>
@@ -83,6 +91,38 @@
                     this.$store.commit('updateFilterCrNumber', value);
                 },
             },
+            filterCrTitle: {
+                get(): string {
+                    return this.$store.getters.filter.crTitle;
+                },
+                set(value: string) {
+                    this.$store.commit('updateFilterCrTitle', value);
+                },
+            },
+            filterCrStatus: {
+                get(): string {
+                    return this.$store.getters.filter.crStatus;
+                },
+                set(value: string) {
+                    this.$store.commit('updateFilterCrStatus', value);
+                },
+            },
+            filterCrProject: {
+                get(): string {
+                    return this.$store.getters.filter.crProject;
+                },
+                set(value: string) {
+                    this.$store.commit('updateFilterCrProject', value);
+                },
+            },
+            filterCrDate: {
+                get(): number {
+                    return this.$store.getters.filter.crDate;
+                },
+                set(value: number) {
+                    this.$store.commit('updateFilterCrDate', value);
+                },
+            },
         },
         components: {
             Pagination,
@@ -97,6 +137,7 @@
     }
     .table-data {
         background-color: rgba(248, 249, 250, 0.6);
+        border-collapse: collapse;
     }
 
 </style>

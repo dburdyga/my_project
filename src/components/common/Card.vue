@@ -96,5 +96,6 @@
     }
     .table-data {
         background-color: rgba(248, 249, 250, 0.6);
+        border-collapse: collapse;
     }
 </style>

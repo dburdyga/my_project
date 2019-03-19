@@ -14,6 +14,10 @@ export default new Vuex.Store({
     requirements: [],
     filter: {
       crNumber: '',
+      crTitle: '',
+      crStatus: '',
+      crProject: '',
+      crDate: '',
     },
   },
   getters: {
@@ -33,6 +37,18 @@ export default new Vuex.Store({
     },
     updateFilterCrNumber: (state, str) => {
       state.filter.crNumber = str;
+    },
+    updateFilterCrTitle: (state, str) => {
+      state.filter.crTitle = str;
+    },
+    updateFilterCrStatus: (state, str) => {
+      state.filter.crStatus = str;
+    },
+    updateFilterCrProject: (state, str) => {
+      state.filter.crProject = str;
+    },
+    updateFilterCrDate: (state, str) => {
+      state.filter.crDate = str;
     },
   },
   actions: {

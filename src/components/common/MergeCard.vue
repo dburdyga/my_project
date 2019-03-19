@@ -90,5 +90,13 @@
     }
     .table-data {
         background-color: rgba(248, 249, 250, 0.6);
+        border-collapse: collapse;
+    }
+    .table-button {
+        background: #ff6600;
+        color: white;
+        border: none;
+        margin: 10px 10px;
+        border-radius: 3px;
     }
 </style>
