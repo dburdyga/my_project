@@ -1,0 +1,1 @@
+export const SET_REQUIREMENTS = 'SET_REQUIREMENTS';

@@ -5,30 +5,25 @@
             <tr class='table-filters'>
                 <td>
                     <input
-                            v-model="filterCrNumber"
-                            type="text" placeholder="CR Number"/>
+                        type="text" placeholder="CR Number"/>
                 </td>
                 <td>
                     <input
-                            v-model="filterCrTitle"
-                            type="text" placeholder="Title"/>
+                        type="text" placeholder="Title"/>
                 </td>
                 <td>
                     <input
-                            v-model="filterCrStatus"
-                            type="text" placeholder="Status"/>
+                        type="text" placeholder="Status"/>
                 </td>
                 <td>
                     <input
-                            v-model="filterCrProject"
-                            type="text" placeholder="Project"/>
+                        type="text" placeholder="Project"/>
                 </td>
                 <td>
                     <input
-                            v-model="filterCrDate"
-                            type="text" placeholder="Created at"/>
+                        type="text" placeholder="Created at"/>
                 </td>
-                <button class="table-button">Add</button>
+                <!--<button class="table-button">Add</button>-->
             </tr>
         </table>
         <table class="table-data" border="1" width="100%" cellpadding="5">
@@ -46,8 +41,8 @@
             </thead>
             <tbody>
             <tr
-                    v-for="task in tasks"
-                    :key="index">
+                v-for="task in tasks"
+                :key="index">
                 <td>{{ task.number }}</td>
                 <td>{{ task.title }}</td>
                 <td>{{ task.status }}</td>
@@ -60,7 +55,6 @@
             </tbody>
         </table>
         <Pagination />
-        {{ requirements }}
     </div>
 </template>
 
@@ -69,6 +63,8 @@
 import Vue from 'vue';
 import Pagination from './Pagination.vue';
 import generateMockData from '../../data';
+import {REQUIREMENTS} from '@/store/getter-types';
+import {FETCH_REQUIREMENTS} from '@/store/action-types';
 
 
 export default Vue.extend({
@@ -76,9 +72,10 @@ export default Vue.extend({
         cats: [],
         currentSort: 'name',
         currentSortDir: 'asc',
+        filter: ''
     },
     created() {
-        this.$store.dispatch('getRequirements');
+        this.$store.dispatch(FETCH_REQUIREMENTS);
     },
     data() {
         return {
@@ -87,48 +84,8 @@ export default Vue.extend({
     },
     computed: {
         requirements() {
-            return this.$store.getters.requirements;
-        },
-        filterCrNumber: {
-            get(): string {
-                return this.$store.getters.filter.crNumber;
-            },
-            set(value: string) {
-                this.$store.commit('updateFilterCrNumber', value);
-            },
-        },
-        filterCrTitle: {
-            get(): string {
-                return this.$store.getters.filter.crTitle;
-            },
-            set(value: string) {
-                this.$store.commit('updateFilterCrTitle', value);
-            },
-        },
-        filterCrStatus: {
-            get(): string {
-                return this.$store.getters.filter.crStatus;
-            },
-            set(value: string) {
-                this.$store.commit('updateFilterCrStatus', value);
-            },
-        },
-        filterCrProject: {
-            get(): string {
-                return this.$store.getters.filter.crProject;
-            },
-            set(value: string) {
-                this.$store.commit('updateFilterCrProject', value);
-            },
-        },
-        filterCrDate: {
-            get(): number {
-                return this.$store.getters.filter.crDate;
-            },
-            set(value: number) {
-                this.$store.commit('updateFilterCrDate', value);
-            },
-        },
+            return this.$store.getters[REQUIREMENTS];
+        }
     },
     components: {
         Pagination,

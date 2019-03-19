@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import router, {Routes} from './router';
-import {RequirementsService} from './common/services/RequirementsService';
+import router, {Routes} from '../router';
+import {RequirementsService} from '../common/services/RequirementsService';
+import {REQUIREMENTS} from '@/store/getter-types';
+import {FETCH_REQUIREMENTS} from '@/store/action-types';
+import {SET_REQUIREMENTS} from '@/store/mutation-types';
 
 Vue.use(Vuex);
 
@@ -21,7 +24,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    requirements: (state) => state.requirements,
+    [REQUIREMENTS]: (state) => state.requirements,
     sorterdReq: (state) => state.requirements.sort(),
     filter: (state) => state.filter,
   },
@@ -32,29 +35,14 @@ export default new Vuex.Store({
       state.loginError = errorMessage;
       state.loginSuccessful = !errorMessage;
     },
-    updateRequirements: (state, requirements) => {
+    [SET_REQUIREMENTS](state, requirements) {
       state.requirements = requirements;
-    },
-    updateFilterCrNumber: (state, str) => {
-      state.filter.crNumber = str;
-    },
-    updateFilterCrTitle: (state, str) => {
-      state.filter.crTitle = str;
-    },
-    updateFilterCrStatus: (state, str) => {
-      state.filter.crStatus = str;
-    },
-    updateFilterCrProject: (state, str) => {
-      state.filter.crProject = str;
-    },
-    updateFilterCrDate: (state, str) => {
-      state.filter.crDate = str;
-    },
+    }
   },
   actions: {
-    getRequirements({ commit }) {
+    [FETCH_REQUIREMENTS]({ commit }) {
       RequirementsService.getRequirements()
-          .then((requirements) => commit('updateRequirements', requirements));
+          .then((requirements) => commit(SET_REQUIREMENTS, requirements));
     },
     doLogin({ commit }) {
       commit('loginStart');
