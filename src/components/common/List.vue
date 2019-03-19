@@ -33,7 +33,9 @@
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>
-                <th>CR Number</th>
+                <th >CR Number
+                    <span class="arrow"></span>
+                </th>
                 <th>Title</th>
                 <th>Status</th>
                 <th>Project</th>
@@ -80,6 +82,14 @@
             };
         },
         computed: {
+
+            // sortedItems: function () {
+            //     this.tasks.sort( ( a, b) => {
+            //         return new Date(a.number) - new Date(b.number);
+            //     });
+            //     return this.tasks;
+            // },
+
             requirements() {
                 return this.$store.getters.requirements;
             },
@@ -139,6 +149,14 @@
     .table-data {
         background-color: rgba(248, 249, 250, 0.6);
         border-collapse: collapse;
+    }
+    .arrow {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 0;
+        margin-left: 5px;
+        opacity: 0.66;
     }
 
 </style>
