@@ -66,8 +66,8 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import generateMockData from '../../data';
     import Pagination from './Pagination.vue';
+    import generateMockData from '../../data';
 
 
     export default Vue.extend({
@@ -129,6 +129,7 @@
         },
     });
 </script>
+
 
 
 <style lang="scss" scoped>
