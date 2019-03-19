@@ -1,7 +1,5 @@
 <template>
     <div class="card">
-        <h2 class="vue-title">Tasks</h2>
-        <h3 class="vue-title">Test Task</h3>
         <table class="table-status" width="100%">
             <thead>
             <tr>
@@ -23,7 +21,7 @@
             </tr>
             </tbody>
         </table>
-        <br><br/>
+        <h2 class="vue-title">Tasks</h2>
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>
@@ -63,7 +61,9 @@
             </tr>
             </tbody>
         </table>
-        <button class="table-button">Estimate</button>
+        <router-link to="/mergecard">
+            <button class="table-button">Estimate</button>
+        </router-link>
         <button class="table-button">Cancel</button>
     </div>
 </template>
@@ -79,27 +79,5 @@
 
 
 <style lang="scss" scoped>
-    $orange-color: #ff6600;
 
-    .card {
-        margin: 5rem 5rem 0rem;
-    }
-    .table-status {
-        border: none;
-        text-align: left;
-        background-color: rgba(248, 249, 250, 0.6);
-    }
-    .table-button {
-        height: 25px;
-        width: 70px;
-        background: $orange-color;
-        color: white;
-        border: none;
-        margin: 10px 10px;
-        border-radius: 3px;
-    }
-    .table-data {
-        background-color: rgba(248, 249, 250, 0.6);
-        border-collapse: collapse;
-    }
 </style>

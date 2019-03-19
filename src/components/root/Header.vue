@@ -1,7 +1,9 @@
 <template>
     <header>
         <div class="header-item">
-            <img class="header-img" src="../../assets/logo.png" alt="Logo">
+            <router-link to="/login">
+                <img class="header-img" src="../../assets/logo.png" alt="Logo">
+            </router-link>
         </div>
         <div class="header-item">
             <h1>{{title}}</h1>
