@@ -5,23 +5,23 @@
             <tr class='table-filters'>
                 <td>
                     <input
-                        type="text" placeholder="CR Number"/>
+                            class="field" type="text" placeholder="CR Number"/>
                 </td>
                 <td>
                     <input
-                        type="text" placeholder="Title"/>
+                            class="field" type="text" placeholder="Title"/>
                 </td>
                 <td>
                     <input
-                        type="text" placeholder="Status"/>
+                            class="field" type="text" placeholder="Status"/>
                 </td>
                 <td>
                     <input
-                        type="text" placeholder="Project"/>
+                            class="field" type="text" placeholder="Project"/>
                 </td>
                 <td>
                     <input
-                        type="text" placeholder="Created at"/>
+                            class="field" type="text" placeholder="Created at"/>
                 </td>
                 <button class="table-button">Add</button>
             </tr>
@@ -99,5 +99,7 @@ export default Vue.extend({
     .list {
         margin: 5rem 5rem 0rem;
     }
-
+    .field {
+        height: 20px;
+    }
 </style>

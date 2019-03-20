@@ -23,7 +23,7 @@ export default function generateMockData() {
             owner: 'Test user',
             version: '1.0.1',
             createdAt: new Date(2019, generateRandomNumber(11), generateRandomNumber(27)).toLocaleDateString(),
-            actions: 'Assignee1 Assignee2',
+            actions: 'Approve Delete',
         });
     }
     return data;
