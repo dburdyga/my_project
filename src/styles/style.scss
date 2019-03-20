@@ -1,7 +1,9 @@
 
 $orange-color: #ff6600;
 
-
+h3 {
+  margin: 8px;
+}
 .card {
   margin: 5rem 5rem 0rem;
   background-color: none;
@@ -27,4 +29,9 @@ $orange-color: #ff6600;
   border: none;
   text-align: left;
   background-color: rgba(248, 249, 250, 0.6);
+}
+
+.vue-title--tasks {
+  float: left;
+  color: $orange-color;
 }

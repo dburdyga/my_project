@@ -21,7 +21,10 @@
             </tr>
             </tbody>
         </table>
-        <h3 class="vue-title">Tasks</h3>
+        <h3 class="vue-title">Tasks
+            <button class="table-button">Add</button>
+        </h3>
+        <h3 class="vue-title--tasks">Test Task</h3>
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>
