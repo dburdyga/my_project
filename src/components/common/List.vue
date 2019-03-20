@@ -23,7 +23,7 @@
                     <input
                         type="text" placeholder="Created at"/>
                 </td>
-                <!--<button class="table-button">Add</button>-->
+                <button class="table-button">Add</button>
             </tr>
         </table>
         <table class="table-data" border="1" width="100%" cellpadding="5">
@@ -98,12 +98,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
     .list {
         margin: 5rem 5rem 0rem;
-    }
-    .table-button {
-
-    }
-    .table-button:hover {
-        visibility: hidden;
     }
 
 </style>
