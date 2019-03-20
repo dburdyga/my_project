@@ -64,10 +64,12 @@
             </tr>
             </tbody>
         </table>
-        <router-link to="/mergecard">
+        <router-link to="/estimatecard">
             <button class="table-button">Estimate</button>
         </router-link>
-        <button class="table-button">Cancel</button>
+        <router-link to="/">
+            <button class="table-button">Cancel</button>
+        </router-link>
     </div>
 </template>
 

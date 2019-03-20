@@ -4,8 +4,8 @@
             <thead>
             <tr>
                 <th>CR: 123456</th>
-                <th>Status: Merged</th>
-                <button class="table-button">Close</button>
+                <th>Status: Approved</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -52,6 +52,17 @@
                 <td>Add/Edit/Delete</td>
             </tr>
             <tr>
+                <td>Write unit tests</td>
+                <td>Write unit tests for Ethereum payment</td>
+                <td>ARS</td>
+                <td>Username</td>
+                <td>7</td>
+                <td>24</td>
+                <td>1</td>
+                <td>-</td>
+                <td>Add/Edit/Delete</td>
+            </tr>
+            <tr>
                 <td>Add missing scenarios</td>
                 <td>Add missing scenarios for the Ethereum Storage</td>
                 <td>JS</td>
@@ -62,9 +73,22 @@
                 <td>-</td>
                 <td>Add/Edit/Delete</td>
             </tr>
+            <tr>
+                <td>Add missing scenarios</td>
+                <td>Add missing scenarios for the Ethereum Smart Contracts</td>
+                <td>JS</td>
+                <td>Username</td>
+                <td>7</td>
+                <td>24</td>
+                <td>1</td>
+                <td>-</td>
+                <td>Add/Edit/Delete</td>
+            </tr>
             </tbody>
         </table>
-        <button class="table-button">Merge</button>
+        <router-link to="/mergecard">
+            <button class="table-button">Merge</button>
+        </router-link>
         <router-link to="/card">
             <button class="table-button">Cancel</button>
         </router-link>
