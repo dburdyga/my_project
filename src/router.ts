@@ -18,12 +18,12 @@ export enum Routes {
 const router = new Router({
   routes: [
     {
-      path: '/',
+      path: '/list',
       name: Routes.HOME,
       component: List,
     },
     {
-      path: '/login',
+      path: '/',
       name: Routes.LOGIN,
       component: Login,
     },

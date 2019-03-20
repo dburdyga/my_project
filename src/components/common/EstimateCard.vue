@@ -3,7 +3,7 @@
         <table class="table-status" width="100%">
             <thead>
             <tr>
-                <th>CR: 123456</th>
+                <th>CR: 123450</th>
                 <th>Status: Approved</th>
                 <th></th>
             </tr>

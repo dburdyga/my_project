@@ -43,7 +43,9 @@
             <tr
                 v-for="task in tasks"
                 :key="index">
-                <td>{{ task.number }}</td>
+                <router-link to="/card">
+                    <td class="link">{{ task.number }}</td>
+                </router-link>
                 <td>{{ task.title }}</td>
                 <td>{{ task.status }}</td>
                 <td>{{ task.project }}</td>
@@ -96,10 +98,19 @@ export default Vue.extend({
 
 
 <style lang="scss" scoped>
+    $grey: #2c3e50;
+
     .list {
         margin: 5rem 5rem 0rem;
     }
     .field {
         height: 20px;
+    }
+    .link {
+        border: none;
+        color: $grey;
+    }
+    a {
+        text-decoration:none;
     }
 </style>

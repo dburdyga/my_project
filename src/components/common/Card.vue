@@ -3,7 +3,7 @@
         <table class="table-status" width="100%">
             <thead>
             <tr>
-                <th>CR: 123456</th>
+                <th>CR: 123450</th>
                 <th>Status: Approved</th>
                 <th></th>
             </tr>
@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td>Owner: Test Username</td>
-                <td>Jira URL: lira link</td>
+                <td>Jira URL: Jira link</td>
                 <td>Assignee 2: Username</td>
             </tr>
             </tbody>
@@ -67,7 +67,7 @@
         <router-link to="/estimatecard">
             <button class="table-button">Estimate</button>
         </router-link>
-        <router-link to="/">
+        <router-link to="/list">
             <button class="table-button">Cancel</button>
         </router-link>
     </div>
