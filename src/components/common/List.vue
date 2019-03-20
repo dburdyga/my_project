@@ -5,7 +5,9 @@
             <tr class='table-filters'>
                 <td>
                     <input
-                            class="field" type="text" placeholder="CR Number"/>
+                        class="field" type="text"
+                        placeholder="CR Number"
+                        v-model="crFilter"/>
                 </td>
                 <td>
                     <input
@@ -41,18 +43,18 @@
             </thead>
             <tbody>
             <tr
-                v-for="task in tasks"
+                v-for="(requirement, index) in requirements"
                 :key="index">
                 <router-link to="/card">
-                    <td class="link">{{ task.number }}</td>
+                    <td class="link">{{ requirement.number }}</td>
                 </router-link>
-                <td>{{ task.title }}</td>
-                <td>{{ task.status }}</td>
-                <td>{{ task.project }}</td>
-                <td>{{ task.owner }}</td>
-                <td>{{ task.version }}</td>
-                <td>{{ task.createdAt }}</td>
-                <td>{{ task.actions }}</td>
+                <td>{{ requirement.title }}</td>
+                <td>{{ requirement.status }}</td>
+                <td>{{ requirement.project }}</td>
+                <td>{{ requirement.owner }}</td>
+                <td>{{ requirement.version }}</td>
+                <td>{{ requirement.createdAt }}</td>
+                <td>{{ requirement.actions }}</td>
             </tr>
             </tbody>
         </table>
@@ -64,34 +66,32 @@
 <script lang="ts">
 import Vue from 'vue';
 import Pagination from './Pagination.vue';
-import generateMockData from '../../data';
 import {REQUIREMENTS} from '@/store/getter-types';
 import {FETCH_REQUIREMENTS} from '@/store/action-types';
+import {IFilter} from "@/shared/interfaces/IFilter";
 
 
 export default Vue.extend({
-    data: {
-        cats: [],
-        currentSort: 'name',
-        currentSortDir: 'asc',
-        filter: ''
-    },
     created() {
         this.$store.dispatch(FETCH_REQUIREMENTS);
     },
     data() {
         return {
-            tasks: generateMockData(),
+            crFilter: ''
         };
     },
     computed: {
         requirements() {
-            return this.$store.getters[REQUIREMENTS];
+            return this.$store.getters[REQUIREMENTS]
+                .filter(requirement => requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()));
         }
     },
     components: {
         Pagination,
     },
+    methods: {
+
+    }
 });
 </script>
 
