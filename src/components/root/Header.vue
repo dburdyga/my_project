@@ -35,9 +35,6 @@
                 return this.$route.name === Routes.LOGIN;
             },
         },
-        components: {
-            Sidebar,
-        }
     });
 </script>
 
