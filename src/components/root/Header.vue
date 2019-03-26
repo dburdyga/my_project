@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="header-item">
-            <router-link to="/">
+            <router-link to="/list">
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </router-link>
         </div>
@@ -14,12 +14,16 @@
                 <img class="user-img" src="../../assets/photo.png" alt="Photo">
             </div>
         </div>
+        <Sidebar />
     </header>
+
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
+    import Sidebar from '../common/Sidebar.vue'
     import {Routes} from '../../router';
+
 
     export default Vue.extend ({
         data() {
@@ -33,6 +37,9 @@
                 return this.$route.name === Routes.LOGIN;
             },
         },
+        components: {
+            Sidebar,
+        }
     });
 </script>
 
