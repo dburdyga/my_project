@@ -14,14 +14,12 @@
                 <img class="user-img" src="../../assets/photo.png" alt="Photo">
             </div>
         </div>
-        <Sidebar />
     </header>
 
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
-    import Sidebar from '../common/Sidebar.vue'
     import {Routes} from '../../router';
 
 
