@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-        <h2 class="vue-title">Requirments</h2>
+        <h2 class="vue-title">Requirements</h2>
         <table id="filter-table">
             <tr class='table-filters'>
                 <td>
