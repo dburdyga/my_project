@@ -30,9 +30,10 @@
 <style lang="scss" scoped>
 
     .v-sidebar-menu {
-        right: 0;
+        left: 0;
         background-color: #ff6600;
     }
+
 
 </style>
 
