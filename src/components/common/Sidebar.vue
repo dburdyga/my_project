@@ -2,7 +2,7 @@
     <sidebar-menu :menu="menu" />
 </template>
 
-<script>
+<script lang="ts">
     export default {
         data() {
             return {
