@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <div class="sidebar" v-if="!isLoginRoute">
         <div class="sidebar-content">
             <router-link to="/list">
                 <div class="sidebar-item">List</div>
@@ -12,17 +12,20 @@
             </router-link>
         </div>
     </div>
-
-
 </template>
 
 <script lang="ts">
+
     import Vue from 'vue';
+    import {Routes} from '../../router';
 
-    export default Vue.extend({
-
+    export default Vue.extend ({
+        computed: {
+            isLoginRoute(): boolean {
+                return this.$route.name === Routes.LOGIN;
+            },
+        },
     });
-
 
 </script>
 

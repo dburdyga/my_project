@@ -64,4 +64,12 @@
         width: 3rem;
         height: 3rem;
     }
+
+
+
+    @media screen and (max-width: 769px) {
+        .header-item {
+            display: block;
+        }
+    }
 </style>

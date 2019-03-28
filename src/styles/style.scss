@@ -39,3 +39,20 @@ h2 {
   float: left;
   color: white;
 }
+
+
+@media screen and (max-width: 769px) {
+  table tr {
+    display: block;
+  }
+  thead tr {
+    display: block;
+  }
+  table td {
+    display: block;
+
+  }
+  .header-item {
+    display: block;
+  }
+}
