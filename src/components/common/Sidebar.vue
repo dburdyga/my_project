@@ -12,6 +12,8 @@
             </router-link>
         </div>
     </div>
+
+
 </template>
 
 <script lang="ts">
@@ -21,11 +23,13 @@
 
     });
 
+
 </script>
 
 <style lang="scss" scoped>
     .sidebar {
         margin-left: 90%;
+        margin-bottom: 35%;
         background-color: rgba(248, 249, 250, 0.7);
         position: fixed;
         top: 0;
@@ -37,13 +41,12 @@
         text-decoration: none;
     }
     .sidebar-content {
-        margin: 50px;
+        margin: 37px;
     }
     .sidebar-item {
         font-weight: bold;
         color: #2c3e50;
+        margin-bottom: 10px;
     }
-
-
 
 </style>
