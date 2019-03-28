@@ -10,6 +10,7 @@
             <input type="email" placeholder="E-Mail" v-model="email">
             <input type="password" placeholder="Password" v-model="password">
             <button type="submit">Login</button>
+            <button type="submit">Registration</button>
             <button class="button button-link">Reset login</button>
         </form>
     </div>
@@ -97,11 +98,11 @@
             border: none;
             background-color: unset;
             text-decoration: none;
-            color: grey;
+            color: #2c3e50;
+            font-weight: bold;
             &:hover {
                 background-color: unset;
             }
         }
-
     }
 </style>

@@ -1,14 +1,14 @@
 <template>
     <div class="sidebar">
         <div class="sidebar-content">
-            <router-link to="/">
-                <div class="sidebar-item">Login</div>
-            </router-link>
             <router-link to="/list">
                 <div class="sidebar-item">List</div>
             </router-link>
             <router-link to="/card">
                 <div class="sidebar-item">Card</div>
+            </router-link>
+            <router-link to="/">
+                <div class="sidebar-item">Logout</div>
             </router-link>
         </div>
     </div>
