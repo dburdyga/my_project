@@ -6,11 +6,6 @@ import data from './data';
 import './styles/style.scss';
 
 
-import VueSidebarMenu from 'vue-sidebar-menu';
-import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
-Vue.use(VueSidebarMenu);
-
-
 Vue.config.productionTip = false;
 
 new Vue({
