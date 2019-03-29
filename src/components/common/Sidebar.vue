@@ -31,8 +31,8 @@
 
 <style lang="scss" scoped>
     .sidebar {
+        height: 150px;
         margin-left: 90%;
-        margin-bottom: 35%;
         background-color: rgba(248, 249, 250, 0.7);
         position: fixed;
         top: 0;
