@@ -1,1 +1,2 @@
 export const REQUIREMENTS = 'REQUIREMENTS';
+export const SIDE_BAR_VISIBLE = 'SIDE_BAR_VISIBLE';

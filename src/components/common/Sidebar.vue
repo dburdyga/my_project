@@ -1,55 +1,50 @@
 <template>
-    <div class="sidebar" v-if="!isLoginRoute">
-        <div class="sidebar-content">
-            <router-link to="/list">
-                <div class="sidebar-item">List</div>
-            </router-link>
-            <router-link to="/card">
-                <div class="sidebar-item">Card</div>
-            </router-link>
-            <router-link to="/">
-                <div class="sidebar-item">Logout</div>
-            </router-link>
-        </div>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Переключить
+        </button>
+        <transition name="fade">
+            <p v-if="show">привет</p>
+        </transition>
     </div>
 </template>
 
 <script lang="ts">
-
     import Vue from 'vue';
-    import {Routes} from '../../router';
+    import {SIDE_BAR_VISIBLE} from "@/store/getter-types";
+    import {TOOGLE_SIDEBAR} from "@/store/mutation-types";
 
     export default Vue.extend ({
-        computed: {
-            isLoginRoute(): boolean {
-                return this.$route.name === Routes.LOGIN;
-            },
+        state: {
+            el: '#demo',
         },
+        computed: {
+            show: {
+                get(): boolean {
+                    return this.$store.getters[SIDE_BAR_VISIBLE]
+                },
+                set(value: boolean) {
+                    this.$store.commit(TOOGLE_SIDEBAR, value);
+                }
+            }
+        }
     });
+
+
+
+
 
 </script>
 
-<style lang="scss" scoped>
-    .sidebar {
-        height: 150px;
-        margin-left: 90%;
-        background-color: rgba(248, 249, 250, 0.7);
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
+<style lang="scss"scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
     }
-    a {
-        text-decoration: none;
-    }
-    .sidebar-content {
-        margin: 37px;
-    }
-    .sidebar-item {
-        font-weight: bold;
-        color: #2c3e50;
-        margin-bottom: 10px;
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+        opacity: 0;
     }
 
 </style>
+
+
+

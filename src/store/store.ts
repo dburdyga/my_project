@@ -2,9 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import router, {Routes} from '../router';
 import {RequirementsService} from '../common/services/RequirementsService';
-import {REQUIREMENTS} from '@/store/getter-types';
+import {REQUIREMENTS, SIDE_BAR_VISIBLE} from '@/store/getter-types';
 import {FETCH_REQUIREMENTS} from '@/store/action-types';
-import {SET_REQUIREMENTS} from '@/store/mutation-types';
+import {SET_REQUIREMENTS, TOOGLE_SIDEBAR} from '@/store/mutation-types';
 
 Vue.use(Vuex);
 
@@ -15,6 +15,7 @@ export default new Vuex.Store({
     loginError: null,
     loginSuccessful: false,
     requirements: [],
+    sideBarVisible: false,
     filter: {
       crNumber: '',
       crTitle: '',
@@ -25,7 +26,7 @@ export default new Vuex.Store({
   },
   getters: {
     [REQUIREMENTS]: (state) => state.requirements,
-    sorterdReq: (state) => state.requirements.sort(),
+    [SIDE_BAR_VISIBLE]: (state) => state.sideBarVisible,
     filter: (state) => state.filter,
   },
   mutations: {
@@ -37,6 +38,9 @@ export default new Vuex.Store({
     },
     [SET_REQUIREMENTS](state, requirements) {
       state.requirements = requirements;
+    },
+    [TOOGLE_SIDEBAR](state, payload: boolean) {
+      state.sideBarVisible = payload;
     }
   },
   actions: {
