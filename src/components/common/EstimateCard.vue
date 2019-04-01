@@ -42,7 +42,7 @@
             <tbody>
             <tr>
                 <td>Write integration tests</td>
-                <td>Write integration tests for Ethereum payment</td>
+                <td>Tests for payment</td>
                 <td>ARS</td>
                 <td>Username</td>
                 <td>11</td>
@@ -53,7 +53,7 @@
             </tr>
             <tr class="col_hidden">
                 <td>Write unit tests</td>
-                <td>Write unit tests for Ethereum payment</td>
+                <td>Tests for payment</td>
                 <td>ARS</td>
                 <td>Username</td>
                 <td>7</td>
@@ -64,7 +64,7 @@
             </tr>
             <tr class="col_hidden">
                 <td>Add missing scenarios</td>
-                <td>Add missing scenarios for the Ethereum Storage</td>
+                <td>Scenarios for storage</td>
                 <td>JS</td>
                 <td>Username</td>
                 <td>11</td>
@@ -75,7 +75,7 @@
             </tr>
             <tr class="col_hidden">
                 <td>Add missing scenarios</td>
-                <td>Add missing scenarios for the Ethereum Smart Contracts</td>
+                <td>Scenarios for storage</td>
                 <td>JS</td>
                 <td>Username</td>
                 <td>7</td>
