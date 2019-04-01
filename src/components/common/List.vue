@@ -12,22 +12,26 @@
                 <td>
                     <input
                             class="field" type="text"
-                            placeholder="Title"/>
+                            placeholder="Title"
+                            v-model="titleFilter"/>
                 </td>
                 <td>
                     <input
                             class="field" type="text"
-                            placeholder="Status"/>
+                            placeholder="Status"
+                            v-model="statusFilter"/>
                 </td>
                 <td>
                     <input
                             class="field" type="text"
-                            placeholder="Project"/>
+                            placeholder="Project"
+                            v-model="projectFilter"/>
                 </td>
                 <td>
                     <input
                             class="field" type="text"
-                            placeholder="Created at"/>
+                            placeholder="Created at"
+                            v-model="dateFilter"/>
                 </td>
                 <button class="table-button">Add</button>
             </tr>
@@ -81,13 +85,33 @@ export default Vue.extend({
     },
     data() {
         return {
-            crFilter: ''
+            crFilter: '',
+            titleFilter: '',
+            statusFilter: '',
+            projectFilter: '',
+            dateFilter: ''
         };
     },
     computed: {
         requirements() {
             return this.$store.getters[REQUIREMENTS]
                 .filter(requirement => requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()));
+        },
+        requirements() {
+            return this.$store.getters[REQUIREMENTS]
+                .filter(requirement => requirement.number.toLowerCase().includes(this.titleFilter.toLowerCase()));
+        },
+        // requirements() {
+        //     return this.$store.getters[REQUIREMENTS]
+        //         .filter(requirement => requirement.number.toLowerCase().includes(this.statusFilter.toLowerCase()));
+        // },
+        // requirements() {
+        //     return this.$store.getters[REQUIREMENTS]
+        //         .filter(requirement => requirement.number.toLowerCase().includes(this.projectFilter.toLowerCase()));
+        // },
+        requirements() {
+            return this.$store.getters[REQUIREMENTS]
+                .filter(requirement => requirement.number.toLowerCase().includes(this.dateFilter.toLowerCase()));
         }
     },
     components: {
