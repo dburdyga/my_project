@@ -51,7 +51,7 @@
                 <td>-</td>
                 <td>Edit/Delete</td>
             </tr>
-            <tr>
+            <tr class="col_hidden">
                 <td>Add missing scenarios</td>
                 <td>Add missing scenarios for the Ethereum Storage</td>
                 <td>JS</td>

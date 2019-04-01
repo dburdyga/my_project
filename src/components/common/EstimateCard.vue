@@ -51,7 +51,7 @@
                 <td>-</td>
                 <td>Add/Edit/Delete</td>
             </tr>
-            <tr>
+            <tr class="col_hidden">
                 <td>Write unit tests</td>
                 <td>Write unit tests for Ethereum payment</td>
                 <td>ARS</td>
@@ -62,7 +62,7 @@
                 <td>-</td>
                 <td>Add/Edit/Delete</td>
             </tr>
-            <tr>
+            <tr class="col_hidden">
                 <td>Add missing scenarios</td>
                 <td>Add missing scenarios for the Ethereum Storage</td>
                 <td>JS</td>
@@ -73,7 +73,7 @@
                 <td>-</td>
                 <td>Add/Edit/Delete</td>
             </tr>
-            <tr>
+            <tr class="col_hidden">
                 <td>Add missing scenarios</td>
                 <td>Add missing scenarios for the Ethereum Smart Contracts</td>
                 <td>JS</td>
