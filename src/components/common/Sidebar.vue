@@ -45,7 +45,7 @@
 
 <style lang="scss"scoped>
     $orange-color: #ff6600;
-    
+
     .sidebar {
         height: 150px;
         margin-left: 90%;
