@@ -1,10 +1,22 @@
 <template>
     <div id="demo">
-        <button v-on:click="show = !show">
-            Переключить
+        <button class="menu-button" v-on:click="show = !show">
+            MENU
         </button>
         <transition name="fade">
-            <p v-if="show">привет</p>
+            <div v-if="show" class="sidebar">
+                <div class="sidebar-content">
+                    <router-link to="/list">
+                        <div class="sidebar-item">List</div>
+                    </router-link>
+                    <router-link to="/card">
+                        <div class="sidebar-item">Card</div>
+                    </router-link>
+                    <router-link to="/">
+                        <div class="sidebar-item">Logout</div>
+                    </router-link>
+                </div>
+            </div>
         </transition>
     </div>
 </template>
@@ -29,14 +41,42 @@
             }
         }
     });
-
-
-
-
-
 </script>
 
 <style lang="scss"scoped>
+    $orange-color: #ff6600;
+    
+    .sidebar {
+        height: 150px;
+        margin-left: 90%;
+        background-color: rgba(248, 249, 250, 0.7);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .menu-button {
+        height: 25px;
+        width: 70px;
+        background: $orange-color;
+        color: white;
+        border: none;
+        margin: 10px 10px;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
+    .sidebar-content {
+        margin: 37px;
+    }
+    .sidebar-item {
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
     }
