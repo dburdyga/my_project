@@ -1,5 +1,5 @@
 <template>
-    <div id="demo">
+    <div class="menu" v-if="!isLoginRoute">
         <button class="menu-button" v-on:click="show = !show">
             MENU
         </button>
@@ -23,14 +23,18 @@
 
 <script lang="ts">
     import Vue from 'vue';
+    import {Routes} from '../../router';
     import {SIDE_BAR_VISIBLE} from "@/store/getter-types";
     import {TOOGLE_SIDEBAR} from "@/store/mutation-types";
 
     export default Vue.extend ({
         state: {
-            el: '#demo',
+            el: 'menu',
         },
         computed: {
+            isLoginRoute(): boolean {
+                return this.$route.name === Routes.LOGIN;
+            },
             show: {
                 get(): boolean {
                     return this.$store.getters[SIDE_BAR_VISIBLE]
@@ -41,6 +45,7 @@
             }
         }
     });
+
 </script>
 
 <style lang="scss"scoped>
