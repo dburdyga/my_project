@@ -46,13 +46,25 @@ h2 {
     display: block;
   }
   thead tr {
-    display: block;
+    display: grid;
   }
   table td {
     display: block;
-
+  }
+  thead, tbody {
+    width: 50%;
+  }
+  .table-data {
+    display: flex;
+    width: 100%;
   }
   .header-item {
     display: block;
+  }
+  .filter-table {
+    width: 100%;
+  }
+  .card{
+    margin: 20px 20px 0px;
   }
 }

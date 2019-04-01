@@ -1,7 +1,7 @@
 <template>
     <div class="list">
         <h2 class="vue-title">Requirements</h2>
-        <table id="filter-table">
+        <table class="filter-table">
             <tr class='table-filters'>
                 <td>
                     <input
@@ -53,9 +53,7 @@
             <tr
                 v-for="(requirement, index) in requirements"
                 :key="index">
-                <router-link to="/card">
-                    <td class="link">{{ requirement.number }}</td>
-                </router-link>
+                <td>{{ requirement.number }}</td>
                 <td>{{ requirement.title }}</td>
                 <td>{{ requirement.status }}</td>
                 <td>{{ requirement.project }}</td>
@@ -96,11 +94,11 @@ export default Vue.extend({
         requirements() {
             return this.$store.getters[REQUIREMENTS]
                 .filter(requirement => requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()));
-        },
-        requirements() {
-            return this.$store.getters[REQUIREMENTS]
-                .filter(requirement => requirement.number.toLowerCase().includes(this.titleFilter.toLowerCase()));
-        },
+        }
+        // requirements() {
+        //     return this.$store.getters[REQUIREMENTS]
+        //         .filter(requirement => requirement.number.toLowerCase().includes(this.titleFilter.toLowerCase()));
+        // },
         // requirements() {
         //     return this.$store.getters[REQUIREMENTS]
         //         .filter(requirement => requirement.number.toLowerCase().includes(this.statusFilter.toLowerCase()));
@@ -109,10 +107,10 @@ export default Vue.extend({
         //     return this.$store.getters[REQUIREMENTS]
         //         .filter(requirement => requirement.number.toLowerCase().includes(this.projectFilter.toLowerCase()));
         // },
-        requirements() {
-            return this.$store.getters[REQUIREMENTS]
-                .filter(requirement => requirement.number.toLowerCase().includes(this.dateFilter.toLowerCase()));
-        }
+        // requirements() {
+        //     return this.$store.getters[REQUIREMENTS]
+        //         .filter(requirement => requirement.number.toLowerCase().includes(this.dateFilter.toLowerCase()));
+        // }
     },
     components: {
         Pagination,
@@ -140,5 +138,11 @@ export default Vue.extend({
     }
     a {
         text-decoration:none;
+    }
+
+    @media screen and (max-width: 769px) {
+        .list {
+            margin: 20px 20px 0px;
+        }
     }
 </style>
