@@ -1,7 +1,6 @@
 <template>
     <div class="list">
         <h2 class="vue-title">Requirements</h2>
-        <button class="table-button">Add</button>
         <NewCard />
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
@@ -67,6 +66,7 @@ import NewCard from './NewCard.vue';
 import Pagination from './Pagination.vue';
 import {REQUIREMENTS} from '@/store/getter-types';
 import {FETCH_REQUIREMENTS} from '@/store/action-types';
+
 import {IFilter} from "@/shared/interfaces/IFilter";
 
 
@@ -91,7 +91,7 @@ export default Vue.extend({
                 .filter(requirement => requirement.status.toLowerCase().includes(this.statusFilter.toLowerCase()))
                 .filter(requirement => requirement.project.toLowerCase().includes(this.projectFilter.toLowerCase()))
                 .filter(requirement => requirement.createdAt.toLowerCase().includes(this.dateFilter.toLowerCase()));
-        }
+        },
     },
     components: {
         Pagination,

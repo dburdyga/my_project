@@ -81,9 +81,9 @@
         margin-bottom: 10px;
     }
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+        transition: opacity .8s;
     }
-    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    .fade-enter, .fade-leave-to {
         opacity: 0;
     }
 
