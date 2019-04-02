@@ -1,51 +1,42 @@
 <template>
     <div class="list">
         <h2 class="vue-title">Requirements</h2>
-        <table class="filter-table">
-            <tr class='table-filters'>
-                <td>
+        <button class="table-button">Add card</button>
+        <table class="table-data" border="1" width="100%" cellpadding="5">
+            <thead>
+            <tr>
+                <th>
                     <input
                             class="field" type="text"
                             placeholder="CR Number"
                             v-model="crFilter"/>
-                </td>
-                <td>
+                </th>
+                <th>
                     <input
                             class="field" type="text"
                             placeholder="Title"
                             v-model="titleFilter"/>
-                </td>
-                <td>
+                </th>
+                <th>
                     <input
                             class="field" type="text"
                             placeholder="Status"
                             v-model="statusFilter"/>
-                </td>
-                <td>
+                </th>
+                <th>
                     <input
                             class="field" type="text"
                             placeholder="Project"
                             v-model="projectFilter"/>
-                </td>
-                <td>
+                </th>
+                <th>Owner</th>
+                <th>Version</th>
+                <th>
                     <input
                             class="field" type="text"
                             placeholder="Created at"
                             v-model="dateFilter"/>
-                </td>
-                <button class="table-button">Add</button>
-            </tr>
-        </table>
-        <table class="table-data" border="1" width="100%" cellpadding="5">
-            <thead>
-            <tr>
-                <th>CR Number</th>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Project</th>
-                <th>Owner</th>
-                <th>Version</th>
-                <th>Created at</th>
+                </th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -125,12 +116,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     $grey: #2c3e50;
-
     .list {
         margin: 5rem 5rem 0rem;
     }
     .field {
         height: 20px;
+        border: 0px;
+        text-align: center;
+        padding: 5px;
     }
     .link {
         border: none;
@@ -138,6 +131,13 @@ export default Vue.extend({
     }
     a {
         text-decoration:none;
+    }
+    th {
+        width: 100px;
+        padding: 0px 0px 0px 0px;
+    }
+    td {
+        padding: 0px 0px 0px 0px;
     }
 
     @media screen and (max-width: 769px) {
