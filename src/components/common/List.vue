@@ -117,10 +117,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
     $grey: #2c3e50;
     .list {
-        margin: 5rem 5rem 0rem;
+        margin: 0rem 5rem 0rem;
     }
     .field {
-        height: 20px;
+        height: 26px;
         border: 0px;
         text-align: center;
         padding: 5px;
@@ -133,10 +133,25 @@ export default Vue.extend({
         text-decoration:none;
     }
     th {
+        height: 26px;
+        background: white;
+        /*font: 400 13.3333px Arial;*/
+        /*color: grey;*/
         width: 100px;
         padding: 0px 0px 0px 0px;
     }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        color: #2c3e50;
+
+    }
+
     td {
+        height: 26px;
         padding: 0px 0px 0px 0px;
     }
 
