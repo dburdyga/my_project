@@ -1,8 +1,8 @@
 <template>
     <div class="menu" v-if="!isLoginRoute">
-        <button class="menu-button" v-on:click="show = !show">
-            MENU
-        </button>
+        <div class="menu-bar" v-on:click="show = !show">
+            <img src="../../assets/menu.png" alt="menu icon" class="menu-img">
+        </div>
         <transition name="fade">
             <div v-if="show" class="sidebar">
                 <div class="sidebar-content">
@@ -51,6 +51,11 @@
 <style lang="scss"scoped>
     $orange-color: #ff6600;
 
+    .menu-bar{
+        float: left;
+        margin-left: 10px;
+        margin-top: 18px;
+    }
     .sidebar {
         height: 150px;
         margin-left: 90%;
@@ -61,15 +66,8 @@
         right: 0;
         left: 0;
     }
-    .menu-button {
-        height: 25px;
-        width: 70px;
-        background: $orange-color;
-        color: white;
-        border: none;
-        margin: 10px 10px;
-        border-radius: 3px;
-        font-weight: bold;
+    .menu-img {
+        width: 50px;
     }
     a {
         text-decoration: none;

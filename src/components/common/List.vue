@@ -1,7 +1,7 @@
 <template>
     <div class="list">
         <h2 class="vue-title">Requirements</h2>
-        <button class="table-button">Add card</button>
+        <button class="table-button">Add</button>
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
             <tr>

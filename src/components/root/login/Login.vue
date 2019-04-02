@@ -1,9 +1,6 @@
 <template>
     <div class="login">
         <p><strong>{{ title }}</strong></p>
-        <div v-if="loggingIn" class="container-loading">
-            <img src="../../../assets/loading.gif" alt="Loading Icon">
-        </div>
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>
         <form @submit.prevent="loginSubmit">
