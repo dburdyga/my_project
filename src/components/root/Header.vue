@@ -5,9 +5,9 @@
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </router-link>
         </div>
-        <div class="header-item">
-            <h1>{{title}}</h1>
-        </div>
+        <!--<div class="header-item">-->
+            <!--<h1>{{title}}</h1>-->
+        <!--</div>-->
         <div class="header-item">
             <div class="header-item--block" v-if="!isLoginRoute">Username</div>
             <div class="header-item--block" v-if="!isLoginRoute">
@@ -39,23 +39,27 @@
 </script>
 
 <style lang="scss" scoped>
+
+    $white: #ffffff;
+
     header {
         display: flex;
         justify-content: space-around;
         align-items: center;
     }
     .header-item {
+        padding-top: 15px;
         display: flex;
         align-items: center;
     }
     .header-item--block {
         padding: 1rem;
-        color: white;
+        color: $white;
         font-size: 16px;
         font-weight: bold;
     }
     h1 {
-        color: white;
+        color: $white;
     }
     .header-img {
         width: 5rem;
@@ -64,8 +68,6 @@
         width: 3rem;
         height: 3rem;
     }
-
-
 
     @media screen and (max-width: 769px) {
         .header-item {

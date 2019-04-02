@@ -135,19 +135,16 @@ export default Vue.extend({
     th {
         height: 26px;
         background: white;
-        /*font: 400 13.3333px Arial;*/
-        /*color: grey;*/
         width: 100px;
         padding: 0px 0px 0px 0px;
     }
 
-    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    ::-webkit-input-placeholder {
+        font-family: "Source Sans Pro", sans-serif;
         font-weight: bold;
         font-size: 16px;
         text-align: center;
         color: #2c3e50;
-
     }
 
     td {

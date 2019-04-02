@@ -21,14 +21,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  $middle-grey: #2c3e50;
+
   #app {
     min-height: 100vh;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: "Source Sans Pro", sans-serif;
     text-align: center;
-    color: #2c3e50;
-    background-image: url('./assets/background.jpg');
+    color: $middle-grey;
+    background: linear-gradient(270deg, #48367d 30%, #241842 100%);
     background-size: cover;
   }
 </style>
