@@ -31,9 +31,11 @@
 
     import Vue from 'vue';
     import {Routes} from '../../router';
+    import {NEW_CARD_VISIBLE} from "@/store/getter-types";
+    import {TOOGLE_NEWCARD} from "@/store/mutation-types";
+
 
     export default Vue.extend({
-        name: "NewCard.vue",
         data() {
             return {
                 title: 'Create new CR'
@@ -43,6 +45,14 @@
             isLoginRoute(): boolean {
                 return this.$route.name === Routes.LOGIN;
             },
+            show: {
+                get(): boolean {
+                    return this.$store.getters[NEW_CARD_VISIBLE]
+                },
+                set(value: boolean) {
+                    this.$store.commit(TOOGLE_NEWCARD, value);
+                }
+            }
         }
     });
 

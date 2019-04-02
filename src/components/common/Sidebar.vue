@@ -58,8 +58,8 @@
     }
     .sidebar {
         height: 150px;
-        margin-left: 90%;
-        background-color: rgba(248, 249, 250, 0.7);
+        margin-right: 90%;
+        background-color: $orange-color;
         position: absolute;
         top: 0;
         bottom: 0;
