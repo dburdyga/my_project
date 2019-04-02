@@ -14,13 +14,11 @@ header {
 
 h3 {
   font-family: "Source Sans Pro", sans-serif;
-  line-height: 1.5;
   margin: 8px;
   color: $white;
 }
 h2 {
   font-family: "Source Sans Pro", sans-serif;
-  line-height: 1.5;
   color: $white;
 }
 .card {
@@ -36,8 +34,8 @@ h2 {
   margin: 10px 10px;
   border-radius: 3px;
   font-weight: normal;
-  font-size: 18px;
-  min-width: 140px;
+  font-size: 16px;
+  min-width: 120px;
   display: inline-block;
   padding: 4px 30px;
 }

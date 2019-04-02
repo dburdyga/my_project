@@ -16,13 +16,19 @@
 </script>
 
 <style lang="scss" scoped>
+    $white: #ffffff;
+    $orange: #ff6600;
+
     .pagination-button {
-        background: #ff6600;
-        color: white;
+        font-family: "Source Sans Pro", sans-serif;
+        background: $orange;
+        color: $white;
         border: none;
         margin: 10px 10px;
-        font-weight: bold;
-        height: 30px;
+        font-weight: normal;
         border-radius: 3px;
+        display: inline-block;
+        font-size: 14px;
+        padding: 4px 10px;
     }
 </style>

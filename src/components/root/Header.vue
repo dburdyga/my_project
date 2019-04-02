@@ -5,9 +5,6 @@
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </router-link>
         </div>
-        <!--<div class="header-item">-->
-            <!--<h1>{{title}}</h1>-->
-        <!--</div>-->
         <div class="header-item">
             <div class="header-item--block" v-if="!isLoginRoute">Username</div>
             <div class="header-item--block" v-if="!isLoginRoute">
@@ -53,6 +50,7 @@
         align-items: center;
     }
     .header-item--block {
+        font-family: "Source Sans Pro", sans-serif;
         padding: 1rem;
         color: $white;
         font-size: 16px;

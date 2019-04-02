@@ -2,6 +2,7 @@
   <div id="app">
     <Sidebar />
     <Header />
+    <NewCard />
     <router-view></router-view>
   </div>
 </template>
@@ -9,6 +10,8 @@
 <script lang="ts">
 import Header from './components/root/Header.vue';
 import Sidebar from './components/common/Sidebar.vue';
+import NewCard from './components/common/NewCard.vue';
+
 
 
 export default {
@@ -16,6 +19,7 @@ export default {
   components: {
     Header,
     Sidebar,
+    NewCard,
   },
 };
 </script>
