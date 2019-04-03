@@ -1,35 +1,51 @@
 <template>
-    <div>
+    <div class="card-form">
+        <div>
         <button
                 class="table-button"
-                v-on:click="show = !show">
-            Add</button>
-        <transition name="fade">
-            <form v-if="show" class="card-form">
-                    <p><strong>{{ title }}</strong></p>
-                    <p>CR Number
-                        <input type="text"/>
-                    </p>
-                    <p>Title
-                        <input type="text" >
-                    </p>
-                    <p>Version
-                        <input type="text" >
-                    </p>
-                    <p>Jira Link
-                        <input type="text" >
-                    </p>
-                    <h3>Tasks</h3>
-                    <p>Task title
-                        <input type="text" >
-                    </p>
-                    <p>Task description
-                        <input type="text" >
-                    </p>
+                v-on:click="show = !show">Add</button>
+        </div>
+        <div>
+            <transition name="fade">
+                <form v-if="show" class="form">
+                    <h3>Create new CR</h3>
+                    <table class="card-table">
+                        <tr>
+                            <td>CRNumber</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Version</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Jira Link</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                    </table>
+                    <div class="form-block">
+                        <h3>Tasks</h3>
+                        <button class="table-button table-button--form">Add</button>
+                    </div>
+                    <table class="card-table">
+                        <tr>
+                            <td>Task title</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                    </table>
                     <button class="table-button">Save</button>
                     <button class="table-button">Cancel</button>
-            </form>
-        </transition>
+                </form>
+            </transition>
+        </div>
     </div>
 </template>
 
@@ -41,11 +57,6 @@
 
 
     export default Vue.extend({
-        data() {
-            return {
-                title: 'Create new CR'
-            };
-        },
         computed: {
             show: {
                 get(): boolean {
@@ -63,20 +74,41 @@
 <style lang="scss" scoped>
     $white: #ffffff;
     $middle-grey: #2c3e50;
+    $middle-purple:#48367d;
+    $light-purple: #6b4fbb;
 
     .card-form {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
+        display: inline-block;
     }
-    p {
-        color: $middle-grey;
+    .form {
+        border-radius: 5px;
+        background-color: $light-purple;
+        padding: 20px;
+        display: table;
+    }
+    .card-table {
+        text-align: left;
+    }
+    td {
+        color: $white;
+        padding-left: 10px;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .8s;
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;
+    }
+
+    ::-webkit-input-placeholder {
+        border: none;
+    }
+    .form-block {
+        display: flex;
+        align-items: center;
+    }
+    .table-button--form {
+        margin-left: 38px;
     }
 
 </style>

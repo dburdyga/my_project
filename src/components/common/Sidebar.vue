@@ -5,7 +5,7 @@
         </div>
         <transition name="fade">
             <div v-if="show" class="sidebar">
-                <div class="cross">
+                <div class="cross" v-on:click="show = !show">
                     <img src="../../assets/cross.png" alt="cross icon" class="cross-img">
                 </div>
                 <div class="sidebar-content">
@@ -54,6 +54,7 @@
 <style lang="scss"scoped>
     $orange-color: #ff6600;
     $white: #ffffff;
+    $light-purple: #6b4fbb;
 
     .menu-bar{
         float: left;
@@ -64,7 +65,7 @@
         border-radius: 5px;
         height: 150px;
         margin-right: 90%;
-        background-color: $orange-color;
+        background-color: $light-purple;
         position: absolute;
         top: 0;
         bottom: 0;

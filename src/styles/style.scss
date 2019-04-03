@@ -51,6 +51,7 @@ h2 {
   border: none;
   background-color: $white;
   text-align: left;
+  padding: 10px;
 }
 button {
   font-family: "Source Sans Pro", sans-serif;
@@ -66,9 +67,6 @@ button {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-table {
-  -webkit-border-radius: 3px;
-}
 th {
   color: $middle-purple;
 }
