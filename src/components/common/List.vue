@@ -106,6 +106,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     $grey: #2c3e50;
+    $middle-purple:#48367d;
+
     .list {
         margin: 0rem 5rem 0rem;
     }
@@ -134,7 +136,7 @@ export default Vue.extend({
         font-weight: bold;
         font-size: 16px;
         text-align: center;
-        color: #2c3e50;
+        color: $middle-purple;
     }
 
     td {

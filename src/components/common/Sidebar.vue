@@ -5,6 +5,9 @@
         </div>
         <transition name="fade">
             <div v-if="show" class="sidebar">
+                <div class="cross">
+                    <img src="../../assets/cross.png" alt="cross icon" class="cross-img">
+                </div>
                 <div class="sidebar-content">
                     <router-link to="/list">
                         <div class="sidebar-item">List</div>
@@ -50,6 +53,7 @@
 
 <style lang="scss"scoped>
     $orange-color: #ff6600;
+    $white: #ffffff;
 
     .menu-bar{
         float: left;
@@ -57,6 +61,7 @@
         margin-top: 18px;
     }
     .sidebar {
+        border-radius: 5px;
         height: 150px;
         margin-right: 90%;
         background-color: $orange-color;
@@ -77,14 +82,20 @@
     }
     .sidebar-item {
         font-weight: bold;
-        color: #2c3e50;
+        color: $white;
         margin-bottom: 10px;
     }
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .8s;
+        transition: opacity .5s;
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;
+    }
+    .cross-img {
+        width: 15px;
+        float: right;
+        padding-top: 5px;
+        padding-right: 5px;
     }
 
 </style>
