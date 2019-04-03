@@ -46,7 +46,7 @@ export default new Vuex.Store({
     },
     [TOOGLE_NEWCARD](state, payload: boolean) {
       state.newCardVisible = payload;
-    }
+    },
   },
   actions: {
     [FETCH_REQUIREMENTS]({ commit }) {

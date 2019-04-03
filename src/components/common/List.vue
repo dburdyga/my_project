@@ -136,7 +136,6 @@
         text-align: center;
         color: $middle-purple;
     }
-
     td {
         height: 26px;
         padding: 0px 0px 0px 0px;

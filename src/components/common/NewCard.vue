@@ -41,8 +41,10 @@
                             <td><input type="text"/></td>
                         </tr>
                     </table>
-                    <button class="table-button">Save</button>
-                    <button class="table-button">Cancel</button>
+                    <div class="button-list">
+                        <button class="table-button">Save</button>
+                        <button class="table-button">Cancel</button>
+                    </div>
                 </form>
             </transition>
         </div>
@@ -109,6 +111,25 @@
     }
     .table-button--form {
         margin-left: 38px;
+    }
+    @media screen and (max-width: 769px) {
+        .form {
+            display: table-caption;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .table-button--form {
+            margin-left: 0px;
+        }
+        .card-table {
+            display: inline-block;
+        }
+        .button-list {
+            display: flex;
+        }
+        .form-block {
+            display: inline-flex;
+        }
     }
 
 </style>
