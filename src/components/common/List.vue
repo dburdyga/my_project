@@ -145,5 +145,8 @@
         .list {
             margin: 20px 20px 0px;
         }
+        th {
+            width: 0px;
+        }
     }
 </style>
