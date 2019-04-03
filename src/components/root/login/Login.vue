@@ -3,18 +3,20 @@
         <p><strong>{{ title }}</strong></p>
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>
-        <form @submit.prevent="loginSubmit">
+        <form>
             <input type="email" placeholder="E-Mail" v-model="email">
             <input type="password" placeholder="Password" v-model="password">
             <button type="submit">Login</button>
-            <button type="submit">Registration</button>
+            <Registration />
             <button class="button button-link">Reset login</button>
+            <!--@submit.prevent="loginSubmit"-->
         </form>
     </div>
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
+    import Registration from '../../common/Registration.vue';
     import { mapState, mapActions } from 'vuex';
     import {Routes} from '../../../router';
 
@@ -37,6 +39,9 @@
             loginSubmit() {
                 this.$router.push({name: Routes.HOME});
             },
+        },
+        components: {
+            Registration,
         },
     });
 </script>
