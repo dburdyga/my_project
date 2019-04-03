@@ -23,7 +23,7 @@
             return {
                 email: '',
                 password: '',
-                title: 'Sign in'
+                title: 'Sign in',
             };
         },
         computed: {

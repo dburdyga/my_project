@@ -27,8 +27,8 @@
 <script lang="ts">
     import Vue from 'vue';
     import {Routes} from '../../router';
-    import {SIDE_BAR_VISIBLE} from "@/store/getter-types";
-    import {TOOGLE_SIDEBAR} from "@/store/mutation-types";
+    import {SIDE_BAR_VISIBLE} from '@/store/getter-types';
+    import {TOOGLE_SIDEBAR} from '@/store/mutation-types';
 
     export default Vue.extend ({
         state: {
@@ -44,9 +44,9 @@
                 },
                 set(value: boolean) {
                     this.$store.commit(TOOGLE_SIDEBAR, value);
-                }
-            }
-        }
+                },
+            },
+        },
     });
 
 </script>
@@ -64,7 +64,7 @@
     .sidebar {
         border-radius: 5px;
         height: 150px;
-        margin-right: 90%;
+        width: 140px;
         background-color: $light-purple;
         position: absolute;
         top: 0;

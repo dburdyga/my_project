@@ -61,46 +61,44 @@
 
 
 <script lang="ts">
-import Vue from 'vue';
-import NewCard from './NewCard.vue';
-import Pagination from './Pagination.vue';
-import {REQUIREMENTS} from '@/store/getter-types';
-import {FETCH_REQUIREMENTS} from '@/store/action-types';
-
-import {IFilter} from "@/shared/interfaces/IFilter";
+    import Vue from 'vue';
+    import NewCard from './NewCard.vue';
+    import Pagination from './Pagination.vue';
+    import {REQUIREMENTS} from '@/store/getter-types';
+    import {FETCH_REQUIREMENTS} from '@/store/action-types';
 
 
-export default Vue.extend({
-    created() {
-        this.$store.dispatch(FETCH_REQUIREMENTS);
-    },
-    data() {
-        return {
-            crFilter: '',
-            titleFilter: '',
-            statusFilter: '',
-            projectFilter: '',
-            dateFilter: ''
-        };
-    },
-    computed: {
-        requirements() {
-            return this.$store.getters[REQUIREMENTS]
-                .filter(requirement => requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()))
-                .filter(requirement => requirement.title.toLowerCase().includes(this.titleFilter.toLowerCase()))
-                .filter(requirement => requirement.status.toLowerCase().includes(this.statusFilter.toLowerCase()))
-                .filter(requirement => requirement.project.toLowerCase().includes(this.projectFilter.toLowerCase()))
-                .filter(requirement => requirement.createdAt.toLowerCase().includes(this.dateFilter.toLowerCase()));
+    export default Vue.extend({
+        created() {
+            this.$store.dispatch(FETCH_REQUIREMENTS);
         },
-    },
-    components: {
-        Pagination,
-        NewCard,
-    },
-    methods: {
+        data() {
+            return {
+                crFilter: '',
+                titleFilter: '',
+                statusFilter: '',
+                projectFilter: '',
+                dateFilter: '',
+            };
+        },
+        computed: {
+            requirements() {
+                return this.$store.getters[REQUIREMENTS]
+                    .filter(requirement => requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()))
+                    .filter(requirement => requirement.title.toLowerCase().includes(this.titleFilter.toLowerCase()))
+                    .filter(requirement => requirement.status.toLowerCase().includes(this.statusFilter.toLowerCase()))
+                    .filter(requirement => requirement.project.toLowerCase().includes(this.projectFilter.toLowerCase()))
+                    .filter(requirement => requirement.createdAt.toLowerCase().includes(this.dateFilter.toLowerCase()));
+            },
+        },
+        components: {
+            Pagination,
+            NewCard,
+        },
+        methods: {
+        },
+    });
 
-    }
-});
 </script>
 
 

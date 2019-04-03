@@ -52,8 +52,8 @@
 <script lang="ts">
 
     import Vue from 'vue';
-    import {NEW_CARD_VISIBLE} from "@/store/getter-types";
-    import {TOOGLE_NEWCARD} from "@/store/mutation-types";
+    import {NEW_CARD_VISIBLE} from '@/store/getter-types';
+    import {TOOGLE_NEWCARD} from '@/store/mutation-types';
 
 
     export default Vue.extend({
@@ -64,9 +64,9 @@
                 },
                 set(value: boolean) {
                     this.$store.commit(TOOGLE_NEWCARD, value);
-                }
-            }
-        }
+                },
+            },
+        },
     });
 
 </script>

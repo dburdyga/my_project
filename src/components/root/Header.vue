@@ -24,7 +24,7 @@
         data() {
             return {
                 title: 'Estimation tool',
-                isHidden: false
+                isHidden: false,
             };
         },
         computed: {

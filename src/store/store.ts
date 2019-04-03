@@ -16,7 +16,7 @@ export default new Vuex.Store({
     loginSuccessful: false,
     requirements: [],
     sideBarVisible: false,
-    newCardVisible:false,
+    newCardVisible: false,
     filter: {
       crNumber: '',
       crTitle: '',
