@@ -21,10 +21,6 @@
                             <td><input type="text"/></td>
                         </tr>
                         <tr>
-                            <td>Email confirmation</td>
-                            <td><input type="text"/></td>
-                        </tr>
-                        <tr>
                             <td>Password</td>
                             <td><input type="text"/></td>
                         </tr>
@@ -85,7 +81,7 @@
         }
     }
     .table-button--register {
-        width: 250px;
+        width: 260px;
     }
 
     .card-form {
