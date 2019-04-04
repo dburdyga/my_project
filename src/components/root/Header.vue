@@ -2,7 +2,7 @@
     <header>
         <div class="header-item">
             <router-link to="/list">
-                <img class="header-img" src="../../assets/logo.png" alt="Logo">
+                <img v-if="!isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
             </router-link>
         </div>
         <div class="header-item">
@@ -30,6 +30,9 @@
         computed: {
             isLoginRoute(): boolean {
                 return this.$route.name === Routes.LOGIN;
+            },
+            isListRoute(): boolean {
+                return this.$route.name === Routes.HOME;
             },
         },
     });
