@@ -62,11 +62,13 @@
 
 <script lang="ts">
     import Vue from 'vue';
+    import Vuetify from 'vuetify';
     import NewCard from './NewCard.vue';
     import Pagination from './Pagination.vue';
     import {REQUIREMENTS} from '@/store/getter-types';
     import {FETCH_REQUIREMENTS} from '@/store/action-types';
 
+    Vue.use(Vuetify);
 
     export default Vue.extend({
         created() {
