@@ -1,6 +1,8 @@
 <template>
     <div class="card-form">
-        <button v-on:click="show = !show">Registration</button>
+        <div>
+            <button v-on:click="show = !show">Registration</button>
+        </div>
         <div>
             <transition name="fade">
                 <form v-if="show" class="register-form">
@@ -27,7 +29,7 @@
                             <td><input type="text"/></td>
                         </tr>
                     </table>
-                    <button class="table-button">Register</button>
+                    <button class="table-button table-button--register">Register</button>
                 </form>
             </transition>
         </div>
@@ -82,11 +84,15 @@
             background-color: lightslategray;
         }
     }
+    .table-button--register {
+        width: 250px;
+    }
 
     .card-form {
         display: inline-block;
     }
     .register-form {
+        padding: 10px;
         border-radius: 5px;
         background-color: $dark-purple;
         display: table;
