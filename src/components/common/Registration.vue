@@ -1,7 +1,7 @@
 <template>
     <div class="card-form">
         <div>
-            <button v-on:click="show = !show">Registration</button>
+            <button v-on:click="show = !show" v-if="!show">Registration</button>
         </div>
         <div>
             <transition name="fade">
@@ -106,7 +106,6 @@
     .fade-enter, .fade-leave-to {
         opacity: 0;
     }
-
     ::-webkit-input-placeholder {
         border: none;
     }

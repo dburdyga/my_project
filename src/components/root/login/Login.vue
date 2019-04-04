@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="login" v-if="!show">
         <p><strong>{{ title }}</strong></p>
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>

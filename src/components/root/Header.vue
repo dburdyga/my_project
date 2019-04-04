@@ -40,6 +40,7 @@
     $white: #ffffff;
 
     header {
+        margin-left: 80px;
         display: flex;
         justify-content: space-around;
         align-items: center;

@@ -1,6 +1,6 @@
 <template>
     <div class="menu" v-if="!isLoginRoute">
-        <div class="menu-bar" v-on:click="show = !show">
+        <div class="menu-bar" v-on:click="show = !show" v-if="!show">
             <img src="../../assets/menu.png" alt="menu icon" class="menu-img">
         </div>
         <transition name="fade">
@@ -87,7 +87,7 @@
         margin-bottom: 10px;
     }
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+        transition: opacity .8s;
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;

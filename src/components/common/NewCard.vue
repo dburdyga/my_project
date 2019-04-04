@@ -6,7 +6,7 @@
                 v-on:click="show = !show">Add</button>
         </div>
         <div>
-            <transition name="fade">
+            <transition name="slide-fade">
                 <form v-if="show" class="form">
                     <h3>Create new CR</h3>
                     <table class="card-table">
@@ -95,13 +95,16 @@
         color: $white;
         padding-left: 10px;
     }
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .8s;
+    .slide-fade-enter-active {
+        transition: all .8s ease;
     }
-    .fade-enter, .fade-leave-to {
+    .slide-fade-leave-active {
+        transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to {
+        transform: translateY(10px);
         opacity: 0;
     }
-
     ::-webkit-input-placeholder {
         border: none;
     }
