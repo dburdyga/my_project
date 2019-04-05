@@ -46,12 +46,13 @@
                 :key="index">
                 <td>{{ requirement.number }}</td>
                 <td>{{ requirement.title }}</td>
+                <!--<td v-for="requirement in requirements">{{ requirement.status }}</td>-->
                 <td>{{ requirement.status }}</td>
                 <td>{{ requirement.project }}</td>
                 <td>{{ requirement.owner }}</td>
                 <td>{{ requirement.version }}</td>
                 <td>{{ requirement.createdAt }}</td>
-                <td>{{ requirement.actions }}</td>
+                <td>{{ requirement.action }}</td>
             </tr>
             </tbody>
         </table>
@@ -92,12 +93,19 @@
                     .filter(requirement => requirement.project.toLowerCase().includes(this.projectFilter.toLowerCase()))
                     .filter(requirement => requirement.createdAt.toLowerCase().includes(this.dateFilter.toLowerCase()));
             },
+            // sortedRequirements: function () {
+            //     function compare(a,b) {
+            //         if (a.status < b.status)
+            //             return -1;
+            //         if (a.status > b.status)
+            //             return 1;
+            //         return 0;
+            //     }
+            // },
         },
         components: {
             Pagination,
             NewCard,
-        },
-        methods: {
         },
     });
 

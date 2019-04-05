@@ -11,6 +11,14 @@ const statuses = [
     'Closed',
 ];
 
+const actions = [
+    'Approve',
+    'Reject',
+    'Assignee 1',
+    'Assignee 2',
+];
+
+
 export default function generateMockData() {
     const data = [];
 
@@ -23,7 +31,7 @@ export default function generateMockData() {
             owner: 'Test user',
             version: '1.0.1',
             createdAt: new Date(2019, generateRandomNumber(11), generateRandomNumber(27)).toLocaleDateString(),
-            actions: 'Approve | Delete',
+            action: actions[generateRandomNumber(5)],
         });
     }
     return data;

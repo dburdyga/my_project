@@ -9,6 +9,12 @@ const statuses = [
     'Merged',
     'Closed',
 ];
+const actions = [
+    'Approve',
+    'Reject',
+    'Assignee 1',
+    'Assignee 2',
+];
 
 function generateRandomNumber(floor: number) {
     return Math.floor(Math.random() * floor);
@@ -27,7 +33,7 @@ export class RequirementsService {
                 owner: 'Test user',
                 version: '1.0.1',
                 createdAt: new Date(2019, generateRandomNumber(11), generateRandomNumber(27)).toLocaleDateString(),
-                actions: 'Assignee1 Assignee2',
+                action: actions[generateRandomNumber(5)],
             });
         }
         return data;

@@ -58,7 +58,7 @@
 
     .menu-bar{
         float: left;
-        margin-left: 10px;
+        margin-left: 15px;
         margin-top: 18px;
     }
     .sidebar {
