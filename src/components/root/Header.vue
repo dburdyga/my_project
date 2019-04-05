@@ -2,7 +2,7 @@
     <header>
         <div class="header-item">
             <router-link to="/list">
-                <img v-if="!isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
+                <img v-if="isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
             </router-link>
         </div>
         <div class="header-item">
@@ -32,14 +32,13 @@
                 return this.$route.name === Routes.LOGIN;
             },
             isListRoute(): boolean {
-                return this.$route.name === Routes.HOME;
+                return this.$route.name === Routes.LOGIN;
             },
         },
     });
 </script>
 
 <style lang="scss" scoped>
-
     $white: #ffffff;
 
     header {
