@@ -7,17 +7,22 @@
 </template>
 
 <script lang="ts">
-import Header from './components/root/Header.vue';
+
 import Sidebar from './components/common/Sidebar.vue';
+import Header from './components/root/Header.vue';
+
+import Login from '../src/components/root/login/Login.vue'
 
 
 export default {
   name: 'app',
   components: {
-    Header,
     Sidebar,
+    Header,
+    Login,
   },
 };
+
 </script>
 
 <style lang="scss" scoped>

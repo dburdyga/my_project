@@ -3,13 +3,12 @@
         <p><strong>{{ title }}</strong></p>
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>
-        <form>
+        <form @submit.prevent="loginSubmit">
             <input type="email" placeholder="E-Mail" v-model="email">
             <input type="password" placeholder="Password" v-model="password">
-            <button type="submit">Login</button>
+            <button @click="component='Login'">Login</button>
             <Registration />
             <button class="button button-link">Reset login</button>
-            <!--@submit.prevent="loginSubmit"-->
         </form>
     </div>
 </template>
@@ -57,7 +56,7 @@
         color: $white;
         border: none;
         border-radius: 10px;
-        padding: 10px 35px;
+        padding: 8px 35px;
         width: 300px;
         margin-left: auto;
         margin-right: auto;

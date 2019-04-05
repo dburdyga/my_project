@@ -42,10 +42,10 @@
     $white: #ffffff;
 
     header {
-        margin-left: 80px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-bottom: 0px;
     }
     .header-item {
         padding-top: 15px;

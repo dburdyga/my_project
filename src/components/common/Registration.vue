@@ -83,11 +83,10 @@
     .table-button--register {
         width: 260px;
     }
-
-    .card-form {
-        display: inline-block;
-    }
     .register-form {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
         padding: 10px;
         border-radius: 5px;
         background-color: $dark-purple;

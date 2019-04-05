@@ -49,7 +49,10 @@
                 <td>34</td>
                 <td>1</td>
                 <td>-</td>
-                <td>Edit/Delete</td>
+                <td>
+                    <img class="icon" src="../../assets/edit.png" alt="Edit">
+                    <img class="icon" src="../../assets/delete.png" alt="Delete">
+                </td>
             </tr>
             <tr class="col_hidden">
                 <td>Add missing scenarios</td>
@@ -60,7 +63,10 @@
                 <td>34</td>
                 <td>1</td>
                 <td>-</td>
-                <td>Edit/Delete</td>
+                <td>
+                    <img class="icon" src="../../assets/edit.png" alt="Edit">
+                    <img class="icon" src="../../assets/delete.png" alt="Delete">
+                </td>
             </tr>
             </tbody>
         </table>
@@ -84,6 +90,7 @@
 
 
 <style lang="scss" scoped>
+
 
 
 </style>
