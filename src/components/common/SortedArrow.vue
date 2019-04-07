@@ -44,7 +44,7 @@ export default Vue.extend({
         margin-right: 5px;
     }
     .active:after {
-        transform: rotate(-180deg);
+        transform: rotate(180deg);
     }
 
 </style>

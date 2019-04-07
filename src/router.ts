@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './components/root/login/Login.vue';
-import List from '../src/components/common/List.vue';
-import Card from './components/common/Card.vue';
-import EstimateCard from './components/common/EstimateCard.vue';
-import MergeCard from './components/common/MergeCard.vue';
+import List from './components/requirements/List.vue';
+import Card from './components/requirements/Card.vue';
+import EstimateCard from './components/requirements/EstimateCard.vue';
+import MergeCard from './components/requirements/MergeCard.vue';
 
 Vue.use(Router);
 

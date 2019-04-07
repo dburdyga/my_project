@@ -20,8 +20,8 @@
                             placeholder="Title"
                             v-model="titleFilter"/>
                     <SortedArrow
-                            name="title"
-                            @change-sort="changeSorted"/>
+                        name="title"
+                        @change-sort="changeSorted"/>
                 </th>
                 <th>
                     <input
@@ -32,14 +32,14 @@
                             name="status"
                             @change-sort="changeSorted"/>
                 </th>
-                <th>
+                <th style="padding-bottom: 20px;">
                     <input
                             class="field" type="text"
                             placeholder="Project"
                             v-model="projectFilter"/>
                 </th>
-                <th>Owner</th>
-                <th>Version</th>
+                <th style="padding-bottom: 20px;">Owner</th>
+                <th style="padding-bottom: 20px;">Version</th>
                 <th>
                     <input
                             class="field" type="text"
@@ -49,7 +49,7 @@
                                 name="createdAt"
                                 @change-sort="changeSorted"/>
                 </th>
-                <th>Actions</th>
+                <th style="padding-bottom: 20px;">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -76,13 +76,13 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import NewCard from './NewCard.vue';
-import Pagination from './Pagination.vue';
-import SortedArrow from './SortedArrow.vue';
-import {REQUIREMENTS} from '@/store/getter-types';
-import {FETCH_REQUIREMENTS} from '@/store/action-types';
-import ISort from '@/shared/interfaces/ISort';
-import IRequirement from '@/shared/interfaces/IRequirement';
-import Util from '@/shared/Util';
+import Pagination from '../common/Pagination.vue';
+import SortedArrow from '../common/SortedArrow.vue';
+import {REQUIREMENTS} from '../../store/getter-types';
+import {FETCH_REQUIREMENTS} from '../../store/action-types';
+import ISort from '../../shared/interfaces/ISort';
+import IRequirement from '../../shared/interfaces/IRequirement';
+import Util from '../../shared/Util';
 
 Vue.use(Vuetify);
 
