@@ -71,8 +71,11 @@
     }
 
     @media screen and (max-width: 769px) {
+        header {
+            margin-bottom: 30px;
+        }
         .header-item {
-            display: block;
+            display: contents;
         }
     }
 </style>

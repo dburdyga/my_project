@@ -6489,6 +6489,7 @@ vue@^2.6.6:
 vuetify@^1.5.9:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.9.tgz#58db8af20cc2a4d226125e430ca5217d8056555b"
+  integrity sha512-Jg8Ocuk6QDiins7lV3uFB6TaEm3ePspcKIyA/XcxR5/Uwd48f4n1uUOlW9H/XBgbvy+4yHW/KWJWG9oI0ZrmzA==
 
 vuex@^3.0.1:
   version "3.1.0"
