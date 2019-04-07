@@ -32,14 +32,14 @@
                             name="status"
                             @change-sort="changeSorted"/>
                 </th>
-                <th style="padding-bottom: 20px;">
+                <th style="padding-bottom: 17px;">
                     <input
                             class="field" type="text"
                             placeholder="Project"
                             v-model="projectFilter"/>
                 </th>
-                <th style="padding-bottom: 20px;">Owner</th>
-                <th style="padding-bottom: 20px;">Version</th>
+                <th style="padding-bottom: 17px;">Owner</th>
+                <th style="padding-bottom: 17px;">Version</th>
                 <th>
                     <input
                             class="field" type="text"
@@ -49,7 +49,7 @@
                                 name="createdAt"
                                 @change-sort="changeSorted"/>
                 </th>
-                <th style="padding-bottom: 20px;">Actions</th>
+                <th style="padding-bottom: 17px;">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -151,6 +151,7 @@ export default Vue.extend({
         border: 0px;
         text-align: center;
         padding: 5px;
+        padding-bottom: 0px;
     }
     .link {
         border: none;
@@ -160,12 +161,12 @@ export default Vue.extend({
         text-decoration:none;
     }
     th {
+        position: relative;
         height: 26px;
         background: white;
         width: 100px;
         padding: 0px 0px 0px 0px;
     }
-
     ::-webkit-input-placeholder {
         font-family: "Source Sans Pro", sans-serif;
         font-weight: bold;

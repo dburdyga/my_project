@@ -1,8 +1,9 @@
 <template>
     <div
-        class="arrow"
         :class="{'active': reversed}"
-        @click="toogleSorting"></div>
+        @click="toogleSorting">
+        <img class="arrow active" src="../../assets/triangle.png" alt="arrow">
+    </div>
 </template>
 
 <script lang="ts">
@@ -34,17 +35,11 @@ export default Vue.extend({
 <style lang="scss" scoped>
     $orange: #ff6600;
 
-    .arrow:after {
-        content: "";
-        height: 0;
-        width: 0;
-        border: 9px solid transparent;
-        border-top-color: $orange;
-        float: right;
-        margin-right: 5px;
+    .arrow {
+        height: 10px;
+        width: 20px;
     }
-    .active:after {
-        transform: rotate(180deg);
+    .active {
+        -webkit-transform: rotate(-180deg); /* Для Safari, Chrome, iOS */
     }
-
 </style>
