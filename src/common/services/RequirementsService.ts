@@ -1,4 +1,4 @@
-import generateMockData from '@/data';
+
 
 
 const statuses = [
@@ -32,7 +32,7 @@ export class RequirementsService {
                 project: 'WMS-TI',
                 owner: 'Test user',
                 version: '1.0.1',
-                createdAt: new Date(2019, generateRandomNumber(11), generateRandomNumber(27)).toLocaleDateString(),
+                createdAt: new Date(2019, generateRandomNumber(11), generateRandomNumber(27)),
                 action: actions[generateRandomNumber(5)],
             });
         }
@@ -41,6 +41,6 @@ export class RequirementsService {
     }
 
     public static getRequirements() {
-        return Promise.resolve(generateMockData());
+        return Promise.resolve(this.generateMockData());
     }
 }

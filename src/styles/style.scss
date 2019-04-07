@@ -83,10 +83,12 @@ th {
 
 tr, td {
   color: $light-purple;
+  cursor: pointer;
 }
 .icon {
   width: 15px;
   margin: 3px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 769px) {

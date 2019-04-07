@@ -33,25 +33,23 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
+import {REGISTRATION_VISIBLE} from '@/store/getter-types';
+import {TOOGLE_REGISTRATION} from '@/store/mutation-types';
 
-    import Vue from 'vue';
-    import {REGISTRATION_VISIBLE} from '@/store/getter-types';
-    import {TOOGLE_REGISTRATION} from '@/store/mutation-types';
 
-
-    export default Vue.extend({
-        computed: {
-            show: {
-                get(): boolean {
-                    return this.$store.getters[REGISTRATION_VISIBLE]
-                },
-                set(value: boolean) {
-                    this.$store.commit(TOOGLE_REGISTRATION, value);
-                },
+export default Vue.extend({
+    computed: {
+        show: {
+            get(): boolean {
+                return this.$store.getters[REGISTRATION_VISIBLE];
+            },
+            set(value: boolean) {
+                this.$store.commit(TOOGLE_REGISTRATION, value);
             },
         },
-    });
-
+    },
+});
 </script>
 
 <style lang="scss"scoped>

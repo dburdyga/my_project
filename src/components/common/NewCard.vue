@@ -54,25 +54,23 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
+import {NEW_CARD_VISIBLE} from '@/store/getter-types';
+import {TOOGLE_NEWCARD} from '@/store/mutation-types';
 
-    import Vue from 'vue';
-    import {NEW_CARD_VISIBLE} from '@/store/getter-types';
-    import {TOOGLE_NEWCARD} from '@/store/mutation-types';
 
-
-    export default Vue.extend({
-        computed: {
-            show: {
-                get(): boolean {
-                    return this.$store.getters[NEW_CARD_VISIBLE]
-                },
-                set(value: boolean) {
-                    this.$store.commit(TOOGLE_NEWCARD, value);
-                },
+export default Vue.extend({
+    computed: {
+        show: {
+            get(): boolean {
+                return this.$store.getters[NEW_CARD_VISIBLE];
+            },
+            set(value: boolean) {
+                this.$store.commit(TOOGLE_NEWCARD, value);
             },
         },
-    });
-
+    },
+});
 </script>
 
 <style lang="scss" scoped>

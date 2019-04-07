@@ -25,30 +25,27 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import {Routes} from '../../router';
-    import {SIDE_BAR_VISIBLE} from '@/store/getter-types';
-    import {TOOGLE_SIDEBAR} from '@/store/mutation-types';
+import Vue from 'vue';
+import {Routes} from '../../router';
+import {SIDE_BAR_VISIBLE} from '@/store/getter-types';
+import {TOOGLE_SIDEBAR} from '@/store/mutation-types';
 
-    export default Vue.extend ({
-        state: {
-            el: 'menu',
+export default Vue.extend ({
+
+    computed: {
+        isLoginRoute(): boolean {
+            return this.$route.name === Routes.LOGIN;
         },
-        computed: {
-            isLoginRoute(): boolean {
-                return this.$route.name === Routes.LOGIN;
+        show: {
+            get(): boolean {
+                return this.$store.getters[SIDE_BAR_VISIBLE];
             },
-            show: {
-                get(): boolean {
-                    return this.$store.getters[SIDE_BAR_VISIBLE]
-                },
-                set(value: boolean) {
-                    this.$store.commit(TOOGLE_SIDEBAR, value);
-                },
+            set(value: boolean) {
+                this.$store.commit(TOOGLE_SIDEBAR, value);
             },
         },
-    });
-
+    },
+});
 </script>
 
 <style lang="scss"scoped>
