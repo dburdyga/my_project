@@ -135,7 +135,7 @@ export default Vue.extend({
         },
     },
 });
-</script>
+</script lang="ts">
 
 
 <style lang="scss" scoped>

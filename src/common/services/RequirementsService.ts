@@ -1,6 +1,3 @@
-
-
-
 const statuses = [
     'Approved',
     'Wait for approve',
@@ -9,6 +6,7 @@ const statuses = [
     'Merged',
     'Closed',
 ];
+
 const actions = [
     'Approve',
     'Reject',
@@ -37,7 +35,6 @@ export class RequirementsService {
             });
         }
         return data;
-
     }
 
     public static getRequirements() {
