@@ -7,7 +7,6 @@
         </div>
         <div>
             <transition name="slide-fade" >
-                <keep-alive>
                 <form v-if="show" class="form">
                     <h3>Create new CR</h3>
                     <table class="card-table">
@@ -47,7 +46,6 @@
                         <button class="table-button" v-on:click="show = !show">Cancel</button>
                     </div>
                 </form>
-                </keep-alive>
             </transition>
         </div>
     </div>

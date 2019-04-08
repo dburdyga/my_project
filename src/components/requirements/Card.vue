@@ -81,12 +81,14 @@
     import Vue from 'vue';
     import Confirmation from '../common/Confirmation.vue';
 
+
     export default Vue.extend({
         components: {
             Confirmation,
-        }
+        },
 
     });
+
 </script>
 
 
