@@ -50,8 +50,7 @@
                 <td>1</td>
                 <td>-</td>
                 <td>
-                    <img class="icon" src="../../assets/edit.png" alt="Edit">
-                    <img class="icon" src="../../assets/delete.png" alt="Delete">
+                    <Confirmation />
                 </td>
             </tr>
             <tr class="col_hidden">
@@ -64,8 +63,7 @@
                 <td>1</td>
                 <td>-</td>
                 <td>
-                    <img class="icon" src="../../assets/edit.png" alt="Edit">
-                    <img class="icon" src="../../assets/delete.png" alt="Delete">
+                    <Confirmation />
                 </td>
             </tr>
             </tbody>
@@ -81,8 +79,12 @@
 
 <script lang="ts">
     import Vue from 'vue';
+    import Confirmation from '../common/Confirmation.vue';
 
     export default Vue.extend({
+        components: {
+            Confirmation,
+        }
 
     });
 </script>

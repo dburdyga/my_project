@@ -26,6 +26,7 @@
                         </tr>
                     </table>
                     <button class="table-button table-button--register">Register</button>
+                    <button class="table-button table-button--register" v-on:click="show = !show">Cancel</button>
                 </form>
             </transition>
         </div>
@@ -36,6 +37,7 @@
 import Vue from 'vue';
 import {REGISTRATION_VISIBLE} from '@/store/getter-types';
 import {TOOGLE_REGISTRATION} from '@/store/mutation-types';
+
 
 
 export default Vue.extend({
@@ -80,6 +82,7 @@ export default Vue.extend({
     }
     .table-button--register {
         width: 260px;
+        margin-bottom: 0px;
     }
     .register-form {
         margin-left: auto;
@@ -93,6 +96,7 @@ export default Vue.extend({
     }
     .card-table {
         text-align: left;
+        margin-left: 16px;
     }
     td {
         color: $white;
@@ -109,6 +113,11 @@ export default Vue.extend({
     .form-block {
         display: flex;
         align-items: center;
+    }
+    input {
+        padding: 3px;
+        border: none;
+        border-radius: 3px;
     }
     @media screen and (max-width: 769px) {
         .form {

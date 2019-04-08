@@ -115,6 +115,12 @@ export default Vue.extend({
     .table-button--form {
         margin-left: 38px;
     }
+    input {
+        padding: 3px;
+        border: none;
+        border-radius: 3px;
+        width: 166px;
+    }
     @media screen and (max-width: 769px) {
         .form {
             display: table-caption;
