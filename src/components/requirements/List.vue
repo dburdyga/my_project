@@ -75,7 +75,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import NewCard from './NewCard.vue';
+import NewCard from '../common/NewCard.vue';
 import Pagination from '../common/Pagination.vue';
 import SortedArrow from '../common/SortedArrow.vue';
 import {REQUIREMENTS} from '../../store/getter-types';
