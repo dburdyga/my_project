@@ -13,6 +13,7 @@ export enum Routes {
   HOME = 'Home',
   LOGIN = 'Login',
   CARD = 'Card',
+  REGISTRATION = 'Registration',
 }
 
 
@@ -45,7 +46,7 @@ const router = new Router({
     },
     {
       path: '/registration',
-      name: 'registration',
+      name: Routes.LOGIN,
       component: Registration,
     },
   ],

@@ -12,7 +12,9 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input type="text"/></td>
+                    <td><input
+                            type="email"
+                            v-model="email"></td>
                 </tr>
                 <tr>
                     <td>Password</td>
@@ -28,7 +30,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    
+
     export default Vue.extend({
         data() {
             return {
@@ -66,7 +68,6 @@
         font-size: 25px;
     }
     button {
-        width: 300px;
         font-family: "Source Sans Pro", sans-serif;
         line-height: 1.5;
         font-size: 14px;
@@ -91,19 +92,20 @@
     td {
         color: $white;
     }
+    tr {
+        vertical-align: baseline;
+    }
     input {
         border: none;
         border-radius: 3px;
         margin-bottom: 10px;
-        margin-left: 10px;
+        margin-left: 15px;
         padding: .5rem;
-        width: 202px;
+        width: 180px;
     }
     @media screen and (max-width: 769px) {
-        .form {
-            display: table-caption;
-            padding-left: 30px;
-            padding-right: 30px;
+        td {
+            text-align: center;
         }
         .table-button--form {
             margin-left: 0px;

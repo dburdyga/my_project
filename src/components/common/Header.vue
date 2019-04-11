@@ -1,9 +1,7 @@
 <template>
     <header>
         <div class="header-item">
-            <router-link to="/list">
-                <img v-if="isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
-            </router-link>
+            <img v-if="isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
         </div>
         <div class="header-item">
             <div class="header-item--block" v-if="!isLoginRoute">Username</div>
@@ -68,13 +66,13 @@
         width: 3rem;
         height: 3rem;
     }
-
     @media screen and (max-width: 769px) {
         header {
-            margin-bottom: 30px;
+            margin-bottom: 80px;
         }
         .header-item {
-            display: contents;
+            padding-top: 10px;
+            margin-left: 30px;
         }
     }
 </style>

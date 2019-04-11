@@ -134,5 +134,9 @@
                 background-color: unset;
             }
         }
+
+        a {
+            margin-bottom: 15px;
+        }
     }
 </style>
