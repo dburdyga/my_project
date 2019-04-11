@@ -1,39 +1,34 @@
 <template>
     <div class="login">
-        <div>
-            <p><strong>{{ title }}</strong></p>
-                <form>
-                    <table class="card-table">
-                        <tr>
-                            <td>Full name</td>
-                            <td><input type="text"/></td>
-                        </tr>
-                        <tr>
-                            <td>Username</td>
-                            <td><input type="text"/></td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td><input type="text"/></td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td><input type="text"/></td>
-                        </tr>
-                    </table>
-                    <button class="table-button table-button--register">Register</button>
-                    <router-link to="/">
-                        <button class="table-button table-button--register">Cancel</button>
-                    </router-link>
-                </form>
+        <p><strong>{{ title }}</strong></p>
+            <table class="card-table">
+                <tr>
+                    <td>Full name</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="text"/></td>
+                </tr>
+            </table>
+            <button class="table-button">Register</button>
+            <router-link to="/">
+                <button class="table-button">Cancel</button>
+            </router-link>
         </div>
-    </div>
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
-
-
+    
     export default Vue.extend({
         data() {
             return {
@@ -68,6 +63,7 @@
         position: relative;
         overflow: hidden;
         background-color: $light-purple;
+        font-size: 25px;
     }
     button {
         width: 300px;
@@ -88,40 +84,20 @@
         width: 260px;
         margin-bottom: 0px;
     }
-    .register-form {
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: $dark-purple;
-        display: table;
-        font-size: 14px;
-    }
     .card-table {
         text-align: left;
-        margin-left: 16px;
+        font-size: 16px;
     }
     td {
         color: $white;
     }
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .8s;
-    }
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    }
-    ::-webkit-input-placeholder {
-        border: none;
-    }
-    .form-block {
-        display: flex;
-        align-items: center;
-    }
     input {
-        padding: 3px;
         border: none;
         border-radius: 3px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        padding: .5rem;
+        width: 202px;
     }
     @media screen and (max-width: 769px) {
         .form {
