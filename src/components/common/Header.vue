@@ -23,7 +23,6 @@
     export default Vue.extend ({
         data() {
             return {
-                title: 'Estimation tool',
                 isHidden: false,
             };
         },

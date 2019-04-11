@@ -35,8 +35,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {REGISTRATION_VISIBLE} from '@/store/getter-types';
-import {TOOGLE_REGISTRATION} from '@/store/mutation-types';
+import {REGISTRATION_VISIBLE} from '../../store/getter-types';
+import {TOOGLE_REGISTRATION} from '../../store/mutation-types';
 
 
 

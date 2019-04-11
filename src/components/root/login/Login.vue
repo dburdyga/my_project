@@ -4,18 +4,28 @@
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>
         <form @submit.prevent="loginSubmit">
-            <input type="email" placeholder="E-Mail" v-model="email">
-            <input type="password" placeholder="Password" v-model="password">
+            <input
+                    type="email"
+                    placeholder="E-Mail"
+                    v-model="email">
+            <input
+                    type="password"
+                    placeholder="Password"
+                    v-model="password">
             <button @click="component='Login'">Login</button>
-            <Registration />
-            <button class="button button-link">Reset login</button>
+            <router-link to="">
+                <a class="link">Forgot Password?</a>
+            </router-link>
+            <router-link to="/registration">
+                <a class="link">Register</a>
+            </router-link>
         </form>
     </div>
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
-    import Registration from '../../common/Registration.vue';
+    import Registration from '../../requirements/Registration.vue';
     import { mapState, mapActions } from 'vuex';
     import {Routes} from '../../../router';
 
@@ -53,6 +63,7 @@
     $light-grey: #cbcfd3;
 
     .login {
+        margin-bottom: 0px;
         color: $white;
         border: none;
         border-radius: 10px;
@@ -80,6 +91,7 @@
             }
         }
         form {
+            margin-bottom: 0px;
             display: flex;
             flex-flow: column;
             *:not(:last-child) {
@@ -109,7 +121,7 @@
                 }
             }
         }
-        .button-link {
+        .link {
             font-family: "Source Sans Pro", sans-serif;
             line-height: 1.5;
             font-size: 14px;

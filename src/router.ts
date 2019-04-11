@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from './components/root/login/Login.vue';
 import List from './components/requirements/List.vue';
 import Card from './components/requirements/Card.vue';
+import Registration from './components/requirements/Registration.vue';
 import EstimateCard from './components/requirements/EstimateCard.vue';
 import MergeCard from './components/requirements/MergeCard.vue';
 
@@ -41,6 +42,11 @@ const router = new Router({
       path: '/mergecard',
       name: 'mergecard',
       component: MergeCard,
+    },
+    {
+      path: '/registration',
+      name: 'registration',
+      component: Registration,
     },
   ],
 });
