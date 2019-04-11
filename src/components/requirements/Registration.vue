@@ -1,12 +1,8 @@
 <template>
-    <div class="card-form">
+    <div class="login">
         <div>
-            <button v-on:click="show = !show" v-if="!show">Registration</button>
-        </div>
-        <div>
-            <transition name="fade">
-                <form v-if="show" class="register-form">
-                    <h3>Register</h3>
+            <p><strong>{{ title }}</strong></p>
+                <form>
                     <table class="card-table">
                         <tr>
                             <td>Full name</td>
@@ -26,35 +22,29 @@
                         </tr>
                     </table>
                     <button class="table-button table-button--register">Register</button>
-                    <button class="table-button table-button--register" v-on:click="show = !show">Cancel</button>
+                    <router-link to="/">
+                        <button class="table-button table-button--register">Cancel</button>
+                    </router-link>
                 </form>
-            </transition>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {REGISTRATION_VISIBLE} from '../../store/getter-types';
-import {TOOGLE_REGISTRATION} from '../../store/mutation-types';
+    import Vue from 'vue';
 
 
-
-export default Vue.extend({
-    computed: {
-        show: {
-            get(): boolean {
-                return this.$store.getters[REGISTRATION_VISIBLE];
-            },
-            set(value: boolean) {
-                this.$store.commit(TOOGLE_REGISTRATION, value);
-            },
+    export default Vue.extend({
+        data() {
+            return {
+                title: 'Register',
+            };
         },
-    },
-});
+    });
+
 </script>
 
-<style lang="scss"scoped>
+<style lang="scss" scoped>
     $white: #ffffff;
     $orange: #ff6600;
     $light-purple: #6b4fbb;
@@ -65,6 +55,20 @@ export default Vue.extend({
     $grey: #333333;
     $middle-grey: #2c3e50;
 
+
+    .login {
+        margin-bottom: 0px;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+        padding: 8px 35px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        background-color: $light-purple;
+    }
     button {
         width: 300px;
         font-family: "Source Sans Pro", sans-serif;
