@@ -86,16 +86,13 @@
         components: {
             Confirmation,
             NewTask,
-        },
-
+        }
     });
 
 </script>
 
 
-
 <style lang="scss" scoped>
-
 
 
 </style>

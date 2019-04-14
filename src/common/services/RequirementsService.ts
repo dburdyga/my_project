@@ -22,7 +22,7 @@ export class RequirementsService {
     public static generateMockData() {
         const data = [];
 
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 40; i++) {
             data.push({
                 number: 'CR12345' + i,
                 title: `Test change ${i}`,
