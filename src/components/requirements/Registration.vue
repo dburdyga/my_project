@@ -22,7 +22,7 @@
                     <td>Email</td>
                     <td><input
                             type="email"
-                            placeholder="E-Mail"
+                            placeholder="email@email.com"
                             v-model="email"></td>
                 </tr>
                 <tr>
@@ -30,7 +30,7 @@
                     <td>
                         <input
                                 type="text"
-                                placeholder="Password"/>
+                                placeholder="password"/>
                     </td>
                 </tr>
             </table>

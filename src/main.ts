@@ -9,6 +9,7 @@ import dateFilter from './shared/filters/date.filter';
 Vue.filter('date', dateFilter);
 Vue.config.productionTip = false;
 
+
 new Vue({
   router,
   store,

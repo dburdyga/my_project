@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
   $middle-grey: #2c3e50;
 
   #app {
