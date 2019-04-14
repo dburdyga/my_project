@@ -4,21 +4,34 @@
             <table class="card-table">
                 <tr>
                     <td>Full name</td>
-                    <td><input type="text"/></td>
+                    <td>
+                        <input
+                                type="text"
+                                placeholder="Daria Burdyga"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Username</td>
-                    <td><input type="text"/></td>
+                    <td>
+                        <input
+                                type="text"
+                                placeholder="dburdyga"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td><input
                             type="email"
+                            placeholder="E-Mail"
                             v-model="email"></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="text"/></td>
+                    <td>
+                        <input
+                                type="text"
+                                placeholder="Password"/>
+                    </td>
                 </tr>
             </table>
             <button class="table-button">Register</button>
