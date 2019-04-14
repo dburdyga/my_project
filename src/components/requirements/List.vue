@@ -67,7 +67,9 @@
             </tr>
             </tbody>
         </table>
-        <Pagination />
+        <Pagination
+                :numberOfPages="numberOfPages"
+                @page-selected="changeStartPage"/>
     </div>
 </template>
 
@@ -101,11 +103,19 @@ export default Vue.extend({
                 field: 'number',
                 reversed:  true,
             } as ISort<IRequirement>,
+            requirementsPerPage: 5,
+            startPage: 0,
+            localRequirements: [] as IRequirement[]
         };
     },
     computed: {
         requirements(): IRequirement[] {
-            return this.$store.getters[REQUIREMENTS]
+            let requirements = this.$store.getters[REQUIREMENTS];
+            this.localRequirements = this.$store.getters[REQUIREMENTS];
+
+            requirements = this.localRequirements;
+
+            return requirements
                 .filter((requirement: IRequirement) =>
                     requirement.number.toLowerCase().includes(this.crFilter.toLowerCase()))
                 .filter((requirement: IRequirement) =>
@@ -117,8 +127,15 @@ export default Vue.extend({
                 .filter((requirement: IRequirement) =>
                     requirement.createdAt.toLocaleDateString('ru-RU').toLowerCase()
                         .includes(this.dateFilter.toLowerCase()))
-                .sort(Util.sortByField<IRequirement>(this.sort.field, this.sort.reversed, true));
+                .sort(Util.sortByField<IRequirement>(this.sort.field, this.sort.reversed, true))
+                .slice(this.startPage,this.startPage + this.requirementsPerPage);
         },
+        numberOfPages(): number {
+            return Math.round(this.requirementsTotal / this.requirementsPerPage);
+        },
+        requirementsTotal(): number {
+            return this.$store.getters[REQUIREMENTS].length;
+        }
     },
     components: {
         Pagination,
@@ -133,9 +150,13 @@ export default Vue.extend({
                 this.sort = {field: event.field, reversed: event.reversed};
             }
         },
+        changeStartPage(index : number) {
+            this.startPage = this.requirementsPerPage * index;
+            console.log(this.startPage);
+        }
     },
 });
-</script lang="ts">
+</script>
 
 
 <style lang="scss" scoped>

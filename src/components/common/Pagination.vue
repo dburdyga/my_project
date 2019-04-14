@@ -1,9 +1,21 @@
 <template>
-    <div class="pagination">
-        <button  class="pagination-button">Prev</button>
-        <button class="pagination-button">1</button>
-        <button class="pagination-button">2</button>
-        <button  class="pagination-button">Next</button>
+    <div
+            class="pagination"
+            v-if="numberOfPages>0">
+        <button
+                class="pagination-button"
+                v-if="numberOfPages>1">Prev
+        </button>
+        <button
+                class="pagination-button"
+                v-for="(page, index) in pagesArray"
+                @click="selectPage(index)">
+            {{ page }}
+        </button>
+        <button
+                class="pagination-button"
+                v-if="numberOfPages>1">Next
+        </button>
     </div>
 </template>
 
@@ -13,17 +25,24 @@ import Vue from 'vue';
 export default Vue.extend({
     data() {
         return {
-            pageNumber: 0,  // по умолчанию 0
+            pageNumber: 0,
         };
     },
     props: {
-
+        numberOfPages: {
+            type: Number,
+            required: true
+        }
     },
     methods: {
-
+        selectPage(index:number) {
+            this.$emit('page-selected', index);
+        }
     },
     computed: {
-
+        pagesArray(): Array<number> {
+            return Array.from({length: this.numberOfPages}, (v, k) => k+1);
+        }
     },
 });
 </script>
