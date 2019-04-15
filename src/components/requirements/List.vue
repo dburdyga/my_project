@@ -105,7 +105,7 @@ export default Vue.extend({
             } as ISort<IRequirement>,
             requirementsPerPage: 5,
             startPage: 0,
-            localRequirements: [] as IRequirement[]
+            localRequirements: [] as IRequirement[],
         };
     },
     computed: {
@@ -128,14 +128,14 @@ export default Vue.extend({
                     requirement.createdAt.toLocaleDateString('ru-RU').toLowerCase()
                         .includes(this.dateFilter.toLowerCase()))
                 .sort(Util.sortByField<IRequirement>(this.sort.field, this.sort.reversed, true))
-                .slice(this.startPage,this.startPage + this.requirementsPerPage);
+                .slice(this.startPage, this.startPage + this.requirementsPerPage);
         },
         numberOfPages(): number {
             return Math.round(this.requirementsTotal / this.requirementsPerPage);
         },
         requirementsTotal(): number {
             return this.$store.getters[REQUIREMENTS].length;
-        }
+        },
     },
     components: {
         Pagination,
@@ -150,10 +150,10 @@ export default Vue.extend({
                 this.sort = {field: event.field, reversed: event.reversed};
             }
         },
-        changeStartPage(index : number) {
+        changeStartPage(index: number) {
             this.startPage = this.requirementsPerPage * index;
             console.log(this.startPage);
-        }
+        },
     },
 });
 </script>

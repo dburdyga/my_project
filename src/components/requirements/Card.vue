@@ -80,18 +80,17 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import Confirmation from '../common/Confirmation.vue';
-    import NewTask from '../common/NewTask.vue';
+import Vue from 'vue';
+import Confirmation from '../common/Confirmation.vue';
+import NewTask from '../common/NewTask.vue';
 
 
-    export default Vue.extend({
-        components: {
-            Confirmation,
-            NewTask,
-        }
-    });
-
+export default Vue.extend({
+    components: {
+        Confirmation,
+        NewTask,
+    },
+});
 </script>
 
 

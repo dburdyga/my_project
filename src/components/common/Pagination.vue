@@ -31,18 +31,18 @@ export default Vue.extend({
     props: {
         numberOfPages: {
             type: Number,
-            required: true
-        }
+            required: true,
+        },
     },
     methods: {
-        selectPage(index:number) {
+        selectPage(index: number) {
             this.$emit('page-selected', index);
-        }
+        },
     },
     computed: {
-        pagesArray(): Array<number> {
-            return Array.from({length: this.numberOfPages}, (v, k) => k+1);
-        }
+        pagesArray(): number[] {
+            return Array.from({length: this.numberOfPages}, (v, k) => k + 1);
+        },
     },
 });
 </script>

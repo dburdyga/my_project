@@ -55,18 +55,18 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import {NEW_CARD_VISIBLE} from '../../store/getter-types';
-    import {TOOGLE_NEWCARD} from '../../store/mutation-types';
+    import {NEW_TASK_VISIBLE} from '../../store/getter-types';
+    import {TOOGLE_NEWTASK} from '../../store/mutation-types';
 
 
     export default Vue.extend({
         computed: {
             show: {
                 get(): boolean {
-                    return this.$store.getters[NEW_CARD_VISIBLE];
+                    return this.$store.getters[NEW_TASK_VISIBLE];
                 },
                 set(value: boolean) {
-                    this.$store.commit(TOOGLE_NEWCARD, value);
+                    this.$store.commit(TOOGLE_NEWTASK, value);
                 },
             },
         },
