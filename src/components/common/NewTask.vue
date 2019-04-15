@@ -1,89 +1,147 @@
 <template>
-        <div class="task">
-            <button class="table-button">
-                Add
-            </button>
-            <!--<div>-->
-                <!--<ul is="transition-group">-->
-                <!--<li v-for="user in users" class="user" :key="user['.key']">-->
-                <!--<span>{{user.name}} - {{user.email}}</span>-->
-                <!--<button v-on:click="removeUser(user)">X</button>-->
-                <!--</li>-->
-                <!--</ul>-->
-                <!--<form id="form" v-on:submit.prevent="addUser">-->
-                <!--<input type="text" v-model="newUser.name" placeholder="Username">-->
-                <!--<input type="email" v-model="newUser.email" placeholder="email@email.com">-->
-                <!--<input type="submit" value="Add User">-->
-                <!--</form>-->
-                <!--<ul class="errors">-->
-                <!--<li v-show="!validation.name">Name cannot be empty.</li>-->
-                <!--<li v-show="!validation.email">Please provide a valid email address.</li>-->
-                <!--</ul>-->
-            <!--</div>-->
+    <div class="card-form">
+        <div>
+            <button
+                    class="table-button"
+                    v-on:click="show = !show">Add</button>
         </div>
+        <div>
+            <transition name="slide-fade" >
+                <form v-if="show" class="form">
+                    <h3>Create new tasks</h3>
+                    <table class="card-table">
+                        <tr>
+                            <td>Sub Tasks</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Effort</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Estimator</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>DVK</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>IMP</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>E-Test</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>E-Test2</td>
+                            <td><input type="text"/></td>
+                        </tr>
+                    </table>
+                    <div class="button-list">
+                        <button class="table-button">Save</button>
+                        <button class="table-button" v-on:click="show = !show">Cancel</button>
+                    </div>
+                </form>
+            </transition>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
-
-    // import Vue from 'vue';
-
-    // let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    //
-    // let config = {
-    //     apiKey: "AIzaSyAi_yuJciPXLFr_PYPeU3eTvtXf8jbJ8zw",
-    //     authDomain: "vue-demo-537e6.firebaseapp.com",
-    //     databaseURL: "https://vue-demo-537e6.firebaseio.com"
-    // };
-    // firebase.initializeApp(config)
-    //
-    // let usersRef = firebase.database().ref('users')
-    //
-    //
-    //
-    // export default Vue.extend({
-    //     data: {
-    //         newUser: {
-    //             name: '',
-    //             email: ''
-    //         }
-    //     },
-    //
-    //     firebase: {
-    //         users: usersRef
-    //     },
-    //     computed: {
-    //         validation: function () {
-    //             return {
-    //                 name: !!this.newUser.name.trim(),
-    //                 email: emailRE.test(this.newUser.email)
-    //             }
-    //         },
-    //         isValid: function () {
-    //             var validation = this.validation
-    //             return Object.keys(validation).every(function (key) {
-    //                 return validation[key]
-    //             })
-    //         }
-    //     },
-    //     methods: {
-    //         addUser: function () {
-    //             if (this.isValid) {
-    //                 usersRef.push(this.newUser)
-    //                 this.newUser.name = ''
-    //                 this.newUser.email = ''
-    //             }
-    //         },
-    //         removeUser: function (user) {
-    //             usersRef.child(user['.key']).remove()
-    //         }
-    //     }
-    // });
+    import Vue from 'vue';
+    import {NEW_CARD_VISIBLE} from '../../store/getter-types';
+    import {TOOGLE_NEWCARD} from '../../store/mutation-types';
 
 
+    export default Vue.extend({
+        computed: {
+            show: {
+                get(): boolean {
+                    return this.$store.getters[NEW_CARD_VISIBLE];
+                },
+                set(value: boolean) {
+                    this.$store.commit(TOOGLE_NEWCARD, value);
+                },
+            },
+        },
+    });
 </script>
 
 <style lang="scss" scoped>
+    $white: #ffffff;
+    $middle-grey: #2c3e50;
+    $middle-purple:#48367d;
+    $light-purple: #6b4fbb;
 
+    .card-form {
+        display: inline-block;
+    }
+    .form {
+        border-radius: 5px;
+        background-color: $light-purple;
+        padding: 20px;
+        display: table;
+    }
+    .card-table {
+        text-align: left;
+    }
+    td {
+        color: $white;
+        padding-left: 10px;
+        font-weight: 400;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 16px;
+    }
+    .slide-fade-enter-active {
+        transition: all .8s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    ::-webkit-input-placeholder {
+        border: none;
+    }
+    .form-block {
+        display: flex;
+        align-items: center;
+    }
+    .table-button--form {
+        margin-left: 38px;
+    }
+    input {
+        padding: 3px;
+        border: none;
+        border-radius: 3px;
+        width: 166px;
+    }
+    @media screen and (max-width: 769px) {
+        .form {
+            display: table-caption;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .table-button--form {
+            margin-left: 0px;
+        }
+        .card-table {
+            display: inline-block;
+        }
+        .button-list {
+            display: flex;
+        }
+        .form-block {
+            display: inline-flex;
+        }
+    }
 
 </style>
-
