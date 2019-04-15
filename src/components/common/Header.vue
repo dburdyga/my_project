@@ -40,9 +40,11 @@
 
     header {
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        margin-bottom: 0px;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 50px;
     }
     .header-item {
         padding-top: 15px;
@@ -60,11 +62,11 @@
         color: $white;
     }
     .header-img {
-        width: 5rem;
+        width: 6rem;
     }
     .user-img {
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
     }
     @media screen and (max-width: 769px) {
         header {

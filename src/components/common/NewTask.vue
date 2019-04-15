@@ -85,7 +85,7 @@
     .form {
         border-radius: 5px;
         background-color: $light-purple;
-        padding: 20px;
+        padding: 16px;
         display: table;
     }
     .card-table {
@@ -119,10 +119,11 @@
         margin-left: 38px;
     }
     input {
-        padding: 3px;
+        padding: 6px;
         border: none;
         border-radius: 3px;
         width: 166px;
+        margin-bottom: 5px;
     }
     @media screen and (max-width: 769px) {
         .form {

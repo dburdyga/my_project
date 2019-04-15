@@ -4,17 +4,23 @@
             v-if="numberOfPages>0">
         <button
                 class="pagination-button"
-                v-if="numberOfPages>1">Prev
+                :class="{'is-disabled': activePageIndex === 0}"
+                v-if="numberOfPages>1"
+                @click="incrementPage(true)">
+            Prev
         </button>
         <button
                 class="pagination-button"
+                :class="{'is-active' : activePageIndex === index}"
                 v-for="(page, index) in pagesArray"
                 @click="selectPage(index)">
             {{ page }}
         </button>
         <button
                 class="pagination-button"
-                v-if="numberOfPages>1">Next
+                :class="{'is-disabled': activePageIndex === numberOfPages - 1}"
+                v-if="numberOfPages>1"
+                @click="incrementPage(false)">Next
         </button>
     </div>
 </template>
@@ -26,6 +32,7 @@ export default Vue.extend({
     data() {
         return {
             pageNumber: 0,
+            activePageIndex: 0
         };
     },
     props: {
@@ -36,8 +43,13 @@ export default Vue.extend({
     },
     methods: {
         selectPage(index: number) {
+            this.activePageIndex = index;
             this.$emit('page-selected', index);
         },
+        incrementPage(isReversed: boolean) {
+            this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex+1);
+            this.selectPage(this.activePageIndex);
+        }
     },
     computed: {
         pagesArray(): number[] {
@@ -50,6 +62,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
     $white: #ffffff;
     $orange: #ff6600;
+    $light-purple: #6b4fbb;
+    $purple: #4b3589;
+    $orange-grey: #b34700;
+
 
     .pagination-button {
         font-family: "Source Sans Pro", sans-serif;
@@ -62,5 +78,17 @@ export default Vue.extend({
         display: inline-block;
         font-size: 14px;
         padding: 4px 10px;
+        outline: none;
+        &.is-active {
+            background: white;
+            color: $orange;
+            font-weight: bold;
+        }
+        &.is-disabled {
+            background: $orange-grey;
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
     }
 </style>
