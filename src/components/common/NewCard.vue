@@ -81,10 +81,13 @@
         display: inline-block;
     }
     .form {
+        display: table;
         border-radius: 5px;
         background-color: $light-purple;
-        padding: 16px;
-        display: table;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     .card-table {
         text-align: left;
@@ -116,7 +119,7 @@
     input {
         padding: 6px;
         border: none;
-        border-radius: 3px;
+        border-radius: 2px;
         width: 166px;
         margin-bottom: 5px;
     }
