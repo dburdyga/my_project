@@ -86,7 +86,10 @@ tr, td {
   margin: 3px;
   cursor: pointer;
 }
-
+.table-container {
+  width: 100%;
+  overflow: auto;
+}
 @media screen and (max-width: 769px) {
   table tr {
     display: block;

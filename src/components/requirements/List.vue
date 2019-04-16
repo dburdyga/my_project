@@ -1,75 +1,82 @@
 <template>
     <div class="list">
         <h2 class="vue-title">Requirements</h2>
-        <NewCard />
-        <table class="table-data" border="1" width="100%" cellpadding="5">
-            <thead>
-            <tr>
-                <th>
-                    <input
-                            class="field" type="text"
-                            placeholder="CR Number"
-                            v-model="crFilter"/>
-                            <SortedArrow
+        <div class="control-panel">
+            <button
+                    class="table-button"
+                    v-on:click="show = !show">Add</button>
+        </div>
+        <div class="table-container">
+            <table class="table-data" border="1" width="100%" cellpadding="5">
+                <thead>
+                <tr>
+                    <th>
+                        <input
+                                class="field" type="text"
+                                placeholder="CR Number"
+                                v-model="crFilter"/>
+                        <SortedArrow
                                 name="number"
                                 @change-sort="changeSorted"/>
-                </th>
-                <th>
-                    <input
-                            class="field" type="text"
-                            placeholder="Title"
-                            v-model="titleFilter"/>
-                    <SortedArrow
-                        name="title"
-                        @change-sort="changeSorted"/>
-                </th>
-                <th>
-                    <input
-                            class="field" type="text"
-                            placeholder="Status"
-                            v-model="statusFilter"/>
-                    <SortedArrow
-                            name="status"
-                            @change-sort="changeSorted"/>
-                </th>
-                <th style="padding-bottom: 17px;">
-                    <input
-                            class="field" type="text"
-                            placeholder="Project"
-                            v-model="projectFilter"/>
-                </th>
-                <th style="padding-bottom: 17px;">Owner</th>
-                <th style="padding-bottom: 17px;">Version</th>
-                <th>
-                    <input
-                            class="field" type="text"
-                            placeholder="Created at"
-                            v-model="dateFilter"/>
-                            <SortedArrow
+                    </th>
+                    <th>
+                        <input
+                                class="field" type="text"
+                                placeholder="Title"
+                                v-model="titleFilter"/>
+                        <SortedArrow
+                                name="title"
+                                @change-sort="changeSorted"/>
+                    </th>
+                    <th>
+                        <input
+                                class="field" type="text"
+                                placeholder="Status"
+                                v-model="statusFilter"/>
+                        <SortedArrow
+                                name="status"
+                                @change-sort="changeSorted"/>
+                    </th>
+                    <th style="padding-bottom: 17px;">
+                        <input
+                                class="field" type="text"
+                                placeholder="Project"
+                                v-model="projectFilter"/>
+                    </th>
+                    <th style="padding-bottom: 17px;">Owner</th>
+                    <th style="padding-bottom: 17px;">Version</th>
+                    <th>
+                        <input
+                                class="field" type="text"
+                                placeholder="Created at"
+                                v-model="dateFilter"/>
+                        <SortedArrow
                                 name="createdAt"
                                 @change-sort="changeSorted"/>
-                </th>
-                <th style="padding-bottom: 17px;">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr
-                v-for="(requirement, index) in requirements"
-                :key="index">
-                <td>{{ requirement.number }}</td>
-                <td>{{ requirement.title }}</td>
-                <td>{{ requirement.status }}</td>
-                <td>{{ requirement.project }}</td>
-                <td>{{ requirement.owner }}</td>
-                <td>{{ requirement.version }}</td>
-                <td>{{ requirement.createdAt | date}}</td>
-                <td>{{ requirement.action }}</td>
-            </tr>
-            </tbody>
-        </table>
+                    </th>
+                    <th style="padding-bottom: 17px;">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        v-for="(requirement, index) in requirements"
+                        :key="index">
+                    <td>{{ requirement.number }}</td>
+                    <td>{{ requirement.title }}</td>
+                    <td>{{ requirement.status }}</td>
+                    <td>{{ requirement.project }}</td>
+                    <td>{{ requirement.owner }}</td>
+                    <td>{{ requirement.version }}</td>
+                    <td>{{ requirement.createdAt | date}}</td>
+                    <td>{{ requirement.action }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <Pagination
                 :numberOfPages="numberOfPages"
                 @page-selected="changeStartPage"/>
+        <NewCard v-if="show"/>
     </div>
 </template>
 
@@ -80,11 +87,12 @@ import Vuetify from 'vuetify';
 import NewCard from '../common/NewCard.vue';
 import Pagination from '../common/Pagination.vue';
 import SortedArrow from '../common/SortedArrow.vue';
-import {REQUIREMENTS} from '../../store/getter-types';
+import {NEW_CARD_VISIBLE, REQUIREMENTS} from '../../store/getter-types';
 import {FETCH_REQUIREMENTS} from '../../store/action-types';
 import ISort from '../../shared/interfaces/ISort';
 import IRequirement from '../../shared/interfaces/IRequirement';
 import Util from '../../shared/Util';
+import {TOOGLE_NEWCARD} from "@/store/mutation-types";
 
 Vue.use(Vuetify);
 
@@ -136,6 +144,14 @@ export default Vue.extend({
         requirementsTotal(): number {
             return this.$store.getters[REQUIREMENTS].length;
         },
+        show: {
+            get(): boolean {
+                return this.$store.getters[NEW_CARD_VISIBLE];
+            },
+            set(value: boolean) {
+                this.$store.commit(TOOGLE_NEWCARD, value);
+            }
+        }
     },
     components: {
         Pagination,
