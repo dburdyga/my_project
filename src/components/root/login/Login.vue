@@ -26,8 +26,9 @@
 <script lang="ts">
     import Vue from 'vue';
     import Registration from '../../requirements/Registration.vue';
-    import { mapState, mapActions } from 'vuex';
+    import {mapState} from 'vuex';
     import {Routes} from '../../../router';
+
 
     export default Vue.extend({
         data() {
@@ -134,7 +135,6 @@
                 background-color: unset;
             }
         }
-
         a {
             margin-bottom: 15px;
         }

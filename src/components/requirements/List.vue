@@ -152,7 +152,6 @@ export default Vue.extend({
         },
         changeStartPage(index: number) {
             this.startPage = this.requirementsPerPage * index;
-            console.log(this.startPage);
         },
     },
 });

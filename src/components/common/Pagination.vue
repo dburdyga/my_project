@@ -32,7 +32,7 @@ export default Vue.extend({
     data() {
         return {
             pageNumber: 0,
-            activePageIndex: 0
+            activePageIndex: 0,
         };
     },
     props: {
@@ -47,9 +47,9 @@ export default Vue.extend({
             this.$emit('page-selected', index);
         },
         incrementPage(isReversed: boolean) {
-            this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex+1);
+            this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex + 1);
             this.selectPage(this.activePageIndex);
-        }
+        },
     },
     computed: {
         pagesArray(): number[] {

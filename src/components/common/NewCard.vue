@@ -117,7 +117,7 @@
         margin-left: 38px;
     }
     input {
-        padding: 6px;
+        padding: 5px;
         border: none;
         border-radius: 2px;
         width: 166px;
