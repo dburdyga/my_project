@@ -29,6 +29,7 @@
 
 
 <style lang="scss" scoped>
+
     .modal  {
         position: fixed;
         left: 0;
@@ -43,8 +44,12 @@
             top: 0;
             bottom: 0;
             z-index: -1;
-            background-color: rgba(white, .5);
-            filter: blur(5px);
+            background-color: rgba(grey, .6);
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+            filter: brightness(0.4);
         }
 
         .modal-content {
