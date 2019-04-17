@@ -1,4 +1,9 @@
 <template>
+    <!--<Modal @close="close">-->
+        <!--<form class="form">-->
+
+        <!--</form>-->
+    <!--</Modal>-->
     <div>
         <img v-if="!show" class="icon" src="../../assets/edit.png" alt="Edit">
         <img v-if="!show" v-on:click="show = !show" class="icon" src="../../assets/delete.png" alt="Delete">
