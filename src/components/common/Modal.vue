@@ -56,7 +56,7 @@
         }
     }
     .close {
-        margin-bottom: 335px;
+        margin-bottom: 355px;
         padding-bottom: 5px;
         padding-top: 5px;
         padding-right: 10px;

@@ -34,7 +34,10 @@
             </table>
             <div class="button-list">
                 <button class="table-button">Save</button>
-                <button class="table-button" v-on:click="show = !show">Cancel</button>
+                <button
+                        @click="close"
+                        class="table-button">Cancel
+                </button>
             </div>
         </form>
     </Modal>
@@ -52,7 +55,7 @@
             close() {
                 this.$store.commit(TOOGLE_NEWCARD, false);
             }
-        }
+        },
     });
 </script>
 

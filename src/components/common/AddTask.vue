@@ -38,7 +38,10 @@
             </table>
             <div class="button-list">
                 <button class="table-button">Save</button>
-                <button class="table-button">Cancel</button>
+                <button
+                        @click="close"
+                        class="table-button">Cancel
+                </button>
             </div>
         </form>
     </Modal>
@@ -65,6 +68,14 @@
     $middle-purple:#48367d;
     $light-purple: #6b4fbb;
 
+    $mobile: 769px;
+
+    @mixin mobile {
+        @media screen and (max-width: $mobile) {
+            @content
+        }
+    }
+
     .card-form {
         display: inline-block;
     }
@@ -76,24 +87,37 @@
         padding-right: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
+        @include mobile {
+            display: table-caption;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
     }
     .card-table {
         text-align: left;
+        @include mobile {
+            display: inline-block;
+        }
     }
     td {
         color: $white;
         padding-left: 10px;
     }
-
     ::-webkit-input-placeholder {
         border: none;
     }
     .form-block {
         display: flex;
         align-items: center;
+        @include mobile {
+            display: inline-flex;
+        }
     }
     .table-button--form {
         margin-left: 38px;
+        @include mobile {
+            margin-left: 0px;
+        }
     }
     input {
         padding: 5px;
@@ -103,22 +127,8 @@
         margin-bottom: 5px;
     }
     @media screen and (max-width: 769px) {
-        .form {
-            display: table-caption;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-        .table-button--form {
-            margin-left: 0px;
-        }
-        .card-table {
-            display: inline-block;
-        }
         .button-list {
             display: flex;
-        }
-        .form-block {
-            display: inline-flex;
         }
     }
 

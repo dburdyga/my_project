@@ -74,7 +74,7 @@
         <router-link to="/estimatecard">
             <button class="table-button">Estimate</button>
         </router-link>
-        <router-link to="/list">
+        <router-link to="/requirements">
             <button class="table-button">Cancel</button>
         </router-link>
         <transition name="fade">
