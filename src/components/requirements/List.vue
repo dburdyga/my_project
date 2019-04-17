@@ -76,7 +76,9 @@
         <Pagination
                 :numberOfPages="numberOfPages"
                 @page-selected="changeStartPage"/>
-        <NewCard v-if="show"/>
+        <transition name="fade">
+            <NewCard v-if="show"/>
+        </transition>
     </div>
 </template>
 
@@ -222,5 +224,12 @@ export default Vue.extend({
         th {
             width: 0px;
         }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

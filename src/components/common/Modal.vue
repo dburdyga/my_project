@@ -1,16 +1,13 @@
 <template>
-    <transition name="slide-fade">
         <div class="modal">
             <div class="modal-content">
                 <slot/>
-                <button @click="close">x</button>
+                <button class="close" @click="close">x</button>
             </div>
             <div
                     @click="close"
                     class="modal-overlay"/>
-        </div>
-    </transition>
-
+            </div>
 </template>
 
 
@@ -44,12 +41,8 @@
             top: 0;
             bottom: 0;
             z-index: -1;
-            background-color: rgba(grey, .6);
-            -webkit-filter: blur(3px);
-            -moz-filter: blur(3px);
-            -ms-filter: blur(3px);
-            filter: blur(3px);
-            filter: brightness(0.4);
+            background-color: rgba(225, 225, 225, 0.8);
+            filter: brightness(0.4) blur(3px);
         }
 
         .modal-content {
@@ -63,15 +56,14 @@
             align-items: center;
         }
     }
+    .close {
+        margin-bottom: 335px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 
-    .slide-fade-enter-active {
-        transition: all .8s ease;
-    }
-    .slide-fade-leave-active {
-        transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-fade-enter, .slide-fade-leave-to {
-        transform: translateY(10px);
-        opacity: 0;
-    }
 </style>

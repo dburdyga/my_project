@@ -44,7 +44,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import Modal from './Modal';
+    import Modal from './Modal.vue';
     import {TOOGLE_NEWCARD} from "@/store/mutation-types";
 
 
@@ -68,6 +68,7 @@
         display: inline-block;
     }
     .form {
+        /*box-shadow: 0 6px 15px rgba(255,255,255,0.3);*/
         display: table;
         border-radius: 5px;
         background-color: $light-purple;
