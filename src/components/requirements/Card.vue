@@ -53,7 +53,9 @@
                 <td>1</td>
                 <td>-</td>
                 <td>
-                    <Confirmation />
+                    <transition name="fade">
+                        <Confirmation v-if="show"/>
+                    </transition>
                 </td>
             </tr>
             <tr class="col_hidden">
@@ -84,29 +86,27 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Confirmation from '../common/Confirmation.vue';
-import AddTask from '../common/AddTask.vue';
-import {NEW_TASK_VISIBLE} from '../../store/getter-types';
-import {TOOGLE_NEWTASK} from '../../store/mutation-types';
-
-
-export default Vue.extend({
-    components: {
-        Confirmation,
-        AddTask
-    },
-    computed: {
-        show: {
-            get(): boolean {
-                return this.$store.getters[NEW_TASK_VISIBLE];
-            },
-            set(value: boolean) {
-                this.$store.commit(TOOGLE_NEWTASK, value);
+    import Vue from 'vue';
+    import Confirmation from '../common/Confirmation.vue';
+    import AddTask from '../common/AddTask.vue';
+    import {NEW_TASK_VISIBLE} from '../../store/getter-types';
+    import {TOOGLE_NEWTASK} from '../../store/mutation-types';
+    export default Vue.extend({
+        components: {
+            Confirmation,
+            AddTask
+        },
+        computed: {
+            show: {
+                get(): boolean {
+                    return this.$store.getters[NEW_TASK_VISIBLE];
+                },
+                set(value: boolean) {
+                    this.$store.commit(TOOGLE_NEWTASK, value);
+                },
             },
         },
-    },
-});
+    });
 </script>
 
 

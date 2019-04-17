@@ -38,7 +38,7 @@
             </table>
             <div class="button-list">
                 <button class="table-button">Save</button>
-                <button class="table-button" v-on:click="show = !show">Cancel</button>
+                <button class="table-button">Cancel</button>
             </div>
         </form>
     </Modal>
@@ -48,8 +48,6 @@
     import Vue from 'vue';
     import Modal from './Modal.vue';
     import {TOOGLE_NEWTASK} from "@/store/mutation-types";
-
-
     export default Vue.extend({
         components: {Modal},
         methods: {
@@ -58,6 +56,7 @@
             }
         }
     });
+
 </script>
 
 <style lang="scss" scoped>
