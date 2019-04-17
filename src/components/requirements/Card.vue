@@ -21,11 +21,12 @@
             </tr>
             </tbody>
         </table>
-        <h3
-                class="vue-title">Tasks
-                <NewTask />
-        </h3>
-
+        <h3 class="vue-title">Tasks</h3>
+        <div class="control-panel">
+            <button
+                    class="table-button"
+                    v-on:click="show = !show">Add</button>
+        </div>
         <h3 class="vue-title--tasks">Test Task</h3>
         <table class="table-data" border="1" width="100%" cellpadding="5">
             <thead>
@@ -76,19 +77,34 @@
         <router-link to="/list">
             <button class="table-button">Cancel</button>
         </router-link>
+        <transition name="fade">
+            <AddTask v-if="show"/>
+        </transition>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Confirmation from '../common/Confirmation.vue';
-import NewTask from '../common/NewTask.vue';
+import AddTask from '../common/AddTask.vue';
+import {NEW_TASK_VISIBLE} from '../../store/getter-types';
+import {TOOGLE_NEWTASK} from '../../store/mutation-types';
 
 
 export default Vue.extend({
     components: {
         Confirmation,
-        NewTask,
+        AddTask
+    },
+    computed: {
+        show: {
+            get(): boolean {
+                return this.$store.getters[NEW_TASK_VISIBLE];
+            },
+            set(value: boolean) {
+                this.$store.commit(TOOGLE_NEWTASK, value);
+            },
+        },
     },
 });
 </script>
@@ -96,5 +112,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
 
 </style>

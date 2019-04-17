@@ -12,6 +12,14 @@
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
+                    <td>Project</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Owner</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
                     <td>Version</td>
                     <td><input type="text"/></td>
                 </tr>
@@ -19,18 +27,8 @@
                     <td>Jira Link</td>
                     <td><input type="text"/></td>
                 </tr>
-            </table>
-            <div class="form-block">
-                <h3>Tasks</h3>
-                <button class="table-button table-button--form">Add</button>
-            </div>
-            <table class="card-table">
                 <tr>
-                    <td>Task title</td>
-                    <td><input type="text"/></td>
-                </tr>
-                <tr>
-                    <td>Description</td>
+                    <td>Created at</td>
                     <td><input type="text"/></td>
                 </tr>
             </table>
@@ -68,7 +66,6 @@
         display: inline-block;
     }
     .form {
-        /*box-shadow: 0 6px 15px rgba(255,255,255,0.3);*/
         display: table;
         border-radius: 5px;
         background-color: $light-purple;

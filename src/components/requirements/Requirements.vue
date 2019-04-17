@@ -77,7 +77,7 @@
                 :numberOfPages="numberOfPages"
                 @page-selected="changeStartPage"/>
         <transition name="fade">
-            <NewCard v-if="show"/>
+            <AddCard v-if="show"/>
         </transition>
     </div>
 </template>
@@ -86,7 +86,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import NewCard from '../common/NewCard.vue';
+import AddCard from '../common/AddCard.vue';
 import Pagination from '../common/Pagination.vue';
 import SortedArrow from '../common/SortedArrow.vue';
 import {NEW_CARD_VISIBLE, REQUIREMENTS} from '../../store/getter-types';
@@ -157,8 +157,8 @@ export default Vue.extend({
     },
     components: {
         Pagination,
-        NewCard,
-        SortedArrow,
+        AddCard,
+        SortedArrow
     },
     methods: {
         changeSorted(event: ISort<IRequirement>) {
@@ -227,7 +227,7 @@ export default Vue.extend({
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .8s;
+        transition: opacity .5s;
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;
