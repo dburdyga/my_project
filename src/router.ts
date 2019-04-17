@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './components/root/login/Login.vue';
-import List from './components/requirements/List.vue';
+import Requirements from './components/requirements/Requirements.vue';
 import Card from './components/requirements/Card.vue';
 import Registration from './components/requirements/Registration.vue';
 import EstimateCard from './components/requirements/EstimateCard.vue';
@@ -12,17 +12,16 @@ Vue.use(Router);
 export enum Routes {
   HOME = 'Home',
   LOGIN = 'Login',
-  CARD = 'Card',
-  REGISTRATION = 'Registration',
+  CARD = 'Card'
 }
 
 
 const router = new Router({
   routes: [
     {
-      path: '/list',
+      path: '/requirements',
       name: Routes.HOME,
-      component: List,
+      component: Requirements,
     },
     {
       path: '/',

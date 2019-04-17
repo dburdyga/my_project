@@ -1,13 +1,16 @@
 <template>
     <header>
-            <div class="header-item">
+            <div class="header-item" style="padding-top: 10px;">
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </div>
             <div class="header-item">
                 <div class="header-item--block" v-if="!isLoginRoute">Username</div>
-                <div class="header-item--block" v-if="!isLoginRoute">
+                <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
                     <img class="user-img" src="../../assets/photo.png" alt="Photo">
                 </div>
+                <router-link v-if="!isLoginRoute" to="/">
+                    <button>Log out</button>
+                </router-link>
             </div>
     </header>
 
@@ -46,13 +49,11 @@
         margin-bottom: 50px;
     }
     .header-item {
-        padding-top: 5px;
         display: flex;
         align-items: center;
     }
     .header-item--block {
         font-family: "Source Sans Pro", sans-serif;
-        padding: 1rem;
         color: $white;
         font-size: 16px;
         font-weight: bold;
@@ -64,8 +65,8 @@
         width: 4.5rem;
     }
     .user-img {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3rem;
+        height: 3rem;
     }
     @media screen and (max-width: 769px) {
         header {

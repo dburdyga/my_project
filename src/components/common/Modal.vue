@@ -41,8 +41,7 @@
             top: 0;
             bottom: 0;
             z-index: -1;
-            background-color: rgba(225, 225, 225, 0.8);
-            filter: brightness(0.4) blur(3px);
+            background-color: rgba(225, 225, 225, 0.7);
         }
 
         .modal-content {
