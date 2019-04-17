@@ -62,6 +62,7 @@
     $middle-grey: #2c3e50;
     $light-purple: #6b4fbb;
     $light-grey: #cbcfd3;
+    $orange-grey: #b34700;
 
     .login {
         margin-bottom: 0px;
@@ -106,20 +107,6 @@
                 border-radius: 3px;
                 padding-left: 14px;
                 font-size: 14px;
-            }
-            button {
-                font-family: "Source Sans Pro", sans-serif;
-                line-height: 1.5;
-                font-size: 14px;
-                color: $white;
-                padding: .5rem;
-                background-color: $orange;
-                border: none;
-                border-radius: 3px;
-                cursor: pointer;
-                &:hover {
-                    background-color: lightslategray;
-                }
             }
         }
         .link {

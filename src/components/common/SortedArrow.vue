@@ -33,13 +33,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-    $orange: #ff6600;
-
     .arrow {
         height: 10px;
         width: 20px;
     }
     .active {
-        -webkit-transform: rotate(-180deg); /* Для Safari, Chrome, iOS */
+        -webkit-transform: rotate(-180deg);
     }
 </style>

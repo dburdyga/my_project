@@ -64,7 +64,7 @@
     $light-grey: #cbcfd3;
     $grey: #333333;
     $middle-grey: #2c3e50;
-
+    $orange-grey: #b34700;
 
     .login {
         margin-bottom: 0px;
@@ -91,7 +91,7 @@
         border-radius: 3px;
         cursor: pointer;
         &:hover {
-            background-color: lightslategray;
+            background-color: $orange-grey;
         }
     }
     .table-button--register {

@@ -1,5 +1,14 @@
+$mobile: 769px;
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content
+  }
+}
+
 $white: #ffffff;
 $orange: #ff6600;
+$orange-grey: #b34700;
 $light-purple: #6b4fbb;
 $purple: #4b3589;
 $middle-purple:#48367d;
@@ -23,7 +32,7 @@ button {
   cursor: pointer;
   outline: none;
   &:hover {
-    background-color: lightslategray;
+    background-color: $orange-grey;
   }
 }
 h3 {
@@ -38,27 +47,33 @@ h2 {
 }
 .card {
   margin: 5rem 5rem 0rem;
+  @include mobile {
+    margin: 20px 20px 0px;
+  }
 }
 .table-button {
   font-family: "Source Sans Pro", sans-serif;
-  width: 70px;
   background: $orange;
   color: white;
   border: none;
   margin: 10px 10px;
   border-radius: 3px;
   font-weight: normal;
-  font-size: 16px;
-  min-width: 120px;
+  font-size: 14px;
+  min-width: 100px;
   display: inline-block;
-  padding: 4px 30px;
+  padding: .5rem;
   outline: none;
 }
 .table-data {
   margin: 10px 0px 0px;;
   background-color: $white;
   border-collapse: collapse;
-  border-color: #cbcfd3;
+  border-color: $light-grey;
+  @include mobile {
+    display: flex;
+    width: 100%;
+  }
 }
 .table-status {
   border: none;
@@ -103,18 +118,8 @@ tr, td {
   thead, tbody {
     width: 50%;
   }
-  .table-data {
-    display: flex;
-    width: 100%;
-  }
-  .header-item {
-    display: block;
-  }
   .filter-table {
     width: 100%;
-  }
-  .card{
-    margin: 20px 20px 0px;
   }
   .col_hidden {
     display: none;

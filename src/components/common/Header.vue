@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header :class="{'no-shadow' : isLoginRoute}">
             <div class="header-item" style="padding-top: 10px;">
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </div>
@@ -13,7 +13,6 @@
                 </router-link>
             </div>
     </header>
-
 </template>
 
 <script lang="ts">
@@ -37,20 +36,36 @@
 
 <style lang="scss" scoped>
     $white: #ffffff;
+    $mobile: 769px;
+
+    @mixin mobile {
+        @media screen and (max-width: $mobile) {
+            @content
+        }
+    }
 
     header {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-left: 30px;
         padding-right: 30px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         padding-bottom: 10px;
         margin-bottom: 50px;
+        &.no-shadow{
+            box-shadow: none;
+        }
+        @include mobile {
+            margin-bottom: 80px;
+        }
     }
     .header-item {
         display: flex;
         align-items: center;
+        @include mobile {
+            padding-top: 10px;
+        }
     }
     .header-item--block {
         font-family: "Source Sans Pro", sans-serif;
@@ -67,13 +82,5 @@
     .user-img {
         width: 3rem;
         height: 3rem;
-    }
-    @media screen and (max-width: 769px) {
-        header {
-            margin-bottom: 80px;
-        }
-        .header-item {
-            padding-top: 10px;
-        }
     }
 </style>

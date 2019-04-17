@@ -66,7 +66,6 @@ export default Vue.extend({
     $purple: #4b3589;
     $orange-grey: #b34700;
 
-
     .pagination-button {
         font-family: "Source Sans Pro", sans-serif;
         background: $orange;
