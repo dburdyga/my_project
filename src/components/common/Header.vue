@@ -1,14 +1,14 @@
 <template>
     <header>
-        <div class="header-item">
-            <img v-if="isListRoute" class="header-img" src="../../assets/logo.png" alt="Logo">
-        </div>
-        <div class="header-item">
-            <div class="header-item--block" v-if="!isLoginRoute">Username</div>
-            <div class="header-item--block" v-if="!isLoginRoute">
-                <img class="user-img" src="../../assets/photo.png" alt="Photo">
+            <div class="header-item">
+                <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </div>
-        </div>
+            <div class="header-item">
+                <div class="header-item--block" v-if="!isLoginRoute">Username</div>
+                <div class="header-item--block" v-if="!isLoginRoute">
+                    <img class="user-img" src="../../assets/photo.png" alt="Photo">
+                </div>
+            </div>
     </header>
 
 </template>
@@ -27,10 +27,7 @@
         computed: {
             isLoginRoute(): boolean {
                 return this.$route.name === Routes.LOGIN;
-            },
-            isListRoute(): boolean {
-                return this.$route.name === Routes.LOGIN;
-            },
+            }
         },
     });
 </script>
@@ -42,12 +39,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 30px;
-        margin-right: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        padding-bottom: 10px;
         margin-bottom: 50px;
     }
     .header-item {
-        padding-top: 15px;
+        padding-top: 5px;
         display: flex;
         align-items: center;
     }
@@ -62,11 +61,11 @@
         color: $white;
     }
     .header-img {
-        width: 6rem;
+        width: 4.5rem;
     }
     .user-img {
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
     @media screen and (max-width: 769px) {
         header {
@@ -74,7 +73,6 @@
         }
         .header-item {
             padding-top: 10px;
-            margin-left: 30px;
         }
     }
 </style>
