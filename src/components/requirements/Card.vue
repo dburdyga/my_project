@@ -53,9 +53,7 @@
                 <td>1</td>
                 <td>-</td>
                 <td>
-                    <transition name="fade">
-                        <Confirmation v-if="show"/>
-                    </transition>
+                    <Confirmation />
                 </td>
             </tr>
             <tr class="col_hidden">
@@ -111,12 +109,5 @@
 
 
 <style lang="scss" scoped>
-
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
-    }
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    }
 
 </style>
