@@ -17,7 +17,6 @@
             <div class="mobile-menu is-hidden-desktop" v-if="!isLoginRoute">
                 <button
                         @click="isMobileMenuOpen = !isMobileMenuOpen"
-                        v-if="!isMobileMenuOpen"
                         style="background-color: transparent">
                         <img src="../../assets/menu.png"
                              alt="menu icon"
@@ -120,6 +119,12 @@ export default Vue.extend ({
         padding-right: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
+        @include mobile {
+            width: 50%;
+            height: 30%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
     .card-table {
         text-align: left;
@@ -153,5 +158,18 @@ export default Vue.extend ({
         border-radius: 2px;
         width: 166px;
         margin-bottom: 5px;
+    }
+    .popup-menu {
+        @include mobile {
+            margin-top: 105px;
+            margin-left: 124px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
     }
 </style>
