@@ -28,49 +28,51 @@
                     v-on:click="show = !show">Add</button>
         </div>
         <h3 class="vue-title--tasks">Test Task</h3>
-        <table class="table-data" border="1" width="100%" cellpadding="5">
-            <thead>
-            <tr>
-                <th>Sub Tasks</th>
-                <th>Description</th>
-                <th>Effort</th>
-                <th>Estimator</th>
-                <th>DVK</th>
-                <th>IMP</th>
-                <th>E-Test</th>
-                <th>E-Test2</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Write integration tests</td>
-                <td>Tests for payment</td>
-                <td>ARS</td>
-                <td>Username</td>
-                <td>11</td>
-                <td>34</td>
-                <td>1</td>
-                <td>-</td>
-                <td>
-                    <Confirmation />
-                </td>
-            </tr>
-            <tr class="col_hidden">
-                <td>Add missing scenarios</td>
-                <td>Scenarios for storage</td>
-                <td>JS</td>
-                <td>Username</td>
-                <td>11</td>
-                <td>34</td>
-                <td>1</td>
-                <td>-</td>
-                <td>
-                    <Confirmation />
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table class="table-data" border="1" width="100%" cellpadding="5">
+                <thead>
+                <tr>
+                    <th>Sub Tasks</th>
+                    <th>Description</th>
+                    <th>Effort</th>
+                    <th>Estimator</th>
+                    <th>DVK</th>
+                    <th>IMP</th>
+                    <th>E-Test</th>
+                    <th>E-Test2</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Write integration tests</td>
+                    <td>Tests for payment</td>
+                    <td>ARS</td>
+                    <td>Username</td>
+                    <td>11</td>
+                    <td>34</td>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>
+                        <Confirmation />
+                    </td>
+                </tr>
+                <tr class="col_hidden">
+                    <td>Add missing scenarios</td>
+                    <td>Scenarios for storage</td>
+                    <td>JS</td>
+                    <td>Username</td>
+                    <td>11</td>
+                    <td>34</td>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>
+                        <Confirmation />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <router-link to="/estimatecard">
             <button class="table-button">Estimate</button>
         </router-link>
