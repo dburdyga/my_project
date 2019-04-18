@@ -44,34 +44,24 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import Modal from './Modal.vue';
-    import {TOOGLE_NEWCARD} from "@/store/mutation-types";
+import Vue from 'vue';
+import Modal from './Modal.vue';
+import {TOOGLE_NEWCARD} from '@/store/mutation-types';
 
 
-    export default Vue.extend({
-        components: {Modal},
-        methods: {
-            close() {
-                this.$store.commit(TOOGLE_NEWCARD, false);
-            }
+export default Vue.extend({
+    components: {Modal},
+    methods: {
+        close() {
+            this.$store.commit(TOOGLE_NEWCARD, false);
         },
-    });
+    },
+});
 </script>
 
 <style lang="scss" scoped>
-    $white: #ffffff;
-    $middle-grey: #2c3e50;
-    $middle-purple:#48367d;
-    $light-purple: #6b4fbb;
-
-    $mobile: 769px;
-
-    @mixin mobile {
-        @media screen and (max-width: $mobile) {
-            @content
-        }
-    }
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
 
     .card-form {
         display: inline-block;

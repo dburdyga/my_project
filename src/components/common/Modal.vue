@@ -12,20 +12,21 @@
 
 
 <script lang="ts">
-    import Vue from 'vue';
+import Vue from 'vue';
 
-    export default Vue.extend({
-        methods: {
-            close() {
-                console.log('close');
-                this.$emit('close');
-            }
-        }
-    });
+export default Vue.extend({
+    methods: {
+        close() {
+            this.$emit('close');
+        },
+    },
+});
 </script>
 
 
 <style lang="scss" scoped>
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
 
     .modal  {
         position: fixed;
@@ -33,7 +34,6 @@
         right: 0;
         top: 0;
         bottom: 0;
-
         .modal-overlay {
             position: absolute;
             left: 0;
@@ -43,7 +43,6 @@
             z-index: -1;
             background-color: rgba(225, 225, 225, 0.7);
         }
-
         .modal-content {
             position: absolute;
             left: 0;

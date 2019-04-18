@@ -41,23 +41,23 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import {Routes} from '../../router';
+import Vue from 'vue';
+import {Routes} from '../../router';
 
 
-    export default Vue.extend ({
-        data() {
-            return {
-                isHidden: false,
-                isMobileMenuOpen: false
-            };
+export default Vue.extend ({
+    data() {
+        return {
+            isHidden: false,
+            isMobileMenuOpen: false,
+        };
+    },
+    computed: {
+        isLoginRoute(): boolean {
+            return this.$route.name === Routes.LOGIN;
         },
-        computed: {
-            isLoginRoute(): boolean {
-                return this.$route.name === Routes.LOGIN;
-            }
-        },
-    });
+    },
+});
 </script>
 
 <style lang="scss" scoped>

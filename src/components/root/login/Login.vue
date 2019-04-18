@@ -57,12 +57,8 @@
 </script>
 
 <style lang="scss" scoped>
-    $orange: #ff6600;
-    $white: #ffffff;
-    $middle-grey: #2c3e50;
-    $light-purple: #6b4fbb;
-    $light-grey: #cbcfd3;
-    $orange-grey: #b34700;
+    @import '../../../styles/mixins';
+    @import '../../../styles/variables';
 
     .login {
         margin-bottom: 0px;

@@ -60,11 +60,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-    $white: #ffffff;
-    $orange: #ff6600;
-    $light-purple: #6b4fbb;
-    $purple: #4b3589;
-    $orange-grey: #b34700;
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
 
     .pagination-button {
         font-family: "Source Sans Pro", sans-serif;

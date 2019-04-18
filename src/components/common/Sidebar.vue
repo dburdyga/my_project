@@ -48,9 +48,8 @@
 </script>
 
 <style lang="scss"scoped>
-    $orange-color: #ff6600;
-    $white: #ffffff;
-    $light-purple: #6b4fbb;
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
 
     .menu-bar{
         float: left;

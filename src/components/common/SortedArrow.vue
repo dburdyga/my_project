@@ -33,6 +33,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
+
     .arrow {
         height: 10px;
         width: 20px;

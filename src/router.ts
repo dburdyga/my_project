@@ -12,7 +12,7 @@ Vue.use(Router);
 export enum Routes {
   HOME = 'Home',
   LOGIN = 'Login',
-  CARD = 'Card'
+  CARD = 'Card',
 }
 
 

@@ -94,7 +94,7 @@ import {FETCH_REQUIREMENTS} from '../../store/action-types';
 import ISort from '../../shared/interfaces/ISort';
 import IRequirement from '../../shared/interfaces/IRequirement';
 import Util from '../../shared/Util';
-import {TOOGLE_NEWCARD} from "@/store/mutation-types";
+import {TOOGLE_NEWCARD} from '@/store/mutation-types';
 
 Vue.use(Vuetify);
 
@@ -152,13 +152,13 @@ export default Vue.extend({
             },
             set(value: boolean) {
                 this.$store.commit(TOOGLE_NEWCARD, value);
-            }
-        }
+            },
+        },
     },
     components: {
         Pagination,
         AddCard,
-        SortedArrow
+        SortedArrow,
     },
     methods: {
         changeSorted(event: ISort<IRequirement>) {
@@ -177,9 +177,8 @@ export default Vue.extend({
 
 
 <style lang="scss" scoped>
-    $grey: #2c3e50;
-    $middle-purple:#48367d;
-    $orange: #ff6600;
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
 
     .list {
         margin: 0rem 5rem 0rem;

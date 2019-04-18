@@ -39,6 +39,9 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../../styles/mixins';
+    @import '../../styles/variables';
+
     form {
         background-color: #6b4fbb;
         color: white;
