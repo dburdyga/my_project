@@ -17,6 +17,7 @@
             <div class="mobile-menu is-hidden-desktop" v-if="!isLoginRoute">
                 <button
                         @click="isMobileMenuOpen = !isMobileMenuOpen"
+                        v-if="!isMobileMenuOpen"
                         style="background-color: transparent">
                         <img src="../../assets/menu.png"
                              alt="menu icon"
@@ -89,6 +90,7 @@ export default Vue.extend ({
         align-items: center;
         @include mobile {
             padding-top: 10px;
+            display: table-row;
         }
     }
     .header-item--block {
