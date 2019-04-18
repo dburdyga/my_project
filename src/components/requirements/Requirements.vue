@@ -182,6 +182,9 @@ export default Vue.extend({
 
     .list {
         margin: 0rem 5rem 0rem;
+        @include mobile {
+            margin: 20px 20px 0px;
+        }
     }
     .field {
         height: 26px;
@@ -203,6 +206,9 @@ export default Vue.extend({
         background: white;
         width: 100px;
         padding: 0px 0px 0px 0px;
+        @include mobile {
+            width: 0px;
+        }
     }
     ::-webkit-input-placeholder {
         font-family: "Source Sans Pro", sans-serif;
@@ -215,20 +221,11 @@ export default Vue.extend({
         height: 26px;
         padding: 0px 0px 0px 0px;
     }
-
-    @media screen and (max-width: 769px) {
-        .list {
-            margin: 20px 20px 0px;
-        }
-        th {
-            width: 0px;
-        }
-    }
-
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;
     }
+
 </style>

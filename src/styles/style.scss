@@ -55,10 +55,6 @@ h2 {
   background-color: $white;
   border-collapse: collapse;
   border-color: $light-grey;
-  @include mobile {
-    display: flex;
-    width: 100%;
-  }
 }
 .table-status {
   border: none;
