@@ -3,14 +3,22 @@
             <div class="header-item" style="padding-top: 10px;">
                 <img class="header-img" src="../../assets/logo.png" alt="Logo">
             </div>
-            <div class="header-item">
-                <div class="header-item--block" v-if="!isLoginRoute">Username</div>
-                <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
-                    <img class="user-img" src="../../assets/photo.png" alt="Photo">
+            <div class="desktop-menu is-hidden-mobile">
+                <div class="header-item">
+                    <div class="header-item--block" v-if="!isLoginRoute">Username</div>
+                    <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
+                        <img class="user-img" src="../../assets/photo.png" alt="Photo">
+                    </div>
+                    <router-link v-if="!isLoginRoute" to="/">
+                        <button>Log out</button>
+                    </router-link>
                 </div>
-                <router-link v-if="!isLoginRoute" to="/">
-                    <button>Log out</button>
-                </router-link>
+            </div>
+            <div class="mobile-menu is-hidden-desktop">
+                <button @click="isMobileMenuOpen = !isMobileMenuOpen">burger {{ isMobileMenuOpen }}</button>
+                <div v-if="isMobileMenuOpen" class="popup-menu">
+                    popup menu
+                </div>
             </div>
     </header>
 </template>
@@ -24,6 +32,7 @@
         data() {
             return {
                 isHidden: false,
+                isMobileMenuOpen: false
             };
         },
         computed: {
@@ -35,14 +44,9 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../../styles/mixins';
     $white: #ffffff;
     $mobile: 769px;
-
-    @mixin mobile {
-        @media screen and (max-width: $mobile) {
-            @content
-        }
-    }
 
     header {
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);

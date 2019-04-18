@@ -1,10 +1,5 @@
-$mobile: 769px;
+@import './mixins';
 
-@mixin mobile {
-  @media screen and (max-width: $mobile) {
-    @content
-  }
-}
 
 $white: #ffffff;
 $orange: #ff6600;
@@ -136,5 +131,18 @@ tr, td {
   }
   .table-filters {
     padding: 2px;
+  }
+}
+
+
+.is-hidden-desktop {
+  @include desktop {
+    display: none;
+  }
+}
+
+.is-hidden-mobile {
+  @include mobile {
+    display: none;
   }
 }
