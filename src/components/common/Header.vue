@@ -14,10 +14,27 @@
                     </router-link>
                 </div>
             </div>
-            <div class="mobile-menu is-hidden-desktop">
-                <button @click="isMobileMenuOpen = !isMobileMenuOpen">burger {{ isMobileMenuOpen }}</button>
+            <div class="mobile-menu is-hidden-desktop" v-if="!isLoginRoute">
+                <button
+                        @click="isMobileMenuOpen = !isMobileMenuOpen"
+                        style="background-color: transparent">
+                        <img src="../../assets/menu.png"
+                             alt="menu icon"
+                             class="menu-img">
+                        <!--{{ isMobileMenuOpen }}-->
+                </button>
                 <div v-if="isMobileMenuOpen" class="popup-menu">
-                    popup menu
+                    <form class="form">
+                        <div class="header-item">
+                            <div class="header-item--block" v-if="!isLoginRoute">Username</div>
+                            <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
+                                <img class="user-img" src="../../assets/photo.png" alt="Photo">
+                            </div>
+                            <router-link v-if="!isLoginRoute" to="/">
+                                <button>Log out</button>
+                            </router-link>
+                        </div>
+                    </form>
                 </div>
             </div>
     </header>
@@ -45,8 +62,7 @@
 
 <style lang="scss" scoped>
     @import '../../styles/mixins';
-    $white: #ffffff;
-    $mobile: 769px;
+    @import '../../styles/variables';
 
     header {
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -63,6 +79,10 @@
         @include mobile {
             margin-bottom: 80px;
         }
+    }
+    .menu-img {
+        width: 50px;
+        padding-top: 9px;
     }
     .header-item {
         display: flex;
@@ -86,5 +106,50 @@
     .user-img {
         width: 3rem;
         height: 3rem;
+    }
+    .card-form {
+        display: inline-block;
+    }
+    .form {
+        display: table;
+        border-radius: 5px;
+        background-color: $light-purple;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .card-table {
+        text-align: left;
+        @include mobile {
+            display: inline-block;
+        }
+    }
+    td {
+        color: $white;
+        padding-left: 10px;
+    }
+    ::-webkit-input-placeholder {
+        border: none;
+    }
+    .form-block {
+        display: flex;
+        align-items: center;
+        @include mobile {
+            display: inline-flex;
+        }
+    }
+    .table-button--form {
+        margin-left: 38px;
+        @include mobile {
+            margin-left: 0px;
+        }
+    }
+    input {
+        padding: 5px;
+        border: none;
+        border-radius: 2px;
+        width: 166px;
+        margin-bottom: 5px;
     }
 </style>
