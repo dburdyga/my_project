@@ -67,9 +67,6 @@
         right: 0;
         left: 0;
     }
-    .menu-img {
-        width: 50px;
-    }
     a {
         text-decoration: none;
     }

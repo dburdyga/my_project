@@ -81,8 +81,8 @@ export default Vue.extend ({
         }
     }
     .menu-img {
-        width: 50px;
-        padding-top: 9px;
+        width: 45px;
+        padding-top: 15px;
     }
     .header-item {
         display: flex;
@@ -97,6 +97,9 @@ export default Vue.extend ({
         color: $white;
         font-size: 16px;
         font-weight: bold;
+        @include mobile {
+            margin-bottom: 20px;
+        }
     }
     h1 {
         color: $white;
