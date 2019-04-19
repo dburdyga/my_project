@@ -91,6 +91,7 @@ import Confirmation from '../common/Confirmation.vue';
 import AddTask from '../common/AddTask.vue';
 import {NEW_TASK_VISIBLE} from '../../store/getter-types';
 import {TOOGLE_NEWTASK} from '../../store/mutation-types';
+
 export default Vue.extend({
     components: {
         Confirmation,

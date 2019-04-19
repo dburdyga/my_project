@@ -28,7 +28,7 @@
     import Registration from '../../requirements/Registration.vue';
     import {mapState} from 'vuex';
     import {Routes} from '../../../router';
-
+    import firebase from 'firebase';
 
     export default Vue.extend({
         data() {
