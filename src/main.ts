@@ -3,8 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store/store';
 import './styles/style.scss';
-
 import dateFilter from './shared/filters/date.filter';
+
 
 Vue.filter('date', dateFilter);
 Vue.config.productionTip = false;

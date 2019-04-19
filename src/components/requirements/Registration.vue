@@ -43,6 +43,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
+    import firebase from 'firebase';
 
     export default Vue.extend({
         data() {
