@@ -15,6 +15,9 @@
                                 <input type="password" class="password" placeholder="Password" v-model="password">
                             </div>
                             <button @click.prevent="login">Login</button>
+                            <router-link to="/register">
+                                <a>Registration</a>
+                            </router-link>
                         </form>
                     </div>
                 </div>
@@ -27,7 +30,6 @@
 import Vue from 'vue';
 import {Routes} from '@/router';
 import firebase from 'firebase';
-
 
 
 export default Vue.extend({
@@ -139,7 +141,9 @@ export default Vue.extend({
             }
         }
         a {
+            text-decoration: none;
             margin-bottom: 15px;
+            font-size: 14px;
         }
     }
 </style>
