@@ -9,7 +9,7 @@
 <script lang="ts">
 import Sidebar from './components/common/Sidebar.vue';
 import Header from './components/common/Header.vue';
-import Login from '../src/components/root/login/Login.vue';
+import Login from './components/requirements/Login.vue';
 
 
 
