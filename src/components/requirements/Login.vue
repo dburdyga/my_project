@@ -4,19 +4,17 @@
             <div class="row">
                 <div class="col s12 m8 offset-m2">
                     <div class="login card-panel green white-text center">
-                        <h3>Login</h3>
+                        <h3 style="margin-top: 15px; margin-bottom: 25px;">Login</h3>
                         <form action="index.html">
                             <div class="input-field">
-                                <i class="material-icons prefix">email</i>
-                                <input type="email" id="email" v-model="email">
-                                <label class="white-text" for="email">Email</label>
+                                <i class="material-icons prefix" style="margin-top: 6px; margin-bottom: 0px;">email</i>
+                                <input type="email" class="email" placeholder="Email" v-model="email">
                             </div>
                             <div class="input-field">
-                                <i class="material-icons prefix">lock</i>
-                                <input type="password" id="password" v-model="password">
-                                <label class="white-text" for="password">Password</label>
+                                <i class="material-icons prefix" style="margin-top: 6px; margin-bottom: 0px;">lock</i>
+                                <input type="password" class="password" placeholder="Password" v-model="password">
                             </div>
-                            <button @click.prevent="login" class="btn btn-large btn-extended grey lighten-4 black-text">Login</button>
+                            <button @click.prevent="login">Login</button>
                         </form>
                     </div>
                 </div>
@@ -64,13 +62,31 @@ export default Vue.extend({
     @import '../../styles/mixins';
     @import '../../styles/variables';
 
+    button {
+        margin-bottom: 20px;
+        margin-top: 15px;
+        width: 240px;
+    }
+    .material-icons {
+        margin-top: 6px;
+        margin-bottom: 0px;
+        margin-right: 20px;
+
+    }
+    .input-field {
+        display: flex;
+        justify-content: space-between;
+    }
+    .email, .password {
+        height: 20px;
+    }
     .login {
+        width: 240px;
         margin-bottom: 0px;
         color: $white;
         border: none;
         border-radius: 10px;
         padding: 8px 35px;
-        width: 300px;
         margin-left: auto;
         margin-right: auto;
         position: relative;

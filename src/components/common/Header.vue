@@ -54,7 +54,7 @@ export default Vue.extend ({
     },
     computed: {
         isLoginRoute(): boolean {
-            return this.$route.name === Routes.LOGIN;
+            return this.$route.name === Routes.LOGIN || this.$route.name === Routes.REGISTER;
         },
     },
 });

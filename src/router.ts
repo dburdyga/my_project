@@ -93,7 +93,7 @@ const router = new Router({
 //     if (firebase.auth().currentUser) {
 //       // Go to login
 //       next({
-//         path: '/requirements',
+//         path: '/',
 //         query: {
 //           redirect: to.fullPath,
 //         },
