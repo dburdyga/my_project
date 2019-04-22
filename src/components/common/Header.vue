@@ -5,13 +5,12 @@
             </div>
             <div class="desktop-menu is-hidden-mobile">
                 <div class="header-item">
-                    <div class="header-item--block" v-if="!isLoginRoute">Username</div>
+                    <div class="header-item--block" v-if="isLoggedIn && !isLoginRoute">{{currentUser}}</div>
                     <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
                         <img class="user-img" src="../../assets/photo.png" alt="Photo">
                     </div>
-                    <router-link v-if="!isLoginRoute" to="/">
-                        <button>Log out</button>
-                    </router-link>
+                    <button v-if="isLoggedIn && !isLoginRoute" v-on:click="logout">Logout</button>
+
                 </div>
             </div>
             <div class="mobile-menu is-hidden-desktop" v-if="!isLoginRoute">
@@ -26,13 +25,12 @@
                 <div v-if="isMobileMenuOpen" class="popup-menu">
                     <form class="form">
                         <div class="header-item">
-                            <div class="header-item--block" v-if="!isLoginRoute">Username</div>
+                            <div class="header-item--block" v-if="isLoggedIn && !isLoginRoute">{{currentUser}}</div>
                             <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
                                 <img class="user-img" src="../../assets/photo.png" alt="Photo">
                             </div>
-                            <router-link v-if="!isLoginRoute" to="/">
-                                <button>Log out</button>
-                            </router-link>
+                            <button v-if="isLoggedIn && !isLoginRoute" v-on:click="logout">Logout</button>
+                            <!--<button v-if="isLoggedIn" v-on:click="logout">Logout</button>-->
                         </div>
                     </form>
                 </div>
@@ -43,13 +41,15 @@
 <script lang="ts">
 import Vue from 'vue';
 import {Routes} from '../../router';
-
+import firebase from 'firebase';
 
 export default Vue.extend ({
     data() {
         return {
             isHidden: false,
             isMobileMenuOpen: false,
+            isLoggedIn: false,
+            currentUser: false,
         };
     },
     computed: {
@@ -57,7 +57,26 @@ export default Vue.extend ({
             return this.$route.name === Routes.LOGIN || this.$route.name === Routes.REGISTER;
         },
     },
+    created() {
+        if (firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.currentUser = firebase.auth().currentUser.email;
+        }
+    },
+    methods: {
+        logout () {
+            firebase
+                .auth()
+                .signOut()
+                .then(() => {
+                    this.$router.push({ name: Routes.LOGIN });
+                });
+        }
+    }
 });
+
+
+
 </script>
 
 <style lang="scss" scoped>
