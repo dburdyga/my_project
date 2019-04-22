@@ -64,19 +64,16 @@ export default Vue.extend ({
         }
     },
     methods: {
-        logout () {
+        logout() {
             firebase
                 .auth()
                 .signOut()
                 .then(() => {
                     this.$router.push({ name: Routes.LOGIN });
                 });
-        }
-    }
+        },
+    },
 });
-
-
-
 </script>
 
 <style lang="scss" scoped>
