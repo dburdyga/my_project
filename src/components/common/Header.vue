@@ -7,7 +7,7 @@
                 <div class="header-item">
                     <div class="header-item--block" v-if="isLoggedIn && !isLoginRoute">{{currentUser}}</div>
                     <div class="header-item--block" style="padding-left: 30px; padding-right: 30px;" v-if="!isLoginRoute">
-                        <img class="user-img" src="../../assets/photo.png" alt="Photo">
+                        <img class="user-img" src="../../assets/chick.jpeg" alt="Photo">
                     </div>
                     <button v-if="isLoggedIn && !isLoginRoute" v-on:click="logout">Logout</button>
 
@@ -129,6 +129,9 @@ export default Vue.extend ({
     .user-img {
         width: 3rem;
         height: 3rem;
+        border-radius: 100px;
+        box-shadow: 0 0 7px #666;
+        border: 3px solid $orange;
     }
     .card-form {
         display: inline-block;
