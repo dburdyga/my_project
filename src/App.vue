@@ -1,27 +1,42 @@
 <template>
   <div id="app">
-    <!--<Sidebar />-->
-    <Header />
-    <router-view></router-view>
+    <Alerts/>
+    <header class="header">
+      <div class="container">
+        <div class="inner">
+          <router-link
+                  :to="{name: $routeNames.Home}"
+                  class="logo"/>
+          <nav class="main-nav">
+            <router-link :to="{name: $routeNames.About}">About</router-link>
+            <router-link disabled :to="{name: $routeNames.Tasks}">Tasks</router-link>
+          </nav>
+          <div class="auth-controls">
+            <UserWidget/>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+      <router-view/>
+    </main>
   </div>
 </template>
 
 <script lang="ts">
-import Sidebar from './components/common/Sidebar.vue';
-import Header from './components/common/Header.vue';
-import Login from './components/requirements/Login.vue';
+  import Vue from 'vue';
+  import Alerts from './views/Alerts.vue';
+  import UserWidget from '@/components/UserWidget.vue';
 
+  export default Vue.extend({
+    components: {
+      Alerts,
+      UserWidget
+    }
+  });
 
-
-export default {
-  name: 'app',
-  components: {
-    Sidebar,
-    Header,
-    Login,
-  },
-};
 </script>
+
 
 <style lang="scss" scoped>
 

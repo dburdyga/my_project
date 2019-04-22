@@ -1,21 +1,33 @@
 import Vue from 'vue';
+import Vuelidate from 'vuelidate';
 import App from './App.vue';
+import store from './store/index';
 import router from './router';
-import store from './store/store';
-// import firebase from 'firebase';
-import './styles/style.scss';
-import dateFilter from './shared/filters/date.filter';
+import './firebase';
+import {auth} from './firebase';
+import './styles/styles.scss';
+import {RouteNames} from '@/router/RouteNames';
 
-
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-
-export const db = firebase.firestore();
-
-
-
-Vue.filter('date', dateFilter);
 Vue.config.productionTip = false;
+
+Vue.prototype.$routeNames = RouteNames;
+
+// add validation lib
+Vue.use(Vuelidate);
+
+let app: Vue;
+// start app when get update auth state update from firebase
+// to avoid re-login after page reload
+auth.onAuthStateChanged(() => {
+  if (!app) {
+    app = new Vue({
+      store,
+      router,
+      render: (h) => h(App),
+    }).$mount('#app');
+  }
+});
+
 
 
 // new Vue({
@@ -25,15 +37,3 @@ Vue.config.productionTip = false;
 // }).$mount('#app');
 
 
-let app: Vue;
-firebase.auth().onAuthStateChanged((user) => {
-  if (!app) {
-    /* eslint-disable no-new */
-    app = new Vue({
-      el: '#app',
-      router,
-      store,
-      render: (h) => h(App),
-    }).$mount('#app');
-  }
-});

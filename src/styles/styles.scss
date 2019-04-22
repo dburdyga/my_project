@@ -1,0 +1,118 @@
+@import '~bulma/bulma.sass';
+@import '../styles/mixins';
+@import '../styles/variables';
+
+@mixin custom-scroll-thin {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 1.5px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 3px;
+  }
+}
+
+.container {
+  max-width: 900px!important;
+}
+
+a.is-active {
+  text-decoration: underline;
+}
+
+textarea {
+  width: 80%;
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+.header {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $size-7;
+  }
+
+  .logo {
+    width: 4rem;
+    height: 4rem;
+    background: center /cover url('../assets/logo.png') no-repeat;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: $size-6;
+    }
+  }
+
+  .auth-controls {
+    .button + .button {
+      margin-left: 12px;
+    }
+  }
+}
+
+
+.content {
+  padding: $size-7;
+}
+
+.form {
+  width: 300px;
+  margin: 100px auto;
+  background-color: $light-purple;
+  color: $white;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin-top: 80px;
+}
+
+.title.is-3 {
+  color: $white;
+  font-size: 26px;
+}
+
+.table-container {
+  overflow: auto;
+  @include custom-scroll-thin;
+}
+
+.spinner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(#00d1b2, .25);
+    border-top-color: #00d1b2;
+    border-radius: 50%;
+    animation: spinner .8s infinite ease-out;
+  }
+}
+@keyframes spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
