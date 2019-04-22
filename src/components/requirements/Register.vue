@@ -24,65 +24,59 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-// import firebase from 'firebase';
+    import Vue from 'vue';
+    // import firebase from 'firebase';
+    // import firebase from 'firebase/app'
+    // import 'firebase/firestore'
+    import {Routes} from '@/router';
+    import firebase from '../../firebase/firebaseInit';
+    // import firebase from '../../firebase/firebaseConfig';
 
-// import firebase from 'firebase/app'
-// import 'firebase/firestore'
-
-import {Routes} from '@/router';
-import firebase from '../../firebase/firebaseInit';
-// import firebase from '../../firebase/firebaseConfig';
-
-
-
-
-
-
-export default Vue.extend({
-    name: 'register',
-    data() {
-        return {
-            email: '',
-            password: '',
-        };
-    },
-    methods: {
-        register() {
-            firebase
-                .auth()
-                .createUserWithEmailAndPassword(this.email, this.password)
-                .then(
-                    (credentials: firebase.auth.UserCredential) => {
-                        alert(`Account Created for ${credentials!.user!.email}`);
-                        this.$router.push({name: Routes.HOME });
-                    },
-                    (err: Error) => {
-                        alert(err.message);
-                    },
-                );
+    export default Vue.extend({
+        name: 'register',
+        data() {
+            return {
+                email: '',
+                password: '',
+            };
         },
-    },
-    // methods: {
-    //     register: function(e) {
-    //         firebase
-    //             .auth()
-    //             .createUserWithEmailAndPassword(this.email, this.password)
-    //             .then(
-    //                 user => {
-    //                     // console.log(user);
-    //                     alert(`Account Created for ${user.email}`);
-    //                     this.$router.go({ path: this.$router.path });
-    //                 },
-    //                 err => {
-    //                     alert(err.message);
-    //                 }
-    //             );
-    //         e.preventDefault();
-    //     }
-    // }
-});
+        methods: {
+            register() {
+                firebase
+                    .auth()
+                    .createUserWithEmailAndPassword(this.email, this.password)
+                    .then(
+                        (credentials: firebase.auth.UserCredential) => {
+                            alert(`Account Created for ${credentials!.user!.email}`);
+                            this.$router.push({name: Routes.HOME });
+                        },
+                        (err: Error) => {
+                            alert(err.message);
+                        },
+                    );
+            },
+        },
+        // methods: {
+        //     register: function(e) {
+        //         firebase
+        //             .auth()
+        //             .createUserWithEmailAndPassword(this.email, this.password)
+        //             .then(
+        //                 user => {
+        //                     // console.log(user);
+        //                     alert(`Account Created for ${user.email}`);
+        //                     this.$router.go({ path: this.$router.path });
+        //                 },
+        //                 err => {
+        //                     alert(err.message);
+        //                 }
+        //             );
+        //         e.preventDefault();
+        //     }
+        // }
+    });
 </script>
+
 
 <style lang="scss" scoped>
     @import '../../styles/mixins';

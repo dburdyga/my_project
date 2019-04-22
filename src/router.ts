@@ -24,49 +24,49 @@ const router = new Router({
       path: '/requirements',
       name: Routes.HOME,
       component: Requirements,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
     {
       path: '/',
       name: Routes.LOGIN,
       component: Login,
-      meta: {
-        requiresGuest: true,
-      },
+      // meta: {
+      //   requiresGuest: true,
+      // },
     },
     {
       path: '/register',
       name: Routes.REGISTER,
       component: Register,
-      meta: {
-        requiresGuest: true,
-      },
+      // meta: {
+      //   requiresGuest: true,
+      // },
     },
     {
       path: '/card',
       name: Routes.CARD,
       component: Card,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
     {
       path: '/estimatecard',
       name: 'estimatecard',
       component: EstimateCard,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
     {
       path: '/mergecard',
       name: 'mergecard',
       component: MergeCard,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
   ],
 });
