@@ -17,12 +17,12 @@
                         <th>Sub Tasks</th>
                         <th>Description</th>
                         <th>Effort</th>
-                        <!--<th>Estimator</th>-->
+                        <th>Estimator</th>
+                        <th>DVK</th>
+                        <th>IMP</th>
+                        <th>E-Test</th>
+                        <th>E-Test2</th>
                         <th>Completed</th>
-                        <!--<th>DVK</th>-->
-                        <!--<th>IMP</th>-->
-                        <!--<th>E-Test</th>-->
-                        <!--<th>E-Test2</th>-->
                     </tr>
                     </thead>
                     <tbody>
@@ -30,6 +30,11 @@
                         <td>{{ task.title }}</td>
                         <td>{{ task.description }}</td>
                         <td>{{ task.effort }}</td>
+                        <td>{{ task.estimator }}</td>
+                        <td>{{ task.dvk }}</td>
+                        <td>{{ task.imp }}</td>
+                        <td>{{ task.etest }}</td>
+                        <td>{{ task.etest2 }}</td>
                         <td>{{ task.completed }}</td>
                     </tr>
                     </tbody>

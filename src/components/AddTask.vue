@@ -7,6 +7,7 @@
             <div class="add-task-box box">
                 <div class="title is-3 has-text-centered">Add new task</div>
                 <form class="new-task-form">
+
                     <div class="field">
                         <label for="title">
                             Sub Tasks*
@@ -27,6 +28,7 @@
                             <span v-if="!$v.title.required">The title is required.</span>
                         </p>
                     </div>
+
                     <div class="field">
                         <label for="description">
                             Description*
@@ -65,6 +67,26 @@
                                 v-if="$v.effort.$dirty && $v.effort.$error"
                                 class="help is-danger">
                             <span v-if="!$v.effort.required">The effort is required.</span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label for="title">
+                            Estimator*
+                        </label>
+                        <div class="control">
+                            <input
+                                    class="input"
+                                    @blur="$v.estimator.$touch()"
+                                    :class="{'is-danger': $v.estimator.$error}"
+                                    v-model="estimator"
+                                    id="estimator"
+                                    type="text"
+                                    placeholder="Estimator">
+                        </div>
+                        <p
+                                v-if="$v.estimator.$dirty && $v.estimator.$error"
+                                class="help is-danger">
+                            <span v-if="!$v.estimator.required">The estimator is required.</span>
                         </p>
                     </div>
                     <div class="field">
