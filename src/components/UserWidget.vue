@@ -5,7 +5,7 @@
                 class="user-controls">
             <router-link
                     :to="{name: $routeNames.Account}"
-                    class="user-name is-small">
+                    class="user-name">
                 <div
                         class="user-logo"
                         :style="{backgroundImage: photoURLBg}"/>
@@ -13,18 +13,18 @@
             </router-link>
             <button
                     @click="logout"
-                    class="button is-outlined is-small is-danger">&#x2794;</button>
+                    class="button">Log out</button>
         </div>
-        <div
-                v-else
-                class="guest-controls">
-            <router-link
-                    :to="{name: $routeNames.Login}"
-                    class="button is-primary is-small" style="background-color:#ff6600; text-decoration: none;">Login</router-link>
-            <router-link
-                    :to="{name: $routeNames.Register}"
-                    class="button is-primary is-small" style="background-color:#ff6600; text-decoration: none;">Register</router-link>
-        </div>
+        <!--<div-->
+                <!--v-else-->
+                <!--class="guest-controls">-->
+            <!--<router-link-->
+                    <!--:to="{name: $routeNames.Login}"-->
+                    <!--class="button is-primary" style="background-color:#ff6600; text-decoration: none;">Login</router-link>-->
+            <!--<router-link-->
+                    <!--:to="{name: $routeNames.Register}"-->
+                    <!--class="button is-primary" style="background-color:#ff6600; text-decoration: none;">Register</router-link>-->
+        <!--</div>-->
     </section>
 
 </template>
@@ -70,24 +70,32 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/mixins';
+    @import '../styles/variables';
+
+    button {
+        background-color: $blue;
+        color: $white;
+        border: none;
+        border-radius: 3px;
+    }
     .user-controls {
         display: flex;
         align-items: center;
     }
-
     .user-logo {
         border-radius: 50%;
         width: 45px;
         height: 45px;
         margin-right: 12px;
-        border: 2px solid #00d1b2;
+        border: 3px solid $blue;
         display: block;
         background: center / cover no-repeat;
     }
-
     .user-name {
-        color: #00d1b2;
-        font-size: 14px;
+        color: $blue;
+        font-size: 16px;
+        font-weight: bold;
         margin-right: 12px;
         display: flex;
         align-items: center;

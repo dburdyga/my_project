@@ -2,6 +2,14 @@
 @import '../styles/mixins';
 @import '../styles/variables';
 
+.button.is-danger {
+  background-color: $orange;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 @mixin custom-scroll-thin {
   &::-webkit-scrollbar-track {
     background-color: transparent;
@@ -71,11 +79,13 @@ textarea {
 
 .title.is-2{
   color: $white;
+  font-size: 30px;
 }
 
 .content {
   padding: $size-7;
 }
+
 
 .form {
   width: 300px;
@@ -86,13 +96,14 @@ textarea {
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 15px;
   margin-top: 80px;
 }
 
 .title.is-3 {
   color: $white;
-  font-size: 26px;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .table-container {

@@ -81,8 +81,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/variables';
+
     .table {
         min-width: 380px;
+    }
+
+    .button.is-primary {
+        background-color: $orange;
     }
 
     .tasks-header {

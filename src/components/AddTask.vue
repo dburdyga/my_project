@@ -32,14 +32,14 @@
                             Description*
                         </label>
                         <div class="control">
-              <textarea
-                      class="input"
-                      @blur="$v.description.$touch()"
-                      :class="{'is-danger': $v.description.$error}"
-                      v-model="description"
-                      id="description"
-                      type="text"
-                      placeholder="Title"/>
+                            <input
+                              class="input"
+                              @blur="$v.description.$touch()"
+                              :class="{'is-danger': $v.description.$error}"
+                              v-model="description"
+                              id="description"
+                              type="text"
+                              placeholder="Description">
                         </div>
                         <p
                                 v-if="$v.description.$dirty && $v.description.$error"
@@ -140,7 +140,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/variables";
+
     .modal-content {
         max-width: 400px;
+    }
+    .add-task-box {
+        background-color: $light-purple;
+        color: $white;
+    }
+    .button.is-link {
+        background-color: $orange;
+        color: $white;
     }
 </style>

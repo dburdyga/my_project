@@ -8,8 +8,9 @@
                   :to="{name: $routeNames.Home}"
                   class="logo"/>
           <nav class="main-nav">
-            <router-link :to="{name: $routeNames.About}">Requirements</router-link>
-            <router-link disabled :to="{name: $routeNames.Tasks}">Tasks</router-link>
+            <router-link class="link" :to="{name: $routeNames.About}" v-if="!isLoginRoute">Requirements</router-link>
+            <router-link class="link" :to="{name: $routeNames.About}" v-if="!isLoginRoute">Cards</router-link>
+            <router-link class="link" disabled :to="{name: $routeNames.Tasks}" v-if="!isLoginRoute">Tasks</router-link>
           </nav>
           <div class="auth-controls">
             <UserWidget/>
@@ -27,19 +28,24 @@
 import Vue from 'vue';
 import Alerts from './views/Alerts.vue';
 import UserWidget from '@/components/UserWidget.vue';
+import {RouteNames} from "@/router/RouteNames";
 
 export default Vue.extend({
   components: {
     Alerts,
     UserWidget,
   },
+  computed: {
+    isLoginRoute(): boolean {
+      return this.$route.name === RouteNames.Login || this.$route.name === RouteNames.Register;
+    },
+  },
 });
 </script>
 
 
 <style lang="scss" scoped>
-
-  $middle-grey: #2c3e50;
+  @import "styles/variables";
 
   #app {
     min-height: 100vh;
@@ -48,6 +54,9 @@ export default Vue.extend({
     color: $middle-grey;
     background: linear-gradient(270deg, #48367d 30%, #241842 100%);
     background-size: cover;
+  }
+  .link {
+    color: $white;
   }
 </style>
 
