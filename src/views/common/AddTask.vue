@@ -1,34 +1,38 @@
 <template>
     <Modal @close="close">
         <form class="form">
-            <h3>Create new CR</h3>
+            <h3>Add tasks</h3>
             <table class="card-table">
                 <tr>
-                    <td>CRNumber</td>
+                    <td>Sub Tasks</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Title</td>
+                    <td>Description</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Project</td>
+                    <td>Effort</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Owner</td>
+                    <td>Estimator</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Version</td>
+                    <td>DVK</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Jira Link</td>
+                    <td>IMP</td>
                     <td><input type="text"/></td>
                 </tr>
                 <tr>
-                    <td>Created at</td>
+                    <td>E-Test</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>E-Test2</td>
                     <td><input type="text"/></td>
                 </tr>
             </table>
@@ -46,14 +50,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import Modal from './Modal.vue';
-import {TOOGLE_NEWCARD} from '@/store/mutation-types';
-
-
+import {TOOGLE_NEWTASK} from '../../store/mutation-types';
 export default Vue.extend({
     components: {Modal},
     methods: {
         close() {
-            this.$store.commit(TOOGLE_NEWCARD, false);
+            this.$store.commit(TOOGLE_NEWTASK, false);
         },
     },
 });
@@ -118,4 +120,6 @@ export default Vue.extend({
             display: flex;
         }
     }
+
 </style>
+

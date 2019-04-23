@@ -2,7 +2,7 @@
     <div class="tasks">
         <div class="container">
             <header class="tasks-header">
-                <h1 class="title is-1">Tasks</h1>
+                <h1 class="title is-2">Tasks</h1>
                 <button
                         class="button is-primary"
                         @click="addTask">Add Task</button>
@@ -17,6 +17,13 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Completed</th>
+                        <th>Effort</th>
+                        <!--<th>Estimator</th>-->
+                        <!--<th>DVK</th>-->
+                        <!--<th>IMP</th>-->
+                        <!--<th>E-Test</th>-->
+                        <!--<th>E-Test2</th>-->
+                        <!--<th>Actions</th>-->
                     </tr>
                     </thead>
                     <tbody>
@@ -24,6 +31,7 @@
                         <td>{{ task.title }}</td>
                         <td>{{ task.description }}</td>
                         <td>{{ task.completed }}</td>
+                        <td>{{ task.effort }}</td>
                     </tr>
                     </tbody>
                 </table>

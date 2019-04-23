@@ -3,7 +3,7 @@ import {ITask} from '@/common/interfaces/ITask';
 import {ADD_TASK, FINISH_TASK_CREATION, GET_TASKS, START_TASK_CREATION} from '@/store/tasks/action-types';
 import {TaskService} from '@/common/services/TaskService';
 import {
-    RESET_NEW_TASK, RESET_TASKS,
+    RESET_NEW_TASK, RESET_TASKS, UPDATE_NEW_TASK_EFFORT,
     UPDATE_NEW_TASK_COMPLETED,
     UPDATE_NEW_TASK_DESCRIPTION,
     UPDATE_NEW_TASK_TITLE,
@@ -11,7 +11,7 @@ import {
     UPDATE_TASKS, UPDATE_TASKS_LOADING,
 } from '@/store/tasks/mutation-types';
 import {
-    IS_TASK_CREATION_STARTED,
+    IS_TASK_CREATION_STARTED, NEW_TASK_EFFORT,
     NEW_TASK_COMPLETED,
     NEW_TASK_DESCRIPTION,
     NEW_TASK_TITLE,
@@ -32,6 +32,7 @@ const INITIAL_TASK: ITask = {
     title: '',
     description: '',
     completed: false,
+    effort: '',
 };
 
 const accountState: Module<ITasksState, {}> = {
@@ -99,6 +100,9 @@ const accountState: Module<ITasksState, {}> = {
         [UPDATE_NEW_TASK_DESCRIPTION](state, value: string) {
             state.newTask.description = value;
         },
+        [UPDATE_NEW_TASK_EFFORT](state, value: string) {
+            state.newTask.effort = value;
+        },
         [UPDATE_NEW_TASK_COMPLETED](state, value: boolean) {
             state.newTask.completed = value;
         },
@@ -127,6 +131,9 @@ const accountState: Module<ITasksState, {}> = {
         },
         [NEW_TASK_COMPLETED](state): boolean {
             return state.newTask.completed;
+        },
+        [NEW_TASK_EFFORT](state): string {
+            return state.newTask.effort;
         },
     },
 };

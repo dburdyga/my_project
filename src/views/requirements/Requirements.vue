@@ -94,7 +94,7 @@ import {FETCH_REQUIREMENTS} from '../../store/action-types';
 import ISort from '../../shared/interfaces/ISort';
 import IRequirement from '../../shared/interfaces/IRequirement';
 import Util from '../../shared/Util';
-import {TOOGLE_NEWCARD} from '@/store/mutation-types';
+import {TOOGLE_NEWCARD} from '../../store/mutation-types';
 
 Vue.use(Vuetify);
 

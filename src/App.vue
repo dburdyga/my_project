@@ -8,7 +8,7 @@
                   :to="{name: $routeNames.Home}"
                   class="logo"/>
           <nav class="main-nav">
-            <router-link :to="{name: $routeNames.About}">About</router-link>
+            <router-link :to="{name: $routeNames.About}">Requirements</router-link>
             <router-link disabled :to="{name: $routeNames.Tasks}">Tasks</router-link>
           </nav>
           <div class="auth-controls">
@@ -24,17 +24,16 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import Alerts from './views/Alerts.vue';
-  import UserWidget from '@/components/UserWidget.vue';
+import Vue from 'vue';
+import Alerts from './views/Alerts.vue';
+import UserWidget from '@/components/UserWidget.vue';
 
-  export default Vue.extend({
-    components: {
-      Alerts,
-      UserWidget
-    }
-  });
-
+export default Vue.extend({
+  components: {
+    Alerts,
+    UserWidget,
+  },
+});
 </script>
 
 

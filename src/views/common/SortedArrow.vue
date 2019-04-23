@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ISort from '@/shared/interfaces/ISort';
-import IRequirement from '@/shared/interfaces/IRequirement';
+import ISort from '../../shared/interfaces/ISort';
+import IRequirement from '../../shared/interfaces/IRequirement';
 
 export default Vue.extend({
     data() {
