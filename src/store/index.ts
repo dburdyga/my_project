@@ -9,7 +9,7 @@ import {RouteNames} from '@/router/RouteNames';
 import {RequirementsService} from '@/common/services/RequirementsService';
 import {FETCH_REQUIREMENTS} from '@/store/action-types';
 import {REQUIREMENTS} from '@/store/getter-types';
-import {SET_REQUIREMENTS, TOOGLE_SIDEBAR} from '@/store/mutation-types';
+import {SET_REQUIREMENTS} from '@/store/mutation-types';
 
 
 Vue.use(Vuex);
@@ -60,7 +60,7 @@ export default new Vuex.Store({
         },
         doLogin({ commit }) {
             commit('loginStart');
-            router.push({name: Routes.HOME});
+            router.push({name: RouteNames.Home});
         },
     },
 });

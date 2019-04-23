@@ -139,14 +139,14 @@
             requirementsTotal(): number {
                 return this.$store.getters[REQUIREMENTS].length;
             },
-            show: {
-                get(): boolean {
-                    return this.$store.getters[NEW_CARD_VISIBLE];
-                },
-                set(value: boolean) {
-                    this.$store.commit(TOOGLE_NEWCARD, value);
-                },
-            },
+            // show: {
+            //     get(): boolean {
+            //         return this.$store.getters[NEW_CARD_VISIBLE];
+            //     },
+            //     set(value: boolean) {
+            //         this.$store.commit(TOOGLE_NEWCARD, value);
+            //     },
+            // },
         },
         components: {
             Pagination,

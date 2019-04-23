@@ -13,7 +13,7 @@
           </nav>
           <div class="auth-controls">
             <UserWidget/>
-            <Sidebar/>
+            <!--<Sidebar/>-->
           </div>
         </div>
       </div>

@@ -8,17 +8,14 @@
                 <div class="cross" v-on:click="show = !show">
                     <img src="../assets/cross.png" alt="cross icon" class="cross-img">
                 </div>
-                <div class="sidebar-content">
+                <!--<div class="sidebar-content">-->
                     <!--<router-link to="/list">-->
-                        <!--<div class="sidebar-item">List</div>-->
+                        <!--<div class="sidebar-item">Requirements</div>-->
                     <!--</router-link>-->
                     <!--<router-link to="/card">-->
-                        <!--<div class="sidebar-item">Card</div>-->
+                        <!--<div class="sidebar-item">Tasks</div>-->
                     <!--</router-link>-->
-                    <!--<router-link to="/">-->
-                        <!--<div class="sidebar-item">Logout</div>-->
-                    <!--</router-link>-->
-                </div>
+                <!--</div>-->
             </div>
         </transition>
     </div>
