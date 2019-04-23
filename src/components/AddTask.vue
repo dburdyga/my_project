@@ -9,7 +9,7 @@
                 <form class="new-task-form">
                     <div class="field">
                         <label for="title">
-                            Title*
+                            Sub Tasks*
                         </label>
                         <div class="control">
                             <input

@@ -14,24 +14,23 @@
                         class="table">
                     <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Sub Tasks</th>
                         <th>Description</th>
-                        <th>Completed</th>
                         <th>Effort</th>
                         <!--<th>Estimator</th>-->
+                        <th>Completed</th>
                         <!--<th>DVK</th>-->
                         <!--<th>IMP</th>-->
                         <!--<th>E-Test</th>-->
                         <!--<th>E-Test2</th>-->
-                        <!--<th>Actions</th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="task in tasks">
                         <td>{{ task.title }}</td>
                         <td>{{ task.description }}</td>
-                        <td>{{ task.completed }}</td>
                         <td>{{ task.effort }}</td>
+                        <td>{{ task.completed }}</td>
                     </tr>
                     </tbody>
                 </table>
