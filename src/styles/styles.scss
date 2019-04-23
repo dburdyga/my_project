@@ -53,11 +53,13 @@ textarea {
     justify-content: space-between;
     align-items: center;
     padding: $size-7;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .logo {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background: center /cover url('../assets/logo.png') no-repeat;
   }
 
@@ -107,6 +109,7 @@ textarea {
 }
 
 .table-container {
+  background-color: $white;
   overflow: auto;
   @include custom-scroll-thin;
 }
@@ -121,7 +124,7 @@ textarea {
     width: 36px;
     height: 36px;
     border: 3px solid rgba(#00d1b2, .25);
-    border-top-color: #00d1b2;
+    border-top-color: $blue;
     border-radius: 50%;
     animation: spinner .8s infinite ease-out;
   }
@@ -131,7 +134,13 @@ textarea {
   to { transform: rotate(360deg); }
 }
 
+.content table thead th {
+  color: $purple;
+}
 
+.content table td {
+  color: $light-purple;
+}
 //header {
 //  margin-bottom: 35px;
 //}
@@ -151,11 +160,6 @@ textarea {
 //  &:hover {
 //    background-color: $orange-grey;
 //  }
-//}
-//h3 {
-//  font-family: "Source Sans Pro", sans-serif;
-//  margin: 8px;
-//  color: $white;
 //}
 //h2 {
 //  font-family: "Source Sans Pro", sans-serif;

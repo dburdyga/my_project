@@ -4,16 +4,14 @@
     <header class="header">
       <div class="container">
         <div class="inner">
-          <router-link
-                  :to="{name: $routeNames.Home}"
-                  class="logo"/>
+          <div class="logo"></div>
           <nav class="main-nav">
             <router-link class="link" :to="{name: $routeNames.About}" v-if="!isLoginRoute">Requirements</router-link>
-            <router-link class="link" disabled :to="{name: $routeNames.Tasks}" v-if="!isLoginRoute">Tasks</router-link>
+            <router-link class="link" :to="{name: $routeNames.Home}" v-if="!isLoginRoute">Cards</router-link>
+            <router-link class="link" :to="{name: $routeNames.Tasks}" v-if="!isLoginRoute">Tasks</router-link>
           </nav>
           <div class="auth-controls">
             <UserWidget/>
-            <!--<Sidebar/>-->
           </div>
         </div>
       </div>
@@ -28,14 +26,12 @@
 import Vue from 'vue';
 import Alerts from './views/Alerts.vue';
 import UserWidget from '@/components/UserWidget.vue';
-import Sidebar from './views/Sidebar.vue'
 import {RouteNames} from '@/router/RouteNames';
 
 export default Vue.extend({
   components: {
     Alerts,
     UserWidget,
-    Sidebar,
   },
   computed: {
     isLoginRoute(): boolean {

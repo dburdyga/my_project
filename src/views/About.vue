@@ -173,6 +173,8 @@
     @import '../styles/variables';
 
     .list {
+        background-color: transparent;
+        border: none;
         margin: 0rem 5rem 0rem;
         @include mobile {
             margin: 20px 20px 0px;
@@ -184,6 +186,11 @@
         text-align: center;
         padding: 5px;
         padding-bottom: 0px;
+    }
+    .vue-title {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 8px;
+        color: $white;
     }
     .link {
         border: none;
