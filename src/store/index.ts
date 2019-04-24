@@ -60,7 +60,7 @@ export default new Vuex.Store({
         },
         doLogin({ commit }) {
             commit('loginStart');
-            router.push({name: RouteNames.Cards});
+            index.push({name: RouteNames.Cards});
         },
     },
 });

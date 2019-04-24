@@ -9,8 +9,6 @@ import {UtilService} from '@/common/services/UtilService';
 import {UPDATE_CURRENT_USER} from '@/store/auth/mutation-types';
 
 
-
-
 const config = {
     apiKey: 'AIzaSyC7JkmYFlHfJihdYKcaEShshQyY034E-vg',
     authDomain: 'frontend-school.firebaseapp.com',
@@ -26,6 +24,9 @@ const firebaseApp = firebase.initializeApp(config);
 export const db = firebase.firestore(firebaseApp);
 export const auth = firebase.auth(firebaseApp);
 export const storage = firebase.storage(firebaseApp);
+
+
+
 
 // update current user when the auth state changes
 // and redirect to appropriate page
