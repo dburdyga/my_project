@@ -8,4 +8,5 @@ export const NEW_TASK_EFFORT = 'NEW_TASK_EFFORT';
 export const NEW_TASK_ESTIMATOR = 'NEW_TASK_ESTIMATOR';
 export const NEW_TASK_DVK = 'NEW_TASK_DVK';
 export const NEW_TASK_IMP = 'NEW_TASK_IMP';
+export const NEW_TASK_ETEST = 'NEW_TASK_ETEST';
 

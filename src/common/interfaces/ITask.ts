@@ -8,4 +8,5 @@ export interface ITask {
     estimator: string;
     dvk: string;
     imp: string;
+    etest: string;
 }

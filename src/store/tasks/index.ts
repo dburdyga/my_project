@@ -11,6 +11,7 @@ import {
     UPDATE_TASK_CREATION_STARTED,
     UPDATE_TASKS, UPDATE_TASKS_LOADING, UPDATE_NEW_TASK_ESTIMATOR,
     UPDATE_NEW_TASK_IMP,
+    UPDATE_NEW_TASK_ETEST,
 } from '@/store/tasks/mutation-types';
 import {
     IS_TASK_CREATION_STARTED, NEW_TASK_EFFORT,
@@ -19,6 +20,7 @@ import {
     NEW_TASK_TITLE,
     NEW_TASK_DVK,
     TASKS, TASKS_LOADING, NEW_TASK_ESTIMATOR, NEW_TASK_IMP,
+    NEW_TASK_ETEST,
 } from '@/store/tasks/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
@@ -39,6 +41,7 @@ const INITIAL_TASK: ITask = {
     estimator: '',
     dvk: '',
     imp: '',
+    etest: '',
 };
 
 const accountState: Module<ITasksState, {}> = {
@@ -112,6 +115,9 @@ const accountState: Module<ITasksState, {}> = {
         [UPDATE_NEW_TASK_ESTIMATOR](state, value: string) {
             state.newTask.estimator = value;
         },
+        [UPDATE_NEW_TASK_ETEST](state, value: string) {
+            state.newTask.etest = value;
+        },
         [UPDATE_NEW_TASK_DVK](state, value: string) {
             state.newTask.dvk = value;
         },
@@ -149,6 +155,9 @@ const accountState: Module<ITasksState, {}> = {
         },
         [NEW_TASK_EFFORT](state): string {
             return state.newTask.effort;
+        },
+        [NEW_TASK_ETEST](state): string {
+            return state.newTask.etest;
         },
         [NEW_TASK_DVK](state): string {
             return state.newTask.dvk;

@@ -20,9 +20,8 @@
                         <th>Estimator</th>
                         <th>DVK</th>
                         <th>IMP</th>
-                        <!--<th>E-Test</th>-->
-                        <!--<th>E-Test2</th>-->
-                        <!--<th>Completed</th>-->
+                        <th>E-Test</th>
+                        <th>Completed</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -33,9 +32,8 @@
                         <td>{{ task.estimator }}</td>
                         <td>{{ task.dvk }}</td>
                         <td>{{ task.imp }}</td>
-                        <!--<td>{{ task.etest }}</td>-->
-                        <!--<td>{{ task.etest2 }}</td>-->
-                        <!--<td>{{ task.completed }}</td>-->
+                        <td>{{ task.etest }}</td>
+                        <td>{{ task.completed }}</td>
                     </tr>
                     </tbody>
                 </table>
