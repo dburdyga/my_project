@@ -5,4 +5,5 @@ export interface ITask {
     description: string;
     completed: boolean;
     effort: string;
+    estimator: string;
 }

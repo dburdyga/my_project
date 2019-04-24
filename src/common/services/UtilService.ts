@@ -15,7 +15,7 @@ export class UtilService {
     public static getRedirectPath(route: Route): RawLocation {
         return route.query.redirect ?
             route.query.redirect as string :
-            { name: RouteNames.Home };
+            { name: RouteNames.Cards };
     }
 
     public static readAsDataUrl(file: File): Promise<string> {
