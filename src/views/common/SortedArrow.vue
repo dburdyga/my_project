@@ -1,6 +1,7 @@
 <template>
     <div
         :class="{'active': reversed}"
+        style="float: right;"
         @click="toogleSorting">
         <img class="arrow active" src="../../assets/triangle.png" alt="arrow">
     </div>
@@ -41,6 +42,6 @@ export default Vue.extend({
         width: 20px;
     }
     .active {
-        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
     }
 </style>
