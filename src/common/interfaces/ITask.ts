@@ -6,4 +6,6 @@ export interface ITask {
     completed: boolean;
     effort: string;
     estimator: string;
+    dvk: string;
+    imp: string;
 }

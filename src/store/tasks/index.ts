@@ -7,15 +7,18 @@ import {
     UPDATE_NEW_TASK_COMPLETED,
     UPDATE_NEW_TASK_DESCRIPTION,
     UPDATE_NEW_TASK_TITLE,
+    UPDATE_NEW_TASK_DVK,
     UPDATE_TASK_CREATION_STARTED,
     UPDATE_TASKS, UPDATE_TASKS_LOADING, UPDATE_NEW_TASK_ESTIMATOR,
+    UPDATE_NEW_TASK_IMP,
 } from '@/store/tasks/mutation-types';
 import {
     IS_TASK_CREATION_STARTED, NEW_TASK_EFFORT,
     NEW_TASK_COMPLETED,
     NEW_TASK_DESCRIPTION,
     NEW_TASK_TITLE,
-    TASKS, TASKS_LOADING, NEW_TASK_ESTIMATOR,
+    NEW_TASK_DVK,
+    TASKS, TASKS_LOADING, NEW_TASK_ESTIMATOR, NEW_TASK_IMP,
 } from '@/store/tasks/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
@@ -34,6 +37,8 @@ const INITIAL_TASK: ITask = {
     completed: false,
     effort: '',
     estimator: '',
+    dvk: '',
+    imp: '',
 };
 
 const accountState: Module<ITasksState, {}> = {
@@ -107,6 +112,12 @@ const accountState: Module<ITasksState, {}> = {
         [UPDATE_NEW_TASK_ESTIMATOR](state, value: string) {
             state.newTask.estimator = value;
         },
+        [UPDATE_NEW_TASK_DVK](state, value: string) {
+            state.newTask.dvk = value;
+        },
+        [UPDATE_NEW_TASK_IMP](state, value: string) {
+            state.newTask.imp = value;
+        },
         [UPDATE_NEW_TASK_COMPLETED](state, value: boolean) {
             state.newTask.completed = value;
         },
@@ -139,8 +150,14 @@ const accountState: Module<ITasksState, {}> = {
         [NEW_TASK_EFFORT](state): string {
             return state.newTask.effort;
         },
+        [NEW_TASK_DVK](state): string {
+            return state.newTask.dvk;
+        },
         [NEW_TASK_ESTIMATOR](state): string {
             return state.newTask.estimator;
+        },
+        [NEW_TASK_IMP](state): string {
+            return state.newTask.imp;
         },
     },
 };
