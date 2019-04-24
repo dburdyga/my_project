@@ -63,6 +63,12 @@ export default Vue.extend({
     @import '../../styles/mixins';
     @import '../../styles/variables';
 
+    .pagination {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .pagination-button {
         font-family: "Source Sans Pro", sans-serif;
         background: $orange;

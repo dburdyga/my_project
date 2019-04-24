@@ -83,7 +83,7 @@
     import Vuetify from 'vuetify';
     import Pagination from '../views/common/Pagination.vue';
     import SortedArrow from '../views/common/SortedArrow.vue';
-    import {NEW_CARD_VISIBLE, REQUIREMENTS} from '@/store/getter-types';
+    import {REQUIREMENTS} from '@/store/getter-types';
     import {FETCH_REQUIREMENTS} from '@/store/action-types';
     import ISort from '../shared/interfaces/ISort';
     import IRequirement from '../shared/interfaces/IRequirement';
