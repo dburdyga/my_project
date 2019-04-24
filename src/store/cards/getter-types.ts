@@ -1,0 +1,6 @@
+export const CARDS = 'CARDS';
+export const CARDS_LOADING = 'CARDS_LOADING';
+export const IS_CARD_CREATION_STARTED = 'IS_CARD_CREATION_STARTED';
+// export const NEW_TASK_TITLE = 'NEW_TASK_TITLE';
+
+

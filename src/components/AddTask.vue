@@ -35,13 +35,13 @@
                         </label>
                         <div class="control">
                             <input
-                              class="input"
-                              @blur="$v.description.$touch()"
-                              :class="{'is-danger': $v.description.$error}"
-                              v-model="description"
-                              id="description"
-                              type="text"
-                              placeholder="Description">
+                                    class="input"
+                                    @blur="$v.description.$touch()"
+                                    :class="{'is-danger': $v.description.$error}"
+                                    v-model="description"
+                                    id="description"
+                                    type="text"
+                                    placeholder="Description">
                         </div>
                         <p
                                 v-if="$v.description.$dirty && $v.description.$error"
@@ -183,54 +183,54 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {mapActions} from 'vuex';
-import {ADD_TASK, FINISH_TASK_CREATION} from '../store/tasks/action-types';
-import {required} from 'vuelidate/lib/validators';
-import {UtilService} from '../common/services/UtilService';
-import {NEW_TASK_ESTIMATOR, NEW_TASK_ETEST, NEW_TASK_IMP, NEW_TASK_DVK, NEW_TASK_EFFORT, NEW_TASK_COMPLETED, NEW_TASK_DESCRIPTION, NEW_TASK_TITLE} from '../store/tasks/getter-types';
-import {
-    UPDATE_NEW_TASK_EFFORT,
-    UPDATE_NEW_TASK_ETEST,
-    UPDATE_NEW_TASK_DVK,
-    UPDATE_NEW_TASK_COMPLETED,
-    UPDATE_NEW_TASK_DESCRIPTION,
-    UPDATE_NEW_TASK_TITLE,
-    UPDATE_NEW_TASK_ESTIMATOR,
-    UPDATE_NEW_TASK_IMP,
-} from '../store/tasks/mutation-types';
+    import Vue from 'vue';
+    import {mapActions} from 'vuex';
+    import {ADD_TASK, FINISH_TASK_CREATION} from '../store/tasks/action-types';
+    import {required} from 'vuelidate/lib/validators';
+    import {UtilService} from '../common/services/UtilService';
+    import {NEW_TASK_ESTIMATOR, NEW_TASK_ETEST, NEW_TASK_IMP, NEW_TASK_DVK, NEW_TASK_EFFORT, NEW_TASK_COMPLETED, NEW_TASK_DESCRIPTION, NEW_TASK_TITLE} from '../store/tasks/getter-types';
+    import {
+        UPDATE_NEW_TASK_EFFORT,
+        UPDATE_NEW_TASK_ETEST,
+        UPDATE_NEW_TASK_DVK,
+        UPDATE_NEW_TASK_COMPLETED,
+        UPDATE_NEW_TASK_DESCRIPTION,
+        UPDATE_NEW_TASK_TITLE,
+        UPDATE_NEW_TASK_ESTIMATOR,
+        UPDATE_NEW_TASK_IMP,
+    } from '../store/tasks/mutation-types';
 
-export default Vue.extend({
-    computed: {
-        title: UtilService.mapTwoWay<string>(NEW_TASK_TITLE, UPDATE_NEW_TASK_TITLE),
-        description: UtilService.mapTwoWay<string>(NEW_TASK_DESCRIPTION, UPDATE_NEW_TASK_DESCRIPTION),
-        completed: UtilService.mapTwoWay<string>(NEW_TASK_COMPLETED, UPDATE_NEW_TASK_COMPLETED),
-        effort: UtilService.mapTwoWay<string>(NEW_TASK_EFFORT, UPDATE_NEW_TASK_EFFORT),
-        estimator: UtilService.mapTwoWay<string>(NEW_TASK_ESTIMATOR, UPDATE_NEW_TASK_ESTIMATOR),
-        dvk: UtilService.mapTwoWay<string>(NEW_TASK_DVK, UPDATE_NEW_TASK_DVK),
-        imp: UtilService.mapTwoWay<string>(NEW_TASK_IMP, UPDATE_NEW_TASK_IMP),
-        etest: UtilService.mapTwoWay<string>(NEW_TASK_ETEST, UPDATE_NEW_TASK_ETEST),
-    },
-    methods: {
-        ...mapActions({
-            finishTaskCreation: FINISH_TASK_CREATION,
-        }),
-        addTask() {
-            if (!this.$v.$invalid) {
-                this.$store.dispatch(ADD_TASK);
-            }
+    export default Vue.extend({
+        computed: {
+            title: UtilService.mapTwoWay<string>(NEW_TASK_TITLE, UPDATE_NEW_TASK_TITLE),
+            description: UtilService.mapTwoWay<string>(NEW_TASK_DESCRIPTION, UPDATE_NEW_TASK_DESCRIPTION),
+            completed: UtilService.mapTwoWay<string>(NEW_TASK_COMPLETED, UPDATE_NEW_TASK_COMPLETED),
+            effort: UtilService.mapTwoWay<string>(NEW_TASK_EFFORT, UPDATE_NEW_TASK_EFFORT),
+            estimator: UtilService.mapTwoWay<string>(NEW_TASK_ESTIMATOR, UPDATE_NEW_TASK_ESTIMATOR),
+            dvk: UtilService.mapTwoWay<string>(NEW_TASK_DVK, UPDATE_NEW_TASK_DVK),
+            imp: UtilService.mapTwoWay<string>(NEW_TASK_IMP, UPDATE_NEW_TASK_IMP),
+            etest: UtilService.mapTwoWay<string>(NEW_TASK_ETEST, UPDATE_NEW_TASK_ETEST),
         },
-    },
-    validations: {
-        title: {required},
-        description: {required},
-        effort: {required},
-        estimator: {required},
-        dvk: {required},
-        imp: {required},
-        etest: {required},
-    },
-});
+        methods: {
+            ...mapActions({
+                finishTaskCreation: FINISH_TASK_CREATION,
+            }),
+            addTask() {
+                if (!this.$v.$invalid) {
+                    this.$store.dispatch(ADD_TASK);
+                }
+            },
+        },
+        validations: {
+            title: {required},
+            description: {required},
+            effort: {required},
+            estimator: {required},
+            dvk: {required},
+            imp: {required},
+            etest: {required},
+        },
+    });
 </script>
 
 <style lang="scss" scoped>
