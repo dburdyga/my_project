@@ -48,16 +48,24 @@
                         </p>
                     </div>
                     <div class="field">
-                        <label for="title">
-                            Completed*
+                        <label for="jiraLink">
+                            Jira Link*
                         </label>
                         <div class="control">
-                            <button
-                                    @click="completed = !completed"
-                                    :class="completed ? 'is-primary' : 'is-danger'"
-                                    class="button"
-                                    type="button">{{ completed ? '&#x2611;' : '&#x2610;' }}</button>
+                            <input
+                                    class="input"
+                                    @blur="$v.jiraLink.$touch()"
+                                    :class="{'is-danger': $v.jiraLink.$error}"
+                                    v-model="jiraLink"
+                                    id="jiraLink"
+                                    type="text"
+                                    placeholder="Jira Link">
                         </div>
+                        <p
+                                v-if="$v.jiraLink.$dirty && $v.jiraLink.$error"
+                                class="help is-danger">
+                            <span v-if="!$v.jiraLink.required">The jiraLink is required.</span>
+                        </p>
                     </div>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
@@ -86,16 +94,16 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE, NEW_CARD_COMPLETED, NEW_CARD_CRNUMBER} from '../store/cards/getter-types';
+    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER} from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
-        UPDATE_NEW_CARD_COMPLETED, UPDATE_NEW_CARD_CRNUMBER,
+        UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,
     } from '../store/cards/mutation-types';
 
     export default Vue.extend({
         computed: {
             title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
-            completed: UtilService.mapTwoWay<string>(NEW_CARD_COMPLETED, UPDATE_NEW_CARD_COMPLETED),
+            jiraLink: UtilService.mapTwoWay<string>(NEW_CARD_JIRALINK, UPDATE_NEW_CARD_JIRALINK),
             crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
         },
         methods: {
@@ -111,6 +119,7 @@
         validations: {
             title: {required},
             crNumber: {required},
+            jiraLink: {required},
         },
     });
 </script>

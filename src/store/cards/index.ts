@@ -7,14 +7,14 @@ import {
     UPDATE_NEW_CARD_TITLE,
     UPDATE_CARD_CREATION_STARTED,
     UPDATE_CARDS, UPDATE_CARDS_LOADING,
-    UPDATE_NEW_CARD_COMPLETED,
+    UPDATE_NEW_CARD_JIRALINK,
     UPDATE_NEW_CARD_CRNUMBER,
 } from '@/store/cards/mutation-types';
 import {
     IS_CARD_CREATION_STARTED,
     NEW_CARD_TITLE,
     CARDS, CARDS_LOADING,
-    NEW_CARD_COMPLETED,
+    NEW_CARD_JIRALINK,
     NEW_CARD_CRNUMBER,
 } from '@/store/cards/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
@@ -33,7 +33,6 @@ const INITIAL_CARD: ICard = {
     title: '',
     crNumber: '',
     jiraLink: '',
-    completed: false,
 };
 
 const accountState: Module<ICardsState, {}> = {
@@ -104,10 +103,10 @@ const accountState: Module<ICardsState, {}> = {
         [RESET_CARDS](state) {
             state.cards = [];
         },
-        [UPDATE_NEW_CARD_COMPLETED](state, value: boolean) {
-            state.newCard.completed = value;
+        [UPDATE_NEW_CARD_JIRALINK](state, value: string) {
+            state.newCard.jiraLink = value;
         },
-        [UPDATE_NEW_CARD_CRNUMBER](state, value: boolean) {
+        [UPDATE_NEW_CARD_CRNUMBER](state, value: string) {
             state.newCard.crNumber = value;
         },
     },
@@ -124,8 +123,8 @@ const accountState: Module<ICardsState, {}> = {
         [IS_CARD_CREATION_STARTED](state): boolean {
             return state.isCardCreationStarted;
         },
-        [NEW_CARD_COMPLETED](state): boolean {
-            return state.newCard.completed;
+        [NEW_CARD_JIRALINK](state): boolean {
+            return state.newCard.jiraLink;
         },
         [NEW_CARD_CRNUMBER](state): boolean {
             return state.newCard.crNumber;

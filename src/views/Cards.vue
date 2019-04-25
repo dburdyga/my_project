@@ -14,16 +14,16 @@
                         class="table">
                     <thead>
                     <tr>
-                        <th>Title</th>
                         <th>CR Number</th>
-                        <th>Completed</th>
+                        <th>Title</th>
+                        <th>Jira Link</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="card in cards">
-                        <td>{{ card.title }}</td>
                         <td>{{ card.crNumber }}</td>
-                        <td>{{ card.completed }}</td>
+                        <td>{{ card.title }}</td>
+                        <td>{{ card.jiraLink }}</td>
                     </tr>
                     </tbody>
                 </table>

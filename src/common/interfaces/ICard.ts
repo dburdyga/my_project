@@ -4,6 +4,5 @@ export interface ICard {
     title: string;
     crNumber: string;
     jiraLink: string;
-    completed: boolean;
 }
 
