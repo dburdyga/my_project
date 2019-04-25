@@ -7,7 +7,26 @@
             <div class="add-task-box box">
                 <div class="title is-3 has-text-centered">Create new CR</div>
                 <form class="new-task-form">
-
+                    <div class="field">
+                        <label for="crNumber">
+                            CR Number*
+                        </label>
+                        <div class="control">
+                            <input
+                                    class="input"
+                                    @blur="$v.crNumber.$touch()"
+                                    :class="{'is-danger': $v.crNumber.$error}"
+                                    v-model="crNumber"
+                                    id="crNumber"
+                                    type="text"
+                                    placeholder="CR Number">
+                        </div>
+                        <p
+                                v-if="$v.crNumber.$dirty && $v.crNumber.$error"
+                                class="help is-danger">
+                            <span v-if="!$v.crNumber.required">The crNumber is required.</span>
+                        </p>
+                    </div>
                     <div class="field">
                         <label for="title">
                             Title*
@@ -67,17 +86,17 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE, NEW_CARD_COMPLETED} from '../store/cards/getter-types';
+    import {NEW_CARD_TITLE, NEW_CARD_COMPLETED, NEW_CARD_CRNUMBER} from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
-        UPDATE_NEW_CARD_COMPLETED,
-
+        UPDATE_NEW_CARD_COMPLETED, UPDATE_NEW_CARD_CRNUMBER,
     } from '../store/cards/mutation-types';
 
     export default Vue.extend({
         computed: {
             title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
             completed: UtilService.mapTwoWay<string>(NEW_CARD_COMPLETED, UPDATE_NEW_CARD_COMPLETED),
+            crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
         },
         methods: {
             ...mapActions({
@@ -91,6 +110,7 @@
         },
         validations: {
             title: {required},
+            crNumber: {required},
         },
     });
 </script>

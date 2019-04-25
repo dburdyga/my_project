@@ -8,18 +8,17 @@ import {
     UPDATE_CARD_CREATION_STARTED,
     UPDATE_CARDS, UPDATE_CARDS_LOADING,
     UPDATE_NEW_CARD_COMPLETED,
+    UPDATE_NEW_CARD_CRNUMBER,
 } from '@/store/cards/mutation-types';
 import {
     IS_CARD_CREATION_STARTED,
     NEW_CARD_TITLE,
     CARDS, CARDS_LOADING,
     NEW_CARD_COMPLETED,
+    NEW_CARD_CRNUMBER,
 } from '@/store/cards/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
-import {UPDATE_NEW_CARD_COMPLETED} from "@/store/cards/mutation-types";
-import {NEW_CARD_COMPLETED} from "@/store/cards/getter-types";
-
 
 
 interface ICardsState {
@@ -108,6 +107,9 @@ const accountState: Module<ICardsState, {}> = {
         [UPDATE_NEW_CARD_COMPLETED](state, value: boolean) {
             state.newCard.completed = value;
         },
+        [UPDATE_NEW_CARD_CRNUMBER](state, value: boolean) {
+            state.newCard.crNumber = value;
+        },
     },
     getters: {
         [CARDS](state): ICard[] {
@@ -124,6 +126,9 @@ const accountState: Module<ICardsState, {}> = {
         },
         [NEW_CARD_COMPLETED](state): boolean {
             return state.newCard.completed;
+        },
+        [NEW_CARD_CRNUMBER](state): boolean {
+            return state.newCard.crNumber;
         },
     },
 };
