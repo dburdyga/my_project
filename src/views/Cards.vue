@@ -22,7 +22,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="card in cards">
+                    <tr
+                            v-for="card in cards"
+                            style="cursor: pointer">
                         <td>{{ card.crNumber }}</td>
                         <td>{{ card.title }}</td>
                         <td>{{ card.project }}</td>
@@ -68,6 +70,7 @@
             ...mapActions({
                 getCards: GET_CARDS,
                 addCard: START_CARD_CREATION,
+                // openCard: OPEN_CARD,
             }),
             ...mapMutations({
                 resetCards: RESET_CARDS,
