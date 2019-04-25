@@ -22,15 +22,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr
-                            v-for="card in cards"
-                            style="cursor: pointer">
-                        <td>{{ card.crNumber }}</td>
-                        <td>{{ card.title }}</td>
-                        <td>{{ card.project }}</td>
-                        <td>{{ card.jiraLink }}</td>
-                        <td>{{ card.createdAt }}</td>
-                    </tr>
+                        <tr v-for="card in cards">
+                            <td>
+                                <router-link :to="{name: $routeNames.OpenCard}">
+                                    {{ card.crNumber }}
+                                </router-link>
+                            </td>
+                            <td>{{ card.title }}</td>
+                            <td>{{ card.project }}</td>
+                            <td>{{ card.jiraLink }}</td>
+                            <td>{{ card.createdAt }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
