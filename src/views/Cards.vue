@@ -24,7 +24,7 @@
                     <tbody>
                         <tr v-for="card in cards">
                             <td>
-                                <router-link :to="{name: $routeNames.OpenCard}">
+                                <router-link :to="{name: $routeNames.Card}">
                                     {{ card.crNumber }}
                                 </router-link>
                             </td>
@@ -72,7 +72,7 @@
             ...mapActions({
                 getCards: GET_CARDS,
                 addCard: START_CARD_CREATION,
-                // openCard: OPEN_CARD,
+                // openCard: CARD,
             }),
             ...mapMutations({
                 resetCards: RESET_CARDS,
