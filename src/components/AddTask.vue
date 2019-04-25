@@ -188,7 +188,13 @@
     import {ADD_TASK, FINISH_TASK_CREATION} from '../store/tasks/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_TASK_ESTIMATOR, NEW_TASK_ETEST, NEW_TASK_IMP, NEW_TASK_DVK, NEW_TASK_EFFORT, NEW_TASK_COMPLETED, NEW_TASK_DESCRIPTION, NEW_TASK_TITLE} from '../store/tasks/getter-types';
+    import {
+        NEW_TASK_ESTIMATOR,
+        NEW_TASK_ETEST,
+        NEW_TASK_IMP, NEW_TASK_DVK,
+        NEW_TASK_EFFORT, NEW_TASK_COMPLETED,
+        NEW_TASK_DESCRIPTION, NEW_TASK_TITLE
+    } from '../store/tasks/getter-types';
     import {
         UPDATE_NEW_TASK_EFFORT,
         UPDATE_NEW_TASK_ETEST,

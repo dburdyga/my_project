@@ -15,11 +15,13 @@
                     <thead>
                     <tr>
                         <th>Title</th>
+                        <th>Completed</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="card in cards">
                         <td>{{ card.title }}</td>
+                        <td>{{ card.completed }}</td>
                     </tr>
                     </tbody>
                 </table>

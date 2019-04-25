@@ -7,14 +7,18 @@ import {
     UPDATE_NEW_CARD_TITLE,
     UPDATE_CARD_CREATION_STARTED,
     UPDATE_CARDS, UPDATE_CARDS_LOADING,
+    UPDATE_NEW_CARD_COMPLETED,
 } from '@/store/cards/mutation-types';
 import {
     IS_CARD_CREATION_STARTED,
     NEW_CARD_TITLE,
     CARDS, CARDS_LOADING,
+    NEW_CARD_COMPLETED,
 } from '@/store/cards/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
+import {UPDATE_NEW_CARD_COMPLETED} from "@/store/cards/mutation-types";
+import {NEW_CARD_COMPLETED} from "@/store/cards/getter-types";
 
 
 
@@ -26,10 +30,11 @@ interface ICardsState {
 }
 
 const INITIAL_CARD: ICard = {
-    // userId: '',
+    userId: '',
     title: '',
-    // crNumber: '',
-    // jiraLink: ''
+    crNumber: '',
+    jiraLink: '',
+    completed: false,
 };
 
 const accountState: Module<ICardsState, {}> = {
@@ -100,6 +105,9 @@ const accountState: Module<ICardsState, {}> = {
         [RESET_CARDS](state) {
             state.cards = [];
         },
+        [UPDATE_NEW_CARD_COMPLETED](state, value: boolean) {
+            state.newCard.completed = value;
+        },
     },
     getters: {
         [CARDS](state): ICard[] {
@@ -113,6 +121,9 @@ const accountState: Module<ICardsState, {}> = {
         },
         [IS_CARD_CREATION_STARTED](state): boolean {
             return state.isCardCreationStarted;
+        },
+        [NEW_CARD_COMPLETED](state): boolean {
+            return state.newCard.completed;
         },
     },
 };

@@ -5,7 +5,7 @@
                 class="modal-background"></div>
         <div class="modal-content">
             <div class="add-task-box box">
-                <div class="title is-3 has-text-centered">Add new card</div>
+                <div class="title is-3 has-text-centered">Create new CR</div>
                 <form class="new-task-form">
 
                     <div class="field">
@@ -28,7 +28,18 @@
                             <span v-if="!$v.title.required">The title is required.</span>
                         </p>
                     </div>
-
+                    <div class="field">
+                        <label for="title">
+                            Completed*
+                        </label>
+                        <div class="control">
+                            <button
+                                    @click="completed = !completed"
+                                    :class="completed ? 'is-primary' : 'is-danger'"
+                                    class="button"
+                                    type="button">{{ completed ? '&#x2611;' : '&#x2610;' }}</button>
+                        </div>
+                    </div>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
                             <button
@@ -56,15 +67,17 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE} from '../store/cards/getter-types';
+    import {NEW_CARD_TITLE, NEW_CARD_COMPLETED} from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
+        UPDATE_NEW_CARD_COMPLETED,
 
     } from '../store/cards/mutation-types';
 
     export default Vue.extend({
         computed: {
             title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
+            completed: UtilService.mapTwoWay<string>(NEW_CARD_COMPLETED, UPDATE_NEW_CARD_COMPLETED),
         },
         methods: {
             ...mapActions({
