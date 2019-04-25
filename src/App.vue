@@ -6,9 +6,9 @@
         <div class="inner">
           <div class="logo"></div>
           <nav class="main-nav">
-            <router-link class="link" :to="{name: $routeNames.Cards}" v-if="!isLoginRoute">Cards</router-link>
+            <router-link class="link" :to="{name: $routeNames.Cards}" v-if="!isLoginRoute">Requirements</router-link>
             <router-link class="link" :to="{name: $routeNames.Tasks}" v-if="!isLoginRoute">Tasks</router-link>
-            <router-link class="link" :to="{name: $routeNames.Requirements}" v-if="!isLoginRoute">Requirements</router-link>
+            <!--<router-link class="link" :to="{name: $routeNames.Requirements}" v-if="!isLoginRoute">Requirements</router-link>-->
           </nav>
           <div class="auth-controls">
             <UserWidget/>

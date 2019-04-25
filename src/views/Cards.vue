@@ -2,7 +2,7 @@
     <div class="tasks">
         <div class="container">
             <header class="tasks-header">
-                <h1 class="title is-2">Cards</h1>
+                <h1 class="title is-2">Requirements</h1>
                 <button
                         class="button is-primary"
                         @click="addCard">Create new CR</button>
