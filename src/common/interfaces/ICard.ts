@@ -3,6 +3,7 @@ export interface ICard {
     userId: string;
     title: string;
     crNumber: string;
+    project: string;
     jiraLink: string;
 }
 

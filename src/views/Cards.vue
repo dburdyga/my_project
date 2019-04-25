@@ -16,14 +16,18 @@
                     <tr>
                         <th>CR Number</th>
                         <th>Title</th>
+                        <th>Project</th>
                         <th>Jira Link</th>
+                        <!--<th>Created at</th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="card in cards">
                         <td>{{ card.crNumber }}</td>
                         <td>{{ card.title }}</td>
+                        <td>{{ card.project }}</td>
                         <td>{{ card.jiraLink }}</td>
+                        <!--<td>{{ card.createdAt }}</td>-->
                     </tr>
                     </tbody>
                 </table>

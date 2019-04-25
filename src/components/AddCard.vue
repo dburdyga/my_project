@@ -48,6 +48,26 @@
                         </p>
                     </div>
                     <div class="field">
+                        <label for="project">
+                            Project*
+                        </label>
+                        <div class="control">
+                            <input
+                                    class="input"
+                                    @blur="$v.project.$touch()"
+                                    :class="{'is-danger': $v.project.$error}"
+                                    v-model="project"
+                                    id="project"
+                                    type="text"
+                                    placeholder="Project">
+                        </div>
+                        <p
+                                v-if="$v.project.$dirty && $v.project.$error"
+                                class="help is-danger">
+                            <span v-if="!$v.project.required">The project is required.</span>
+                        </p>
+                    </div>
+                    <div class="field">
                         <label for="jiraLink">
                             Jira Link*
                         </label>
@@ -94,15 +114,17 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER} from '../store/cards/getter-types';
+    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER, NEW_CARD_PROJECT} from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
         UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,
+        UPDATE_NEW_CARD_PROJECT,
     } from '../store/cards/mutation-types';
 
     export default Vue.extend({
         computed: {
             title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
+            project: UtilService.mapTwoWay<string>(NEW_CARD_PROJECT, UPDATE_NEW_CARD_PROJECT),
             jiraLink: UtilService.mapTwoWay<string>(NEW_CARD_JIRALINK, UPDATE_NEW_CARD_JIRALINK),
             crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
         },
@@ -119,6 +141,7 @@
         validations: {
             title: {required},
             crNumber: {required},
+            project: {required},
             jiraLink: {required},
         },
     });

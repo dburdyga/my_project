@@ -9,6 +9,7 @@ import {
     UPDATE_CARDS, UPDATE_CARDS_LOADING,
     UPDATE_NEW_CARD_JIRALINK,
     UPDATE_NEW_CARD_CRNUMBER,
+    UPDATE_NEW_CARD_PROJECT,
 } from '@/store/cards/mutation-types';
 import {
     IS_CARD_CREATION_STARTED,
@@ -16,6 +17,7 @@ import {
     CARDS, CARDS_LOADING,
     NEW_CARD_JIRALINK,
     NEW_CARD_CRNUMBER,
+    NEW_CARD_PROJECT,
 } from '@/store/cards/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
@@ -32,6 +34,7 @@ const INITIAL_CARD: ICard = {
     userId: '',
     title: '',
     crNumber: '',
+    project: '',
     jiraLink: '',
 };
 
@@ -109,6 +112,9 @@ const accountState: Module<ICardsState, {}> = {
         [UPDATE_NEW_CARD_CRNUMBER](state, value: string) {
             state.newCard.crNumber = value;
         },
+        [UPDATE_NEW_CARD_PROJECT](state, value: string) {
+            state.newCard.project = value;
+        },
     },
     getters: {
         [CARDS](state): ICard[] {
@@ -123,11 +129,14 @@ const accountState: Module<ICardsState, {}> = {
         [IS_CARD_CREATION_STARTED](state): boolean {
             return state.isCardCreationStarted;
         },
-        [NEW_CARD_JIRALINK](state): boolean {
+        [NEW_CARD_JIRALINK](state): string {
             return state.newCard.jiraLink;
         },
-        [NEW_CARD_CRNUMBER](state): boolean {
+        [NEW_CARD_CRNUMBER](state): string {
             return state.newCard.crNumber;
+        },
+        [NEW_CARD_PROJECT](state): string {
+            return state.newCard.project;
         },
     },
 };
