@@ -5,78 +5,64 @@
                 <h1 class="title is-2">Cards</h1>
                 <button
                         class="button is-primary"
-                        @click="addTask">Create new CR</button>
+                        @click="addCard">Create new CR</button>
             </header>
             <div
-                    v-if="tasks.length && !isLoading"
+                    v-if="cards.length && !isLoading"
                     class="table-container">
                 <table
                         class="table">
                     <thead>
                     <tr>
-                        <th>Sub Tasks</th>
-                        <th>Description</th>
-                        <th>Effort</th>
-                        <th>Estimator</th>
-                        <th>DVK</th>
-                        <th>IMP</th>
-                        <th>E-Test</th>
-                        <th>Completed</th>
+                        <th>Title</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="task in tasks">
-                        <td>{{ task.title }}</td>
-                        <td>{{ task.description }}</td>
-                        <td>{{ task.effort }}</td>
-                        <td>{{ task.estimator }}</td>
-                        <td>{{ task.dvk }}</td>
-                        <td>{{ task.imp }}</td>
-                        <td>{{ task.etest }}</td>
-                        <td>{{ task.completed }}</td>
+                    <tr v-for="card in cards">
+                        <td>{{ card.title }}</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <p v-else-if="!tasks.length && !isLoading">no tasks yet</p>
+            <p v-else-if="!cards.length && !isLoading">no cards yet</p>
             <div v-else class="spinner-container">
                 <div class="spinner"/>
             </div>
         </div>
-        <AddTask v-if="isTaskCreationStarted"/>
+        <AddCard v-if="isCardCreationStarted"/>
     </div>
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
     import {mapActions, mapGetters, mapMutations} from 'vuex';
-    import {IS_TASK_CREATION_STARTED, TASKS, TASKS_LOADING} from '../store/tasks/getter-types';
-    import {GET_TASKS, START_TASK_CREATION} from '../store/tasks/action-types';
-    import AddTask from '@/components/AddTask.vue';
-    import {RESET_TASKS} from '../store/tasks/mutation-types';
+    import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
+    import {GET_CARDS, START_CARD_CREATION} from '../store/cards/action-types';
+    import AddCard from '@/components/AddCard.vue';
+    import {RESET_CARDS} from '../store/cards/mutation-types';
 
     export default Vue.extend({
-        components: {AddTask},
+        components: {AddCard},
         created() {
-            this.getTasks();
+            this.getCards();
         },
         destroyed() {
-            this.resetTasks();
+            this.resetCards();
         },
         computed: {
             ...mapGetters({
-                tasks: TASKS,
-                isTaskCreationStarted: IS_TASK_CREATION_STARTED,
-                isLoading: TASKS_LOADING,
+                cards: CARDS,
+                isCardCreationStarted: IS_CARD_CREATION_STARTED,
+                isLoading: CARDS_LOADING,
             }),
         },
         methods: {
             ...mapActions({
-                getTasks: GET_TASKS,
-                addTask: START_TASK_CREATION,
+                getCards: GET_CARDS,
+                addCard: START_CARD_CREATION,
             }),
             ...mapMutations({
-                resetTasks: RESET_TASKS,
+                resetCards: RESET_CARDS,
             }),
         },
     });
@@ -88,11 +74,9 @@
     .table {
         min-width: 380px;
     }
-
     .button.is-primary {
         background-color: $orange;
     }
-
     .tasks-header {
         display: flex;
         width: 100%;

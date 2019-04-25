@@ -1,6 +1,21 @@
 import {Module} from 'vuex';
 import {ICard} from "@/common/interfaces/ICard";
-import {ADD_CARD, FINISH_CARD_CREATION} from "@/store/cards/action-types";
+import {ADD_CARD, FINISH_CARD_CREATION, GET_CARDS, START_CARD_CREATION} from '@/store/cards/action-types';
+import {CardService} from '@/common/services/CardService';
+import {
+    RESET_NEW_CARD, RESET_CARDS,
+    UPDATE_NEW_CARD_TITLE,
+    UPDATE_CARD_CREATION_STARTED,
+    UPDATE_CARDS, UPDATE_CARDS_LOADING,
+} from '@/store/cards/mutation-types';
+import {
+    IS_CARD_CREATION_STARTED,
+    NEW_CARD_TITLE,
+    CARDS, CARDS_LOADING,
+} from '@/store/cards/getter-types';
+import {ADD_ALERT} from '@/store/alert/action-types';
+import {AlertType} from '@/common/interfaces/IAlert';
+
 
 
 interface ICardsState {
@@ -11,10 +26,10 @@ interface ICardsState {
 }
 
 const INITIAL_CARD: ICard = {
-    userId: '',
+    // userId: '',
     title: '',
-    crNumber: '',
-    jiraLink: ''
+    // crNumber: '',
+    // jiraLink: ''
 };
 
 const accountState: Module<ICardsState, {}> = {
@@ -27,7 +42,7 @@ const accountState: Module<ICardsState, {}> = {
     actions: {
         [GET_CARDS]({state, commit, dispatch}) {
             commit(UPDATE_CARDS_LOADING, true);
-            return TaskService.getCards()
+            return CardService.getCards()
                 .then((cards: ICard[]) => {
                     commit(UPDATE_CARDS, cards);
                     commit(UPDATE_CARDS_LOADING, false);
@@ -73,11 +88,11 @@ const accountState: Module<ICardsState, {}> = {
         [UPDATE_CARDS_LOADING](state, value: boolean) {
             state.isLoading = value;
         },
+        [UPDATE_NEW_CARD_TITLE](state, value: string) {
+            state.newCard.title = value;
+        },
         [UPDATE_CARD_CREATION_STARTED](state, value: boolean) {
             state.isCardCreationStarted = value;
-        },
-        [UPDATE_NEW_CARD_DESCRIPTION](state, value: string) {
-            state.newCard.description = value;
         },
         [RESET_NEW_CARD](state) {
             state.newCard = {...INITIAL_CARD};
@@ -92,6 +107,9 @@ const accountState: Module<ICardsState, {}> = {
         },
         [CARDS_LOADING](state): boolean {
             return state.isLoading;
+        },
+        [NEW_CARD_TITLE](state): string {
+            return state.newCard.title;
         },
         [IS_CARD_CREATION_STARTED](state): boolean {
             return state.isCardCreationStarted;

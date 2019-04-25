@@ -4,6 +4,7 @@ import authState from '@/store/auth';
 import alertState from '@/store/alert';
 import accountState from '@/store/account';
 import tasksState from '@/store/tasks';
+import cardsState from '@/store/cards'
 import index from '../router/index';
 import {RouteNames} from '@/router/RouteNames';
 import {RequirementsService} from '@/common/services/RequirementsService';
@@ -20,6 +21,7 @@ export default new Vuex.Store({
         alertState,
         accountState,
         tasksState,
+        cardsState,
     },
     state: {
         loggingIn: false,
