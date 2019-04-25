@@ -5,5 +5,6 @@ export interface ICard {
     crNumber: string;
     project: string;
     jiraLink: string;
+    createdAt: string;
 }
 

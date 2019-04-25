@@ -1,5 +1,5 @@
 import {Module} from 'vuex';
-import {ICard} from "@/common/interfaces/ICard";
+import {ICard} from '@/common/interfaces/ICard';
 import {ADD_CARD, FINISH_CARD_CREATION, GET_CARDS, START_CARD_CREATION} from '@/store/cards/action-types';
 import {CardService} from '@/common/services/CardService';
 import {
@@ -10,6 +10,7 @@ import {
     UPDATE_NEW_CARD_JIRALINK,
     UPDATE_NEW_CARD_CRNUMBER,
     UPDATE_NEW_CARD_PROJECT,
+    UPDATE_NEW_CARD_CREATEDAT,
 } from '@/store/cards/mutation-types';
 import {
     IS_CARD_CREATION_STARTED,
@@ -18,6 +19,7 @@ import {
     NEW_CARD_JIRALINK,
     NEW_CARD_CRNUMBER,
     NEW_CARD_PROJECT,
+    NEW_CARD_CREATEDAT,
 } from '@/store/cards/getter-types';
 import {ADD_ALERT} from '@/store/alert/action-types';
 import {AlertType} from '@/common/interfaces/IAlert';
@@ -36,6 +38,7 @@ const INITIAL_CARD: ICard = {
     crNumber: '',
     project: '',
     jiraLink: '',
+    createdAt: '',
 };
 
 const accountState: Module<ICardsState, {}> = {
@@ -115,6 +118,9 @@ const accountState: Module<ICardsState, {}> = {
         [UPDATE_NEW_CARD_PROJECT](state, value: string) {
             state.newCard.project = value;
         },
+        [UPDATE_NEW_CARD_CREATEDAT](state, value: string) {
+            state.newCard.createdAt = value;
+        },
     },
     getters: {
         [CARDS](state): ICard[] {
@@ -138,7 +144,11 @@ const accountState: Module<ICardsState, {}> = {
         [NEW_CARD_PROJECT](state): string {
             return state.newCard.project;
         },
+        [NEW_CARD_CREATEDAT](state): string {
+            return state.newCard.createdAt;
+        },
     },
+
 };
 
 export default accountState;

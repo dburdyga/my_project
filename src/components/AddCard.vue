@@ -87,6 +87,26 @@
                             <span v-if="!$v.jiraLink.required">The jiraLink is required.</span>
                         </p>
                     </div>
+                    <div class="field">
+                        <label for="createdAt">
+                            Created At*
+                        </label>
+                        <div class="control">
+                            <input
+                                    class="input"
+                                    @blur="$v.createdAt.$touch()"
+                                    :class="{'is-danger': $v.createdAt.$error}"
+                                    v-model="createdAt"
+                                    id="createdAt"
+                                    type="text"
+                                    placeholder="Created At">
+                        </div>
+                        <p
+                                v-if="$v.createdAt.$dirty && $v.createdAt.$error"
+                                class="help is-danger">
+                            <span v-if="!$v.createdAt.required">The createdAt is required.</span>
+                        </p>
+                    </div>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
                             <button
@@ -114,19 +134,21 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER, NEW_CARD_PROJECT} from '../store/cards/getter-types';
+    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER, NEW_CARD_PROJECT, NEW_CARD_CREATEDAT} from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
         UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,
         UPDATE_NEW_CARD_PROJECT,
+        UPDATE_NEW_CARD_CREATEDAT,
     } from '../store/cards/mutation-types';
 
     export default Vue.extend({
         computed: {
             title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
+            crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
             project: UtilService.mapTwoWay<string>(NEW_CARD_PROJECT, UPDATE_NEW_CARD_PROJECT),
             jiraLink: UtilService.mapTwoWay<string>(NEW_CARD_JIRALINK, UPDATE_NEW_CARD_JIRALINK),
-            crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
+            createdAt: UtilService.mapTwoWay<string>(NEW_CARD_CREATEDAT, UPDATE_NEW_CARD_CREATEDAT),
         },
         methods: {
             ...mapActions({
@@ -142,6 +164,7 @@
             title: {required},
             crNumber: {required},
             project: {required},
+            createdAt: {required},
             jiraLink: {required},
         },
     });

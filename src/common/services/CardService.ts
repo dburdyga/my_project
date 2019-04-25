@@ -1,5 +1,5 @@
 import {auth, db} from '../../firebase';
-import {ICard} from "@/common/interfaces/ICard";
+import {ICard} from '@/common/interfaces/ICard';
 
 const COLLECTION_NAME = 'cards';
 

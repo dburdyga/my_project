@@ -18,7 +18,7 @@
                         <th>Title</th>
                         <th>Project</th>
                         <th>Jira Link</th>
-                        <!--<th>Created at</th>-->
+                        <th>Created at</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -27,7 +27,7 @@
                         <td>{{ card.title }}</td>
                         <td>{{ card.project }}</td>
                         <td>{{ card.jiraLink }}</td>
-                        <!--<td>{{ card.createdAt }}</td>-->
+                        <td>{{ card.createdAt }}</td>
                     </tr>
                     </tbody>
                 </table>
