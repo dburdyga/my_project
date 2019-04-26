@@ -46,7 +46,7 @@
             <div class="field">
                 <label
                         class="label"
-                        for="displayName">email:</label>
+                        for="displayName">EMail</label>
                 <div class="control">
                     <div class="input" disabled>{{ currentUser.email }}</div>
                 </div>
@@ -54,7 +54,7 @@
             <div class="field">
                 <label
                         class="label"
-                        for="displayName">displayName:</label>
+                        for="displayName">Name</label>
                 <div class="control">
                     <input
                             v-model="displayName"
@@ -66,7 +66,7 @@
             <div class="field">
                 <label
                         class="label"
-                        for="photo">photo:</label>
+                        for="photo">Photo</label>
                 <div class="field">
                     <div class="file is-info is-small">
                         <label class="file-label">

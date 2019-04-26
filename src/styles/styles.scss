@@ -115,6 +115,11 @@ textarea {
   padding: 10px;
   @include custom-scroll-thin;
 }
+.label:not(:last-child) {
+  color: $white;
+  font-weight: normal;
+  text-align: left;
+}
 
 .spinner-container {
   width: 100%;

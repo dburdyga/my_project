@@ -47,6 +47,7 @@ export default Vue.extend({
     },
     methods: {
         // getTasksByCardId() {
+        //     console.log(this.$store.cardId);
         //     this.$store.dispatch(GET_TASK);
         // },
     }
