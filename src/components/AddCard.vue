@@ -129,51 +129,51 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import {mapActions} from 'vuex';
-    import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
-    import {required} from 'vuelidate/lib/validators';
-    import {UtilService} from '../common/services/UtilService';
-    import {
-        NEW_CARD_TITLE,
-        NEW_CARD_JIRALINK,
-        NEW_CARD_CRNUMBER,
-        NEW_CARD_PROJECT,
-        NEW_CARD_CREATEDAT
-    } from '../store/cards/getter-types';
-    import {
-        UPDATE_NEW_CARD_TITLE,
-        UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,
-        UPDATE_NEW_CARD_PROJECT,
-        UPDATE_NEW_CARD_CREATEDAT,
-    } from '../store/cards/mutation-types';
+import Vue from 'vue';
+import {mapActions} from 'vuex';
+import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
+import {required} from 'vuelidate/lib/validators';
+import {UtilService} from '../common/services/UtilService';
+import {
+    NEW_CARD_TITLE,
+    NEW_CARD_JIRALINK,
+    NEW_CARD_CRNUMBER,
+    NEW_CARD_PROJECT,
+    NEW_CARD_CREATEDAT,
+} from '../store/cards/getter-types';
+import {
+    UPDATE_NEW_CARD_TITLE,
+    UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,
+    UPDATE_NEW_CARD_PROJECT,
+    UPDATE_NEW_CARD_CREATEDAT,
+} from '../store/cards/mutation-types';
 
-    export default Vue.extend({
-        computed: {
-            title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
-            crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
-            project: UtilService.mapTwoWay<string>(NEW_CARD_PROJECT, UPDATE_NEW_CARD_PROJECT),
-            jiraLink: UtilService.mapTwoWay<string>(NEW_CARD_JIRALINK, UPDATE_NEW_CARD_JIRALINK),
-            createdAt: UtilService.mapTwoWay<string>(NEW_CARD_CREATEDAT, UPDATE_NEW_CARD_CREATEDAT),
+export default Vue.extend({
+    computed: {
+        title: UtilService.mapTwoWay<string>(NEW_CARD_TITLE, UPDATE_NEW_CARD_TITLE),
+        crNumber: UtilService.mapTwoWay<string>(NEW_CARD_CRNUMBER, UPDATE_NEW_CARD_CRNUMBER),
+        project: UtilService.mapTwoWay<string>(NEW_CARD_PROJECT, UPDATE_NEW_CARD_PROJECT),
+        jiraLink: UtilService.mapTwoWay<string>(NEW_CARD_JIRALINK, UPDATE_NEW_CARD_JIRALINK),
+        createdAt: UtilService.mapTwoWay<string>(NEW_CARD_CREATEDAT, UPDATE_NEW_CARD_CREATEDAT),
+    },
+    methods: {
+        ...mapActions({
+            finishCardCreation: FINISH_CARD_CREATION,
+        }),
+        addCard() {
+            if (!this.$v.$invalid) {
+                this.$store.dispatch(ADD_CARD);
+            }
         },
-        methods: {
-            ...mapActions({
-                finishCardCreation: FINISH_CARD_CREATION,
-            }),
-            addCard() {
-                if (!this.$v.$invalid) {
-                    this.$store.dispatch(ADD_CARD);
-                }
-            },
-        },
-        validations: {
-            title: {required},
-            crNumber: {required},
-            project: {required},
-            createdAt: {required},
-            jiraLink: {required},
-        },
-    });
+    },
+    validations: {
+        title: {required},
+        crNumber: {required},
+        project: {required},
+        createdAt: {required},
+        jiraLink: {required},
+    },
+});
 </script>
 
 <style lang="scss" scoped>
