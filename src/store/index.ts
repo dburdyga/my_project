@@ -8,7 +8,7 @@ import cardsState from '@/store/cards';
 import index from '../router/index';
 import {RouteNames} from '@/router/RouteNames';
 import {RequirementsService} from '@/common/services/RequirementsService';
-import {FETCH_REQUIREMENTS} from '@/store/action-types';
+import {FETCH_REQUIREMENT, FETCH_REQUIREMENTS} from '@/store/action-types';
 import {REQUIREMENTS} from '@/store/getter-types';
 import {SET_REQUIREMENTS} from '@/store/mutation-types';
 
@@ -64,6 +64,9 @@ export default new Vuex.Store({
             commit('loginStart');
             index.push({name: RouteNames.Cards});
         },
+        [FETCH_REQUIREMENT](cardId: string) {
+
+        }
     },
 });
 

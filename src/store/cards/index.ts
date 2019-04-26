@@ -1,6 +1,6 @@
 import {Module} from 'vuex';
 import {ICard} from '@/common/interfaces/ICard';
-import {ADD_CARD, FINISH_CARD_CREATION, GET_CARDS, START_CARD_CREATION} from '@/store/cards/action-types';
+import {ADD_CARD, FINISH_CARD_CREATION, GET_CARD, GET_CARDS, START_CARD_CREATION} from '@/store/cards/action-types';
 import {CardService} from '@/common/services/CardService';
 import {
     RESET_NEW_CARD, RESET_CARDS,
@@ -64,6 +64,10 @@ const accountState: Module<ICardsState, {}> = {
                         text: err.message,
                     });
                 });
+        },
+        [GET_CARD]({dispatch}, cardId: string) {
+          return dispatch(GET_CARDS)
+              .then((cards: ICard[]) => cards.find(card => card.id === cardId));
         },
         [START_CARD_CREATION]({state, commit}) {
             commit(UPDATE_CARD_CREATION_STARTED, true);

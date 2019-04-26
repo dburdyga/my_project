@@ -24,7 +24,7 @@
                     <tbody>
                         <tr v-for="card in cards">
                             <td>
-                                <router-link :to="{name: $routeNames.Card}">
+                                <router-link :to="{name: routeNames.Card, params: {cardId: card.id}}">
                                     {{ card.crNumber }}
                                 </router-link>
                             </td>
@@ -52,9 +52,15 @@
     import {GET_CARDS, START_CARD_CREATION} from '../store/cards/action-types';
     import AddCard from '@/components/AddCard.vue';
     import {RESET_CARDS} from '../store/cards/mutation-types';
+    import {RouteNames} from "@/router/RouteNames";
 
     export default Vue.extend({
         components: {AddCard},
+        data() {
+          return {
+              routeNames: RouteNames
+          }
+        },
         created() {
             this.getCards();
         },

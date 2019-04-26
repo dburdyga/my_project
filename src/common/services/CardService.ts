@@ -28,6 +28,7 @@ export class CardService {
                 return cards;
             });
     }
+    
 
     public static addCard(card: ICard): Promise<firebase.firestore.DocumentReference> {
         return db.collection(COLLECTION_NAME)
