@@ -67,7 +67,7 @@ const accountState: Module<ICardsState, {}> = {
         },
         [GET_CARD]({dispatch}, cardId: string) {
           return dispatch(GET_CARDS)
-              .then((cards: ICard[]) => cards.find(card => card.id === cardId));
+              .then((cards: ICard[]) => cards.find((card) => card.id === cardId));
         },
         [START_CARD_CREATION]({state, commit}) {
             commit(UPDATE_CARD_CREATION_STARTED, true);

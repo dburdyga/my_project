@@ -134,7 +134,13 @@
     import {ADD_CARD, FINISH_CARD_CREATION} from '../store/cards/action-types';
     import {required} from 'vuelidate/lib/validators';
     import {UtilService} from '../common/services/UtilService';
-    import {NEW_CARD_TITLE, NEW_CARD_JIRALINK, NEW_CARD_CRNUMBER, NEW_CARD_PROJECT, NEW_CARD_CREATEDAT} from '../store/cards/getter-types';
+    import {
+        NEW_CARD_TITLE,
+        NEW_CARD_JIRALINK,
+        NEW_CARD_CRNUMBER,
+        NEW_CARD_PROJECT,
+        NEW_CARD_CREATEDAT
+    } from '../store/cards/getter-types';
     import {
         UPDATE_NEW_CARD_TITLE,
         UPDATE_NEW_CARD_JIRALINK, UPDATE_NEW_CARD_CRNUMBER,

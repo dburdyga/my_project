@@ -46,45 +46,45 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import {mapActions, mapGetters, mapMutations} from 'vuex';
-    import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
-    import {GET_CARDS, START_CARD_CREATION} from '../store/cards/action-types';
-    import AddCard from '@/components/AddCard.vue';
-    import {RESET_CARDS} from '../store/cards/mutation-types';
-    import {RouteNames} from "@/router/RouteNames";
+import Vue from 'vue';
+import {mapActions, mapGetters, mapMutations} from 'vuex';
+import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
+import {GET_CARDS, START_CARD_CREATION} from '../store/cards/action-types';
+import AddCard from '@/components/AddCard.vue';
+import {RESET_CARDS} from '../store/cards/mutation-types';
+import {RouteNames} from '@/router/RouteNames';
 
-    export default Vue.extend({
-        components: {AddCard},
-        data() {
-          return {
-              routeNames: RouteNames
-          }
-        },
-        created() {
-            this.getCards();
-        },
-        destroyed() {
-            this.resetCards();
-        },
-        computed: {
-            ...mapGetters({
-                cards: CARDS,
-                isCardCreationStarted: IS_CARD_CREATION_STARTED,
-                isLoading: CARDS_LOADING,
-            }),
-        },
-        methods: {
-            ...mapActions({
-                getCards: GET_CARDS,
-                addCard: START_CARD_CREATION,
-                // openCard: CARD,
-            }),
-            ...mapMutations({
-                resetCards: RESET_CARDS,
-            }),
-        },
-    });
+export default Vue.extend({
+    components: {AddCard},
+    data() {
+      return {
+          routeNames: RouteNames,
+      };
+    },
+    created() {
+        this.getCards();
+    },
+    destroyed() {
+        this.resetCards();
+    },
+    computed: {
+        ...mapGetters({
+            cards: CARDS,
+            isCardCreationStarted: IS_CARD_CREATION_STARTED,
+            isLoading: CARDS_LOADING,
+        }),
+    },
+    methods: {
+        ...mapActions({
+            getCards: GET_CARDS,
+            addCard: START_CARD_CREATION,
+            // openCard: CARD,
+        }),
+        ...mapMutations({
+            resetCards: RESET_CARDS,
+        }),
+    },
+});
 </script>
 
 <style lang="scss" scoped>

@@ -1,3 +1,1 @@
-export const SET_REQUIREMENTS = 'SET_REQUIREMENTS';
-export const TOOGLE_SIDEBAR = 'TOOGLE_SIDEBAR';
 
