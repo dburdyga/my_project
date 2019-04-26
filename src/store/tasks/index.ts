@@ -52,9 +52,9 @@ const accountState: Module<ITasksState, {}> = {
         newTask: {...INITIAL_TASK},
     },
     actions: {
-        [GET_TASKS]({state, commit, dispatch}) {
+        [GET_TASKS]({state, commit, dispatch}, cardId: string) {
             commit(UPDATE_TASKS_LOADING, true);
-            return TaskService.getTasks()
+            return TaskService.getTasksByCardId(cardId)
                 .then((tasks: ITask[]) => {
                     commit(UPDATE_TASKS, tasks);
                     commit(UPDATE_TASKS_LOADING, false);

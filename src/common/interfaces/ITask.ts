@@ -1,6 +1,7 @@
 export interface ITask {
     id?: string;
     userId: string;
+    cardId: string;
     title: string;
     description: string;
     completed: boolean;

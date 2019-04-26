@@ -15,9 +15,10 @@ export class TaskService {
         }
       }
    */
-    public static getTasks(): Promise<ITask[]> {
+    public static getTasksByCardId(cardId: string): Promise<ITask[]> {
         return db.collection(COLLECTION_NAME)
             .where('userId', '==', auth.currentUser && auth.currentUser.uid)
+            .where('cardId', '==', cardId)
             .get()
             .then((querySnapshot) => {
                 const tasks: ITask[] = querySnapshot.docs

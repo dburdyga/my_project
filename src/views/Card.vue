@@ -15,8 +15,8 @@
                     <p><strong>Created at: </strong>{{card.createdAt}}</p>
                 </div>
             </div>
-            <Tasks/>
         </div>
+        <Tasks/>
     </div>
 </template>
 

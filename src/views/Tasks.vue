@@ -39,9 +39,6 @@
                 </table>
             </div>
             <p v-else-if="!tasks.length && !isLoading">no tasks yet</p>
-            <div v-else class="spinner-container">
-                <div class="spinner"/>
-            </div>
         </div>
         <AddTask v-if="isTaskCreationStarted"/>
     </div>
