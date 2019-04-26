@@ -78,6 +78,9 @@ export default Vue.extend({
         ...mapMutations({
             resetTasks: RESET_TASKS,
         }),
+        // getTasksByCardId() {
+        //     this.$store.dispatch(GET_TASK);
+        // },
     },
 });
 </script>

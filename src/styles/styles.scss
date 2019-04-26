@@ -112,6 +112,7 @@ textarea {
 .table-container {
   background-color: $white;
   overflow: auto;
+  padding: 10px;
   @include custom-scroll-thin;
 }
 

@@ -45,6 +45,11 @@ export default Vue.extend({
     components: {
         Tasks,
     },
+    methods: {
+        // getTasksByCardId() {
+        //     this.$store.dispatch(GET_TASK);
+        // },
+    }
 });
 </script>
 
@@ -54,7 +59,10 @@ export default Vue.extend({
     @import '../styles/variables';
 
     .card {
-        padding: 15px;
+        padding-left: 0px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
