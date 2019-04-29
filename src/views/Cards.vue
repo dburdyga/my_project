@@ -42,6 +42,7 @@
             </div>
         </div>
         <AddCard v-if="isCardCreationStarted"/>
+        <Pagination />
     </div>
 </template>
 
@@ -51,11 +52,15 @@ import {mapActions, mapGetters, mapMutations} from 'vuex';
 import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
 import {GET_CARDS, START_CARD_CREATION} from '../store/cards/action-types';
 import AddCard from '@/components/AddCard.vue';
+import Pagination from '../views/Pagination.vue';
 import {RESET_CARDS} from '../store/cards/mutation-types';
 import {RouteNames} from '@/router/RouteNames';
 
 export default Vue.extend({
-    components: {AddCard},
+    components: {
+        AddCard,
+        Pagination,
+    },
     data() {
       return {
           routeNames: RouteNames,

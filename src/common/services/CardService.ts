@@ -19,7 +19,7 @@ export class CardService {
     public static getCards(): Promise<ICard[]> {
         return db.collection(COLLECTION_NAME)
             .where('userId', '==', auth.currentUser && auth.currentUser.uid)
-            .orderBy("project","asc")
+            .orderBy('project','asc')
             // .limit(5)
             .get()
             .then((querySnapshot) => {

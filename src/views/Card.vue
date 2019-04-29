@@ -30,8 +30,8 @@ import Vue from 'vue';
 import {GET_CARD} from '@/store/cards/action-types';
 import {ICard} from '@/common/interfaces/ICard';
 import Tasks from '../views/Tasks.vue';
-import {mapActions, mapGetters, mapMutations} from 'vuex';
-import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
+import {mapGetters} from 'vuex';
+import {CARDS_LOADING} from '../store/cards/getter-types';
 
 export default Vue.extend({
     props: {
