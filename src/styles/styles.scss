@@ -4,6 +4,9 @@
 
 .button.is-danger {
   background-color: $orange;
+  &:hover {
+    background-color: $orange-grey;
+  }
 }
 
 .button.is-primary:hover{

@@ -264,5 +264,8 @@ export default Vue.extend({
     .button.is-link {
         background-color: $orange;
         color: $white;
+        &:hover {
+            background-color: $orange-grey;
+        }
     }
 </style>
