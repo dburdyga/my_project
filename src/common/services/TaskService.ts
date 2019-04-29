@@ -3,6 +3,7 @@ import {ITask} from '@/common/interfaces/ITask';
 
 const COLLECTION_NAME = 'tasks';
 
+
 export class TaskService {
     // add rule to tasks collection
     /*
@@ -36,5 +37,6 @@ export class TaskService {
                 ...task,
                 userId: auth.currentUser && auth.currentUser.uid,
             });
+
     }
 }

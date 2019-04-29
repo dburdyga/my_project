@@ -3,6 +3,7 @@ import {ICard} from '@/common/interfaces/ICard';
 
 const COLLECTION_NAME = 'cards';
 
+
 export class CardService {
     // add rule to tasks collection
     /*
@@ -18,6 +19,8 @@ export class CardService {
     public static getCards(): Promise<ICard[]> {
         return db.collection(COLLECTION_NAME)
             .where('userId', '==', auth.currentUser && auth.currentUser.uid)
+            .orderBy("project","asc")
+            // .limit(5)
             .get()
             .then((querySnapshot) => {
                 const cards: ICard[] = querySnapshot.docs
