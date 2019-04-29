@@ -38,7 +38,7 @@
                     </tbody>
                 </table>
             </div>
-            <p v-else-if="!tasks.length && !isLoading">no tasks yet</p>
+            <!--<p v-else-if="!tasks.length && !isLoading">no tasks yet</p>-->
         </div>
         <AddTask
                 :cardId="cardId"
