@@ -93,11 +93,12 @@
         color: $white;
         border: none;
         border-radius: 3px;
+        &:hover {
+            background-color: $dark-blue;
+            color: $white;
+        }
     }
-    button:hover {
-        background-color: $dark-blue;
-        color: $white;
-    }
+
     .user-controls {
         display: flex;
         align-items: center;
@@ -118,6 +119,10 @@
         margin-right: 12px;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        &:hover {
+            color: $dark-blue;
+        }
     }
     header {
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);

@@ -22,11 +22,17 @@ const router = new Router({
             component: Card,
             props: true,
             name: RouteNames.Card,
+            meta: {
+                requiresAuth: true,
+            },
        },
         {
-            path: '/',
+            path: '/cards',
             component: Cards,
             name: RouteNames.Cards,
+            meta: {
+                requiresAuth: true,
+            },
         },
         {
             path: '/account',
@@ -37,7 +43,7 @@ const router = new Router({
             },
         },
         {
-            path: '/login',
+            path: '*',
             component: Login,
             name: RouteNames.Login,
             meta: {
@@ -64,10 +70,10 @@ const router = new Router({
                 requiresAuth: true,
             },
         },
-        {
-            path: '*',
-            component: PageNotFound,
-        },
+        // {
+        //     path: '*',
+        //     component: PageNotFound,
+        // },
     ],
     scrollBehavior(to, from, savedPosition) {
         return savedPosition || {x: 0, y: 0};
