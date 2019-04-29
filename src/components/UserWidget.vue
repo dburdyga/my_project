@@ -102,6 +102,22 @@
             background-color: $dark-blue;
             color: $white;
         }
+        @include mobile {
+            background: $white;
+            color: $purple;
+            &:hover {
+                background-color: $light-grey2;
+                color: $white;
+            }
+        }
+        @include tablet {
+            background: $white;
+            color: $purple;
+            &:hover {
+                background-color: $light-grey2;
+                color: $white;
+            }
+        }
     }
 
     .user-controls {
@@ -122,10 +138,12 @@
         @include mobile {
             width: 60px;
             height: 60px;
+            border: none;
         }
         @include tablet {
             width: 60px;
             height: 60px;
+            border: none;
         }
 
     }
@@ -143,9 +161,17 @@
         @include mobile {
             justify-content: space-evenly;
             font-size: 20px;
+            color: $white;
+            &:hover {
+                color: $light-grey2;
+            }
         }
         @include tablet {
             font-size: 20px;
+            color: $white;
+            &:hover {
+                color: $light-grey2;
+            }
         }
     }
     button.modal-close.is-large {
@@ -208,11 +234,12 @@
     .form {
         display: table;
         border-radius: 5px;
-        background-color: $light-purple;
+        background: linear-gradient(45deg, $blue, $light-purple);
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
+
         @include mobile {
             height: 200px;
             display: inline-grid;

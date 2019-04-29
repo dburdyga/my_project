@@ -78,6 +78,7 @@ export default Vue.extend({
         color: $purple;
         display: flex;
         border-radius: 3px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         @include mobile {
             display: inline-table;
             font-size: 14px;

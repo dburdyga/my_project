@@ -137,6 +137,7 @@ a {
   overflow: auto;
   padding: 10px;
   border-radius: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   @include custom-scroll-thin;
 }
 .label:not(:last-child) {
