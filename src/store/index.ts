@@ -24,13 +24,6 @@ export default new Vuex.Store({
         loginSuccessful: false,
         requirements: [],
         sideBarVisible: false,
-        filter: {
-            crNumber: '',
-            crTitle: '',
-            crStatus: '',
-            crProject: '',
-            crDate: '',
-        },
     },
     mutations: {
         loginStart: (state) => state.loggingIn = true,

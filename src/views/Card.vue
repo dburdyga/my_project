@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <Tasks/>
+        <Tasks :cardId="cardId"/>
     </div>
 </template>
 

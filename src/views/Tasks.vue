@@ -40,7 +40,9 @@
             </div>
             <p v-else-if="!tasks.length && !isLoading">no tasks yet</p>
         </div>
-        <AddTask v-if="isTaskCreationStarted"/>
+        <AddTask
+                :cardId="cardId"
+                v-if="isTaskCreationStarted"/>
     </div>
 </template>
 
@@ -54,8 +56,13 @@ import {RESET_TASKS} from '../store/tasks/mutation-types';
 
 export default Vue.extend({
     components: {AddTask},
+    props: {
+        cardId: {
+            type: String,
+        },
+    },
     created() {
-        this.getTasks();
+        this.getTasks(this.cardId);
     },
     destroyed() {
         this.resetTasks();

@@ -9,4 +9,5 @@ export interface ITask {
     dvk: string;
     imp: string;
     etest: string;
+    cardId: string;
 }

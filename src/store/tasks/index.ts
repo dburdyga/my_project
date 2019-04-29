@@ -11,7 +11,7 @@ import {
     UPDATE_TASK_CREATION_STARTED,
     UPDATE_TASKS, UPDATE_TASKS_LOADING, UPDATE_NEW_TASK_ESTIMATOR,
     UPDATE_NEW_TASK_IMP,
-    UPDATE_NEW_TASK_ETEST,
+    UPDATE_NEW_TASK_ETEST, SET_CARD_ID,
 } from '@/store/tasks/mutation-types';
 import {
     IS_TASK_CREATION_STARTED, NEW_TASK_EFFORT,
@@ -75,10 +75,10 @@ const accountState: Module<ITasksState, {}> = {
             commit(UPDATE_TASK_CREATION_STARTED, false);
             commit(RESET_NEW_TASK);
         },
-        [ADD_TASK]({state, dispatch}) {
+        [ADD_TASK]({state, dispatch},  cardId: string) {
             return TaskService.addTask(state.newTask)
                 .then(() => {
-                    dispatch(GET_TASKS);
+                    dispatch(GET_TASKS, cardId);
                     dispatch(ADD_ALERT, {
                         type: AlertType.SUCCESS,
                         text: `'${state.newTask.title}' task has been successfully created!`,
@@ -129,6 +129,9 @@ const accountState: Module<ITasksState, {}> = {
         },
         [RESET_NEW_TASK](state) {
             state.newTask = {...INITIAL_TASK};
+        },
+        [SET_CARD_ID](state, cardId: string) {
+            state.newTask.cardId = cardId;
         },
         [RESET_TASKS](state) {
             state.tasks = [];

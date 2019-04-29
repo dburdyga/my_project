@@ -204,10 +204,21 @@ import {
     UPDATE_NEW_TASK_DESCRIPTION,
     UPDATE_NEW_TASK_TITLE,
     UPDATE_NEW_TASK_ESTIMATOR,
-    UPDATE_NEW_TASK_IMP,
+    UPDATE_NEW_TASK_IMP, SET_CARD_ID,
 } from '../store/tasks/mutation-types';
 
 export default Vue.extend({
+    props: {
+        cardId: {
+            type: String,
+        },
+    },
+    created() {
+        this.$store.commit(SET_CARD_ID, this.cardId);
+    },
+    destroyed() {
+        this.$store.commit(SET_CARD_ID, '');
+    },
     computed: {
         title: UtilService.mapTwoWay<string>(NEW_TASK_TITLE, UPDATE_NEW_TASK_TITLE),
         description: UtilService.mapTwoWay<string>(NEW_TASK_DESCRIPTION, UPDATE_NEW_TASK_DESCRIPTION),
@@ -224,7 +235,7 @@ export default Vue.extend({
         }),
         addTask() {
             if (!this.$v.$invalid) {
-                this.$store.dispatch(ADD_TASK);
+                this.$store.dispatch(ADD_TASK, this.cardId);
             }
         },
     },

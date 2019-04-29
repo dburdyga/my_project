@@ -26,8 +26,6 @@ export const auth = firebase.auth(firebaseApp);
 export const storage = firebase.storage(firebaseApp);
 
 
-
-
 // update current user when the auth state changes
 // and redirect to appropriate page
 auth.onAuthStateChanged((user) => {
