@@ -78,7 +78,6 @@ export default Vue.extend({
         ...mapActions({
             getCards: GET_CARDS,
             addCard: START_CARD_CREATION,
-            // openCard: CARD,
         }),
         ...mapMutations({
             resetCards: RESET_CARDS,
