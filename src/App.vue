@@ -52,7 +52,13 @@ export default Vue.extend({
     background-size: cover;
   }
   .link {
-    color: $white;
+    color: $blue;
+    font-weight: bold;
+    font-size: 16px;
+    &:hover{
+      color: $dark-blue;
+    }
   }
+
 </style>
 

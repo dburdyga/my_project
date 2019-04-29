@@ -46,6 +46,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import "../styles/variables";
+
     .alert-list {
         position: fixed;
         right: 0;

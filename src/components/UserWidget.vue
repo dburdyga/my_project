@@ -94,6 +94,10 @@
         border: none;
         border-radius: 3px;
     }
+    button:hover {
+        background-color: $dark-blue;
+        color: $white;
+    }
     .user-controls {
         display: flex;
         align-items: center;

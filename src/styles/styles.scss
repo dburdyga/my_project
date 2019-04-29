@@ -6,6 +6,10 @@
   background-color: $orange;
 }
 
+.button.is-primary:hover{
+  background-color: $orange-grey;
+}
+
 .field:not(:last-child) {
   margin-bottom: 8px;
 }
@@ -21,7 +25,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: $light-grey2;
     border-radius: 1.5px;
   }
 
@@ -36,6 +40,12 @@
 
 a.is-active {
   text-decoration: underline;
+}
+a {
+  color: $light-purple;
+  &:hover {
+    color: $blue;
+  }
 }
 
 textarea {
@@ -113,6 +123,7 @@ textarea {
   background-color: $white;
   overflow: auto;
   padding: 10px;
+  border-radius: 3px;
   @include custom-scroll-thin;
 }
 .label:not(:last-child) {

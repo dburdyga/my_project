@@ -64,6 +64,7 @@ export default Vue.extend({
         margin-bottom: 20px;
         color: $purple;
         display: flex;
+        border-radius: 3px;
     }
     .content p:not(:last-child) {
         margin-bottom: 0px;

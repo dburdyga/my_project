@@ -12,7 +12,7 @@
                             class="user-logo-bg is-overlay"/>
                     <button
                             @click="startEdit"
-                            class="edit-button button is-primary">
+                            class="edit-button button">
                         ✎
                     </button>
                 </div>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="media-content">
-                        <p class="title is-4">{{ currentUser.displayName || currentUser.email }}</p>
+                        <p class="title is-5">{{ currentUser.displayName || currentUser.email }}</p>
                         <p
                                 v-if="currentUser.displayName"
                                 class="subtitle is-6">{{ currentUser.email }}</p>
@@ -155,6 +155,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/mixins';
+    @import '../styles/variables';
+
+    .card {
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 0px;
+        border-radius: 3px;
+    }
+
     .user-profile {
         width: 400px;
         margin: 50px auto;
@@ -175,6 +186,12 @@ export default Vue.extend({
             position: absolute;
             right: 6px;
             top: 6px;
+            background-color: $orange;
+            color: white;
+            border: none;
+            &:hover {
+                background-color: $orange-grey;
+            }
         }
 
         .user-logo-bg {
@@ -190,5 +207,9 @@ export default Vue.extend({
             right: 0;
             top: 0;
         }
+        .title.is-5 {
+            margin-top: 14px;
+        }
+
     }
 </style>

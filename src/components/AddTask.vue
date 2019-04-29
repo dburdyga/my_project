@@ -246,7 +246,7 @@ export default Vue.extend({
         max-width: 400px;
     }
     .add-task-box {
-        background-color: $light-purple;
+        background: linear-gradient(-90deg, $blue, $light-purple);
         color: $white;
     }
     .button.is-link {

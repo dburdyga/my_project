@@ -108,7 +108,6 @@ export default Vue.extend({
         margin-top: 6px;
         margin-bottom: 0px;
         margin-right: 20px;
-
     }
     .input-field {
         display: flex;
