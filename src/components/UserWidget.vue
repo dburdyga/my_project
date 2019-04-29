@@ -107,6 +107,9 @@
     .user-controls {
         display: flex;
         align-items: center;
+        @include mobile {
+            display: grid;
+        }
     }
     .user-logo {
         border-radius: 50%;
@@ -116,6 +119,15 @@
         border: 3px solid $blue;
         display: block;
         background: center / cover no-repeat;
+        @include mobile {
+            width: 60px;
+            height: 60px;
+        }
+        @include tablet {
+            width: 60px;
+            height: 60px;
+        }
+
     }
     .user-name {
         color: $blue;
@@ -127,6 +139,13 @@
         text-decoration: none;
         &:hover {
             color: $dark-blue;
+        }
+        @include mobile {
+            justify-content: space-evenly;
+            font-size: 20px;
+        }
+        @include tablet {
+            font-size: 20px;
         }
     }
     button.modal-close.is-large {
@@ -195,11 +214,11 @@
         padding-top: 8px;
         padding-bottom: 8px;
         @include mobile {
-            height: 30%;
+            height: 200px;
             display: inline-grid;
         }
         @include tablet {
-            height: 15%;
+            height: 200px;
             display: inline-grid;
         }
     }
