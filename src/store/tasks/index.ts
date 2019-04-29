@@ -34,6 +34,7 @@ interface ITasksState {
 
 const INITIAL_TASK: ITask = {
     userId: '',
+    cardId: '',
     title: '',
     description: '',
     completed: false,
