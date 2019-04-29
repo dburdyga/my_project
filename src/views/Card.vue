@@ -52,6 +52,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     @import '../styles/variables';
+    @import '../styles/mixins';
 
     .card {
         padding-left: 0px;
@@ -65,6 +66,11 @@ export default Vue.extend({
         color: $purple;
         display: flex;
         border-radius: 3px;
+        @include mobile {
+            display: inline-table;
+            font-size: 14px;
+            width: 100%;
+        }
     }
     .content p:not(:last-child) {
         margin-bottom: 0px;

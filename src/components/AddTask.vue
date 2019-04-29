@@ -178,7 +178,8 @@
         </div>
         <button
                 @click="finishTaskCreation"
-                class="modal-close is-large"></button>
+                class="modal-close is-large">
+        </button>
     </div>
 </template>
 

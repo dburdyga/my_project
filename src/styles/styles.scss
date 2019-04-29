@@ -68,6 +68,10 @@ a {
     padding: $size-7;
     padding-left: 0px;
     padding-right: 0px;
+    @include tablet {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 
   .logo {
@@ -96,6 +100,9 @@ a {
   color: $white;
   font-size: 30px;
   text-align: left;
+  @include tablet {
+    font-size: 20px;
+  }
 }
 
 .content {

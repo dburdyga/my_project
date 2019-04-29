@@ -30,8 +30,13 @@
                             <span>{{ currentUser.displayName || currentUser.email }}</span>
                         </router-link>
                         <button @click="logout" class="button">Log out</button>
+                        <button
+                                @click="isMobileMenuOpen = !isMobileMenuOpen"
+                                class="modal-close is-large">
+                        </button>
                     </div>
                 </form>
+
             </div>
         </div>
     </section>
@@ -43,7 +48,6 @@
     import {LOGOUT} from '@/store/auth/action-types';
     import {GET_ACCOUNT_PHOTO_URL} from '../store/account/action-types';
     import {ACCOUNT_PHOTO_URL} from '../store/account/getter-types';
-
 
     export default Vue.extend({
         data() {
@@ -80,6 +84,7 @@
                 this.$store.dispatch(LOGOUT);
             },
         },
+
     });
 </script>
 
@@ -123,6 +128,10 @@
         &:hover {
             color: $dark-blue;
         }
+    }
+    button.modal-close.is-large {
+        top: 100px;
+        background-color: transparent;
     }
     header {
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -189,6 +198,10 @@
             height: 30%;
             display: inline-grid;
         }
+        @include tablet {
+            height: 15%;
+            display: inline-grid;
+        }
     }
     .card-table {
         text-align: left;
@@ -231,6 +244,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            background-color: rgba(10, 10, 10, 0.86);
         }
     }
 </style>
