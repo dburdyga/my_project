@@ -89,6 +89,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
     @import '../styles/variables';
 
+
     .table {
         min-width: 380px;
     }

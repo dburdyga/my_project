@@ -24,6 +24,7 @@ export class CardService {
             .get()
             .then((querySnapshot) => {
                 const cards: ICard[] = querySnapshot.docs
+                    .sort()
                     .map((doc: firebase.firestore.QueryDocumentSnapshot) => ({
                         id: doc.id,
                         ...doc.data(),
