@@ -1,5 +1,4 @@
 import { shallowMount } from '@vue/test-utils';
-import {} from 'jest'
 import App from '../../src/App.vue';
 
 describe('App.vue', () => {
