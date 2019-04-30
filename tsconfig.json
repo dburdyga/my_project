@@ -7,11 +7,13 @@
     "importHelpers": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ],
     "paths": {
       "@/*": [
@@ -37,6 +39,7 @@
   ],
   "files": [
     "global.d.ts",
-    "vuelidate.d.ts"
+    "vuelidate.d.ts",
+    "node_modules@typesjestindex.d.ts"
   ]
 }

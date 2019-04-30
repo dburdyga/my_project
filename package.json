@@ -9,11 +9,17 @@
   },
   "dependencies": {
     "@types/firebase": "^3.2.1",
+    "@vue/server-test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "bootstrap": "^4.3.1",
     "bulma": "^0.7.4",
     "firebase": "^5.10.0",
     "firebase-paginator": "^1.1.2",
+    "jest": "^24.7.1",
+    "mocha": "^6.1.4",
+    "ts-jest": "^24.0.2",
     "vue": "^2.6.6",
+    "vue-jest": "^3.0.4",
     "vue-router": "^3.0.1",
     "vue-sidebar-menu": "^3.6.3",
     "vuefire": "^1.4.5",
@@ -22,12 +28,14 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/mocha": "^5.2.6",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-typescript": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.2.1",
+    "typescript": "^3.4.5",
     "vue-template-compiler": "^2.5.21"
   }
 }

@@ -6,7 +6,7 @@
         <div class="inner">
           <div class="logo"></div>
           <nav class="main-nav">
-            <router-link class="link" :to="{name: $routeNames.Cards}" v-if="!isLoginRoute">Requirements</router-link>
+            <router-link class="link" :to="{name: $routeNames.Cards}" v-if="!isLoginRoute">{{ msg }}</router-link>
            </nav>
           <div class="auth-controls">
             <UserWidget/>
@@ -27,6 +27,11 @@ import UserWidget from '@/components/UserWidget.vue';
 import {RouteNames} from '@/router/RouteNames';
 
 export default Vue.extend({
+  data() {
+    return {
+      msg: 'Requirements',
+    }
+  },
   components: {
     Alerts,
     UserWidget,
