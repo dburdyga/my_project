@@ -158,6 +158,19 @@ export default Vue.extend({
     @import '../styles/mixins';
     @import '../styles/variables';
 
+
+    .file.is-info:active .file-cta{
+        background: $blue;
+    }
+
+    .file.is-info .file-cta{
+        background: $blue;
+    }
+    .button.is-primary{
+        &:hover{
+            background: $dark-blue;
+        }
+    }
     .card {
         padding-top: 5px;
         padding-right: 5px;
