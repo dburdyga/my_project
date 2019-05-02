@@ -15,9 +15,9 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
+### Run your end-to-end tests
 ```
-yarn run test
+yarn run test:e2e
 ```
 
 ### Lints and fixes files

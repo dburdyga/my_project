@@ -1,6 +1,6 @@
 <template>
     <div class="login-form">
-        <form class="form">
+            <form class="form">
             <h3 class="title is-3 has-text-centered">Login</h3>
             <div class="field">
                 <label for="email">
