@@ -30,7 +30,7 @@ export default Vue.extend({
   data() {
     return {
       msg: 'Requirements',
-    }
+    };
   },
   components: {
     Alerts,
