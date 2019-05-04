@@ -11,14 +11,13 @@
                 <button @click="logout" class="button">Log out</button>
             </div>
         </div>
-        <div class="mobile-menu is-hidden-tablet">
+        <div class="mobile-menu is-hidden-desktop is-hidden-tablet" v-if="!isLoginRoute">
             <button
                     @click="isMobileMenuOpen = !isMobileMenuOpen"
                     style="background-color: transparent">
                 <img src="../assets/menu.png"
                      alt="menu icon"
                      class="menu-img">
-                <!--{{ isMobileMenuOpen }}-->
             </button>
             <div v-if="isMobileMenuOpen" class="popup-menu">
                 <form class="form">
@@ -47,6 +46,7 @@
     import {LOGOUT} from '@/store/auth/action-types';
     import {GET_ACCOUNT_PHOTO_URL} from '../store/account/action-types';
     import {ACCOUNT_PHOTO_URL} from '../store/account/getter-types';
+    import {RouteNames} from '@/router/RouteNames';
 
     export default Vue.extend({
         data() {
@@ -73,6 +73,9 @@
             },
             photoURLBg(): string {
                 return this.photoURL ? `url('${this.photoURL}')` : '';
+            },
+            isLoginRoute(): boolean {
+                return this.$route.name === RouteNames.Login || this.$route.name === RouteNames.Register;
             },
         },
         methods: {
