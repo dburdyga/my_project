@@ -40,9 +40,11 @@
             <div v-else class="spinner-container">
                 <div class="spinner"/>
             </div>
+            <Pagination
+                    :numberOfPages="numberOfPages"
+                    @page-selected="changeStartPage"/>
         </div>
         <AddCard v-if="isCardCreationStarted"/>
-        <Pagination />
     </div>
 </template>
 
@@ -78,6 +80,16 @@ export default Vue.extend({
             isCardCreationStarted: IS_CARD_CREATION_STARTED,
             isLoading: CARDS_LOADING,
         }),
+        changeStartPage(index : number) {
+            this.startPage = this.requirementsPerPage * index;
+            console.log(this.startPage);
+        },
+        numberOfPages(): number {
+            return Math.round(this.requirementsTotal / this.requirementsPerPage);
+        },
+        // requirementsTotal(): number {
+        //     return this.$store.getters[REQUIREMENTS].length;
+        // }
     },
     methods: {
         ...mapActions({
