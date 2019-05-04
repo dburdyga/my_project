@@ -5,12 +5,10 @@
                 <h1 class="title is-2">Card</h1>
             </header>
             <div class="card" v-if="!isLoading">
+                <h4 class="card-title"><strong>CR Number: </strong>{{card.crNumber}}</h4>
                 <div class="card-item">
-                    <p><strong>CR Number: </strong>{{card.crNumber}}</p>
                     <p><strong>Title: </strong>{{card.title}}</p>
                     <p><strong>Project: </strong>{{card.project}}</p>
-                </div>
-                <div class="card-item">
                     <p><strong>Jira Link: </strong>{{card.jiraLink}}</p>
                     <p><strong>Created at: </strong>{{card.createdAt}}</p>
                 </div>
@@ -61,13 +59,12 @@ export default Vue.extend({
 </script>
 
 
-
 <style lang="scss" scoped>
     @import '../styles/variables';
     @import '../styles/mixins';
 
     .card {
-        padding-left: 0px;
+        padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 10px;
         padding-top: 10px;
@@ -92,9 +89,18 @@ export default Vue.extend({
         color: $purple;
     }
     .card-item {
-        margin-right: 100px;
-        margin-left: 20px;
+        display: flex;
+        justify-content: space-around;
+        @include mobile {
+            display: table;
+            font-size: 18px;
+        }
     }
-
-
+    .card-title {
+        margin-right: auto;
+        margin-left: auto;
+        color: $purple;
+        font-weight: normal;
+        margin-bottom: 25px;
+    }
 </style>

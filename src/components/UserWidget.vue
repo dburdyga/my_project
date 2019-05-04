@@ -11,7 +11,7 @@
                 <button @click="logout" class="button">Log out</button>
             </div>
         </div>
-        <div class="mobile-menu is-hidden-desktop is-hidden-tablet">
+        <div class="mobile-menu is-hidden-tablet">
             <button
                     @click="isMobileMenuOpen = !isMobileMenuOpen"
                     style="background-color: transparent">
@@ -36,7 +36,6 @@
                         </button>
                     </div>
                 </form>
-
             </div>
         </div>
     </section>
@@ -102,24 +101,7 @@
             background-color: $dark-blue;
             color: $white;
         }
-        @include mobile {
-            background: $white;
-            color: $purple;
-            &:hover {
-                background-color: $light-grey2;
-                color: $white;
-            }
-        }
-        @include tablet {
-            background: $white;
-            color: $purple;
-            &:hover {
-                background-color: $light-grey2;
-                color: $white;
-            }
-        }
     }
-
     .user-controls {
         display: flex;
         align-items: center;
@@ -129,23 +111,12 @@
     }
     .user-logo {
         border-radius: 50%;
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         margin-right: 12px;
         border: 3px solid $blue;
         display: block;
         background: center / cover no-repeat;
-        @include mobile {
-            width: 60px;
-            height: 60px;
-            border: none;
-        }
-        @include tablet {
-            width: 60px;
-            height: 60px;
-            border: none;
-        }
-
     }
     .user-name {
         color: $blue;
@@ -160,18 +131,6 @@
         }
         @include mobile {
             justify-content: space-evenly;
-            font-size: 20px;
-            color: $white;
-            &:hover {
-                color: $light-grey2;
-            }
-        }
-        @include tablet {
-            font-size: 20px;
-            color: $white;
-            &:hover {
-                color: $light-grey2;
-            }
         }
     }
     button.modal-close.is-large {
@@ -224,7 +183,7 @@
         width: 3rem;
         height: 3rem;
         border-radius: 100px;
-        box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px $grey2;
         border: 3px solid $orange;
     }
     .card-form {
@@ -233,20 +192,20 @@
     .form {
         display: table;
         border-radius: 5px;
-        background: linear-gradient(45deg, $blue, $light-purple);
+        background: linear-gradient(90deg, $light-grey2, $grey2);
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
         @include mobile {
-            height: 200px;
+            height: 170px;
             display: inline-grid;
             margin-top: 30%;
         }
         @include tablet {
-            height: 200px;
+            height: 170px;
             display: inline-grid;
-            margin-top: 50%;
+            margin-top: 30%;
         }
     }
     .card-table {

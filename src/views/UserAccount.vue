@@ -158,11 +158,9 @@ export default Vue.extend({
     @import '../styles/mixins';
     @import '../styles/variables';
 
-
     .file.is-info:active .file-cta{
         background: $blue;
     }
-
     .file.is-info .file-cta{
         background: $blue;
     }
@@ -178,7 +176,6 @@ export default Vue.extend({
         padding-bottom: 0px;
         border-radius: 3px;
     }
-
     .user-profile {
         width: 400px;
         margin: 50px auto;

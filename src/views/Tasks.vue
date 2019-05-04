@@ -88,6 +88,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     @import '../styles/variables';
+    @import '../styles/mixins';
 
 
     .table {

@@ -46,8 +46,8 @@ export default Vue.extend({
 
 
 <style lang="scss" scoped>
-  @import "styles/variables";
-  @import "styles/mixins";
+  @import 'styles/variables';
+  @import 'styles/mixins';
 
   #app {
     min-height: 100vh;

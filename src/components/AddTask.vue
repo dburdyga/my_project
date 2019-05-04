@@ -252,7 +252,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-    @import "../styles/variables";
+    @import '../styles/variables';
+    @import '../styles/mixins';
 
     .modal-content {
         max-width: 400px;
