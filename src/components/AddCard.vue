@@ -178,9 +178,16 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     @import "../styles/variables";
+    @import "../styles/mixins";
 
     .modal-content {
         max-width: 400px;
+        @include mobile {
+            max-width: 90%;
+        }
+        @include tablet {
+            max-width: 90%;
+        }
     }
     .add-task-box {
         background: linear-gradient(-90deg, $blue, $light-purple);

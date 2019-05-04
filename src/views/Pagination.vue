@@ -75,18 +75,25 @@
         border: none;
         color: $white;
         font-size: 14px;
+        border-radius: 3px;
     }
     .page-item.disabled .page-link {
         background-color: $orange-grey;
         color: $grey;
     }
-
     .pagination {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+        @include mobile {
+            justify-content: space-around;
+            width: 100%;
+        }
+        @include tablet {
+            justify-content: space-around;
+            width: 100%;
+        }
     }
-
     .pagination-button {
         font-family: "Source Sans Pro", sans-serif;
         display: inline-block;

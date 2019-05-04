@@ -175,7 +175,6 @@
         }
     }
     button.modal-close.is-large {
-        top: 100px;
         background-color: transparent;
     }
     header {
@@ -239,14 +238,15 @@
         padding-right: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
-
         @include mobile {
             height: 200px;
             display: inline-grid;
+            margin-top: 30%;
         }
         @include tablet {
             height: 200px;
             display: inline-grid;
+            margin-top: 50%;
         }
     }
     .card-table {
@@ -286,6 +286,7 @@
         @include mobile {
             position: fixed;
             left: 0;
+            top: 0;
             right: 0;
             width: 100%;
             height: 100%;
