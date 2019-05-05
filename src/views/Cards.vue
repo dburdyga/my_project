@@ -59,7 +59,7 @@ import AddCard from '@/components/AddCard.vue';
 import Pagination from '../views/Pagination.vue';
 import {RESET_CARDS} from '../store/cards/mutation-types';
 import {RouteNames} from '@/router/RouteNames';
-import {ICard} from "@/common/interfaces/ICard";
+import {ICard} from '@/common/interfaces/ICard';
 
 export default Vue.extend({
     components: {
@@ -70,7 +70,7 @@ export default Vue.extend({
       return {
           routeNames: RouteNames,
           requirementsPerPage: 5,
-          startPage: 0
+          startPage: 0,
       };
     },
     created() {
@@ -85,14 +85,14 @@ export default Vue.extend({
             isLoading: CARDS_LOADING,
         }),
         cards(): ICard[] {
-            return  this.$store.getters[CARDS].slice(this.startPage,this.startPage + this.requirementsPerPage);
+            return  this.$store.getters[CARDS].slice(this.startPage, this.startPage + this.requirementsPerPage);
         },
         numberOfPages(): number {
             return Math.round(this.requirementsTotal / this.requirementsPerPage);
         },
         requirementsTotal(): number {
             return this.$store.getters[CARDS].length;
-        }
+        },
     },
     methods: {
         ...mapActions({
@@ -102,10 +102,9 @@ export default Vue.extend({
         ...mapMutations({
             resetCards: RESET_CARDS,
         }),
-        changeStartPage(index : number) {
+        changeStartPage(index: number) {
             this.startPage = this.requirementsPerPage * index;
-            console.log(this.startPage);
-        }
+        },
     },
 });
 </script>

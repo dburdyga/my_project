@@ -28,44 +28,42 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
+import Vue from 'vue';
 
-    export default Vue.extend({
-        data() {
-            return {
-                pageNumber: 0,
-                activePageIndex: 0
-            };
+export default Vue.extend({
+    data() {
+        return {
+            pageNumber: 0,
+            activePageIndex: 0,
+        };
+    },
+    props: {
+        numberOfPages: {
+            type: Number,
         },
-        props: {
-            numberOfPages: {
-                type: Number
-            },
-            requirementsPerPage: {
-                type: Number
-            },
-            requirementsTotal: {
-                type: Number
-            }
-
+        requirementsPerPage: {
+            type: Number,
         },
-        methods: {
-            selectPage(index: number) {
-                this.activePageIndex = index;
-                this.$emit('page-selected', index);
-            },
-            incrementPage(isReversed: boolean) {
-                this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex+1);
-                this.selectPage(this.activePageIndex);
-            }
+        requirementsTotal: {
+            type: Number,
         },
-        computed: {
-            pagesArray(): number[] {
-                return Array.from({length: this.numberOfPages}, (v, k) => k+1);
-            }
-        }
-    });
-
+    },
+    methods: {
+        selectPage(index: number) {
+            this.activePageIndex = index;
+            this.$emit('page-selected', index);
+        },
+        incrementPage(isReversed: boolean) {
+            this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex + 1);
+            this.selectPage(this.activePageIndex);
+        },
+    },
+    computed: {
+        pagesArray(): number[] {
+            return Array.from({length: this.numberOfPages}, (v, k) => k + 1);
+        },
+    },
+});
 </script>
 
 
