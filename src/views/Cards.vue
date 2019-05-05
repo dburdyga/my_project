@@ -51,6 +51,7 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue';
 import {mapActions, mapGetters, mapMutations} from 'vuex';
 import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
@@ -64,7 +65,7 @@ import {ICard} from '@/common/interfaces/ICard';
 export default Vue.extend({
     components: {
         AddCard,
-        Pagination,
+        Pagination
     },
     data() {
       return {
