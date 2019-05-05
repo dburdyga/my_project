@@ -1,20 +1,30 @@
 <template>
-    <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Prev</a>
-            </li>
-            <li class="page-item" v-model="currentPage">
-                <!--<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>-->
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="pagination">
+        <div
+                class="pagination"
+                v-if="numberOfPages>0">
+            <button
+                    class="pagination-button"
+                    :class="{'is-disabled': activePageIndex === 0}"
+                    v-if="numberOfPages>1"
+                    @click="incrementPage(true)">
+                Prev
+            </button>
+            <button
+                    class="pagination-button"
+                    :class="{'is-active' : activePageIndex === index}"
+                    v-for="(page, index) in pagesArray"
+                    @click="selectPage(index)">
+                {{ page }}
+            </button>
+            <button
+                    class="pagination-button"
+                    :class="{'is-disabled': activePageIndex === numberOfPages - 1}"
+                    v-if="numberOfPages>1"
+                    @click="incrementPage(false)">Next
+            </button>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -23,66 +33,49 @@
     export default Vue.extend({
         data() {
             return {
-                // pageNumber: 0,
-                // activePageIndex: 0
-                currentPage: 1,
-                totalPages: 10
+                pageNumber: 0,
+                activePageIndex: 0
             };
         },
-        // props: {
-        // },
-        // methods: {
-        //     selectPage(index: number) {
-        //         this.activePageIndex = index;
-        //         this.$emit('page-selected', index);
-        //     },
-        //     incrementPage(isReversed: boolean) {
-        //         this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex+1);
-        //         this.selectPage(this.activePageIndex);
-        //     }
-        // },
-        // computed: {
-        //     pagesArray(): number[] {},
-        //     changeStartPage(index : number) {
-        //         this.startPage = this.requirementsPerPage * index;
-        //         console.log(this.startPage);
-        //     },
-        //     numberOfPages(): number {
-        //         return Math.round(this.requirementsTotal / this.requirementsPerPage);
-        //     },
-        // }
-        });
+        props: {
+            numberOfPages: {
+                type: Number
+            },
+            requirementsPerPage: {
+                type: Number
+            },
+            requirementsTotal: {
+                type: Number
+            }
+
+        },
+        methods: {
+            selectPage(index: number) {
+                this.activePageIndex = index;
+                this.$emit('page-selected', index);
+            },
+            incrementPage(isReversed: boolean) {
+                this.activePageIndex = isReversed ? (this.activePageIndex - 1) : (this.activePageIndex+1);
+                this.selectPage(this.activePageIndex);
+            }
+        },
+        computed: {
+            pagesArray(): number[] {
+                return Array.from({length: this.numberOfPages}, (v, k) => k+1);
+            }
+        }
+    });
 
 </script>
+
 
 
 <style lang="scss" scoped>
     @import '../styles/mixins';
     @import '../styles/variables';
 
-    li {
-        list-style-type: none; /* Убираем маркеры */
-    }
-    .page-item {
-        border-radius: 3px;
-    }
-    .page-link {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: $orange;
-        border: none;
-        color: $white;
-        font-size: 14px;
-        border-radius: 3px;
-    }
-    .page-item.disabled .page-link {
-        background-color: $orange-grey;
-        color: $grey;
-    }
     .pagination {
-        width: 50%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
         @include mobile {

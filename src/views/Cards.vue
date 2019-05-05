@@ -42,6 +42,8 @@
             </div>
             <Pagination
                     :numberOfPages="numberOfPages"
+                    :requirementsTotal="requirementsTotal"
+                    :requirementsPerPage="5"
                     @page-selected="changeStartPage"/>
         </div>
         <AddCard v-if="isCardCreationStarted"/>
@@ -57,6 +59,7 @@ import AddCard from '@/components/AddCard.vue';
 import Pagination from '../views/Pagination.vue';
 import {RESET_CARDS} from '../store/cards/mutation-types';
 import {RouteNames} from '@/router/RouteNames';
+import {ICard} from "@/common/interfaces/ICard";
 
 export default Vue.extend({
     components: {
@@ -66,6 +69,8 @@ export default Vue.extend({
     data() {
       return {
           routeNames: RouteNames,
+          requirementsPerPage: 5,
+          startPage: 0
       };
     },
     created() {
@@ -76,20 +81,18 @@ export default Vue.extend({
     },
     computed: {
         ...mapGetters({
-            cards: CARDS,
             isCardCreationStarted: IS_CARD_CREATION_STARTED,
             isLoading: CARDS_LOADING,
         }),
-        changeStartPage(index : number) {
-            this.startPage = this.requirementsPerPage * index;
-            console.log(this.startPage);
+        cards(): ICard[] {
+            return  this.$store.getters[CARDS].slice(this.startPage,this.startPage + this.requirementsPerPage);
         },
         numberOfPages(): number {
             return Math.round(this.requirementsTotal / this.requirementsPerPage);
         },
-        // requirementsTotal(): number {
-        //     return this.$store.getters[REQUIREMENTS].length;
-        // }
+        requirementsTotal(): number {
+            return this.$store.getters[CARDS].length;
+        }
     },
     methods: {
         ...mapActions({
@@ -99,6 +102,10 @@ export default Vue.extend({
         ...mapMutations({
             resetCards: RESET_CARDS,
         }),
+        changeStartPage(index : number) {
+            this.startPage = this.requirementsPerPage * index;
+            console.log(this.startPage);
+        }
     },
 });
 </script>

@@ -20,8 +20,6 @@ export class CardService {
         return db.collection(COLLECTION_NAME)
             .where('userId', '==', auth.currentUser && auth.currentUser.uid)
             .orderBy('project', 'asc')
-            // .startAt(0)
-            .limit(5)
             .get()
             .then((querySnapshot) => {
                 const cards: ICard[] = querySnapshot.docs
