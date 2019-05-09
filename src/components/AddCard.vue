@@ -19,6 +19,7 @@
                                     v-model="crNumber"
                                     id="crNumber"
                                     type="text"
+                                    maxlength="9"
                                     placeholder="CR Number">
                         </div>
                         <p
@@ -199,4 +200,5 @@ export default Vue.extend({
         background-color: $orange;
         color: $white;
     }
+
 </style>
