@@ -66,8 +66,6 @@ export default Vue.extend({
     .card {
         padding-left: 10px;
         padding-right: 10px;
-        padding-bottom: 10px;
-        padding-top: 10px;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
@@ -76,10 +74,17 @@ export default Vue.extend({
         display: flex;
         border-radius: 3px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-top: 5px solid $orange;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         @include mobile {
             display: inline-table;
             font-size: 14px;
             width: 100%;
+            text-align: center;
         }
     }
     .content p:not(:last-child) {
@@ -94,6 +99,8 @@ export default Vue.extend({
         @include mobile {
             display: table;
             font-size: 18px;
+            text-align: center;
+            width: 100%;
         }
     }
     .card-title {
@@ -101,6 +108,18 @@ export default Vue.extend({
         margin-left: auto;
         color: $purple;
         font-weight: normal;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
+    .card-title::after {
+        content: '';
+        position: absolute;
+        left: 1%;
+        display: inline-block;
+        height: 30px;
+        width: 98%;
+        border-bottom: 2px solid;
+        margin-top: 5px;
+        color: $grey2;
+    }
+
 </style>
