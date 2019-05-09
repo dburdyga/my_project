@@ -100,8 +100,7 @@
                                     id="createdAt"
                                     type="text"
                                     placeholder="Date"
-                                    onfocus="(this.type='date')"
-                                   >
+                                    onfocus="(this.type='date')">
                         </div>
                         <p
                                 v-if="$v.createdAt.$dirty && $v.createdAt.$error"
