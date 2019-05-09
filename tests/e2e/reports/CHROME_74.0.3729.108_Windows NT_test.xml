@@ -5,9 +5,9 @@
 
   <testsuite name="test"
     errors="0" failures="0" hostname="" id="" package="test" skipped="0"
-    tests="2" time="33.67" timestamp="Sun, 05 May 2019 15:31:22 GMT">
+    tests="2" time="35.90" timestamp="Thu, 09 May 2019 13:39:45 GMT">
   
-    <testcase name="Test for login and creation new CR card" classname="test" time="21.17" assertions="5">
+    <testcase name="Test for login and creation new CR card" classname="test" time="23.04" assertions="5">
 
     
 
@@ -20,7 +20,7 @@
     
     </testcase>
   
-    <testcase name="Test for registration of new user" classname="test" time="12.51" assertions="2">
+    <testcase name="Test for registration of new user" classname="test" time="12.86" assertions="2">
 
     
 

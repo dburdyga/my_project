@@ -59,6 +59,7 @@
                                     v-model="project"
                                     id="project"
                                     type="text"
+                                    oninput="this.value = this.value.toUpperCase()"
                                     placeholder="Project">
                         </div>
                         <p

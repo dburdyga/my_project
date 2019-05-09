@@ -61,6 +61,7 @@
                                     v-model="effort"
                                     id="effort"
                                     type="text"
+                                    oninput="this.value = this.value.toUpperCase()"
                                     placeholder="Effort">
                         </div>
                         <p
