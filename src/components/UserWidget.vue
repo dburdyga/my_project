@@ -195,7 +195,7 @@
     .form {
         display: table;
         border-radius: 5px;
-        background: linear-gradient(90deg, $light-grey2, $grey2);
+        background: linear-gradient(90deg, $light-purple2, $middle-purple);
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 8px;

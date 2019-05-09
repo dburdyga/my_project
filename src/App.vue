@@ -2,12 +2,12 @@
   <div id="app">
     <Alerts/>
     <header class="header">
-      <div class="container">
+      <div class="container" style="padding-top: 0px; padding-bottom: 0px;">
         <div class="inner">
           <div class="logo"></div>
           <nav class="main-nav">
             <router-link class="link" :to="{name: $routeNames.Cards}" v-if="!isLoginRoute">{{ msg }}</router-link>
-           </nav>
+          </nav>
           <div class="auth-controls">
             <UserWidget/>
           </div>
@@ -21,34 +21,32 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Alerts from './views/Alerts.vue';
-import UserWidget from '@/components/UserWidget.vue';
-import {RouteNames} from '@/router/RouteNames';
-
-export default Vue.extend({
-  data() {
-    return {
-      msg: 'Requirements',
-    };
-  },
-  components: {
-    Alerts,
-    UserWidget,
-  },
-  computed: {
-    isLoginRoute(): boolean {
-      return this.$route.name === RouteNames.Login || this.$route.name === RouteNames.Register;
+  import Vue from 'vue';
+  import Alerts from './views/Alerts.vue';
+  import UserWidget from '@/components/UserWidget.vue';
+  import {RouteNames} from '@/router/RouteNames';
+  export default Vue.extend({
+    data() {
+      return {
+        msg: 'Requirements',
+      };
     },
-  },
-});
+    components: {
+      Alerts,
+      UserWidget,
+    },
+    computed: {
+      isLoginRoute(): boolean {
+        return this.$route.name === RouteNames.Login || this.$route.name === RouteNames.Register;
+      },
+    },
+  });
 </script>
 
 
 <style lang="scss" scoped>
   @import 'styles/variables';
   @import 'styles/mixins';
-
   #app {
     min-height: 100vh;
     font-family: "Source Sans Pro", sans-serif;
@@ -65,6 +63,5 @@ export default Vue.extend({
       color: $dark-blue;
     }
   }
-
 </style>
 

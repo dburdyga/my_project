@@ -7,6 +7,16 @@
                         class="button is-primary"
                         @click="addCard">Create new CR</button>
             </header>
+            <v-text-field
+                    v-model="search"
+                    append-icon="search"
+                    style="color: orangered; background-color: white;
+                    padding-top: 0px; border-radius: 3px; padding-left: 10px;
+                    padding-right: 10px;"
+                    label="Search for project"
+                    single-line
+                    hide-details
+            ></v-text-field>
             <div
                     v-if="cards.length && !isLoading"
                     class="table-container">
@@ -43,7 +53,7 @@
             <Pagination
                     :numberOfPages="numberOfPages"
                     :requirementsTotal="requirementsTotal"
-                    :requirementsPerPage="2"
+                    :requirementsPerPage="5"
                     @page-selected="changeStartPage"/>
         </div>
         <AddCard v-if="isCardCreationStarted"/>
@@ -51,7 +61,6 @@
 </template>
 
 <script lang="ts">
-
 import Vue from 'vue';
 import {mapActions, mapGetters, mapMutations} from 'vuex';
 import {IS_CARD_CREATION_STARTED, CARDS, CARDS_LOADING} from '../store/cards/getter-types';
@@ -61,17 +70,21 @@ import Pagination from '../views/Pagination.vue';
 import {RESET_CARDS} from '../store/cards/mutation-types';
 import {RouteNames} from '@/router/RouteNames';
 import {ICard} from '@/common/interfaces/ICard';
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify);
 
 export default Vue.extend({
     components: {
         AddCard,
-        Pagination
+        Pagination,
     },
     data() {
       return {
           routeNames: RouteNames,
-          requirementsPerPage: 2,
+          requirementsPerPage: 5,
           startPage: 0,
+          search: '',
       };
     },
     created() {
@@ -86,7 +99,11 @@ export default Vue.extend({
             isLoading: CARDS_LOADING,
         }),
         cards(): ICard[] {
-            return  this.$store.getters[CARDS].slice(this.startPage, this.startPage + this.requirementsPerPage);
+            return this.$store.getters[CARDS]
+                .slice(this.startPage, this.startPage + this.requirementsPerPage)
+                .filter(post => {
+                    return post.project.toLowerCase().includes(this.search.toLowerCase())
+                });
         },
         numberOfPages(): number {
             return Math.round(this.requirementsTotal / this.requirementsPerPage);
@@ -114,10 +131,13 @@ export default Vue.extend({
     @import '../styles/variables';
     @import '../styles/mixins';
 
+
     p {
         color: $white;
     }
-
+    .table-container{
+        margin-top: 20px;
+    }
     .table {
         min-width: 380px;
     }
@@ -135,4 +155,5 @@ export default Vue.extend({
             margin-bottom: 0;
         }
     }
+
 </style>
