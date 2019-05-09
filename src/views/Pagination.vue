@@ -73,7 +73,7 @@ export default Vue.extend({
     @import '../styles/variables';
 
     .pagination {
-        width: 70%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         @include mobile {
