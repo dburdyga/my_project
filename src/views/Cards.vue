@@ -101,8 +101,8 @@ export default Vue.extend({
         cards(): ICard[] {
             return this.$store.getters[CARDS]
                 .slice(this.startPage, this.startPage + this.requirementsPerPage)
-                .filter(post => {
-                    return post.project.toLowerCase().includes(this.search.toLowerCase())
+                .filter((post) => {
+                    return post.project.toLowerCase().includes(this.search.toLowerCase());
                 });
         },
         numberOfPages(): number {
