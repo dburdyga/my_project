@@ -73,9 +73,10 @@ export default Vue.extend({
     @import '../styles/variables';
 
     .pagination {
-        width: 100%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 8px;
         @include mobile {
             justify-content: space-around;
             width: 100%;

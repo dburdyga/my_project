@@ -136,14 +136,9 @@ export default Vue.extend({
         color: $white;
     }
     .table-container{
-        margin-top: 20px;
+        margin-top: 25px;
     }
-    .table {
-        min-width: 380px;
-    }
-    .button.is-primary {
-        background-color: $orange;
-    }
+
     .tasks-header {
         display: flex;
         width: 100%;

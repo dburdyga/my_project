@@ -1,6 +1,6 @@
 <template>
     <div class="tasks">
-        <div class="container">
+        <div class="container" style="padding-top: 0px;">
             <header class="tasks-header">
                 <h1 class="title is-2">Tasks</h1>
                 <button
@@ -38,7 +38,7 @@
                     </tbody>
                 </table>
             </div>
-            <!--<p v-else-if="!tasks.length && !isLoading">no tasks yet</p>-->
+            <p style="color: white;" v-else-if="!tasks.length && !isLoading">no tasks yet</p>
         </div>
         <AddTask
                 :cardId="cardId"
@@ -90,14 +90,6 @@ export default Vue.extend({
     @import '../styles/variables';
     @import '../styles/mixins';
 
-
-    .table {
-        min-width: 380px;
-    }
-
-    .button.is-primary {
-        background-color: $orange;
-    }
 
     .tasks-header {
         display: flex;
