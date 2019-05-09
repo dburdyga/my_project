@@ -13,6 +13,7 @@
                             v-model="email"
                             @blur="$v.email.$touch()"
                             id="email"
+                            autocomplete="email"
                             type="text"
                             placeholder="Email">
                 </div>

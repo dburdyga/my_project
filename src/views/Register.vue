@@ -14,6 +14,7 @@
                             @blur="$v.email.$touch()"
                             id="email"
                             type="text"
+                            autocomplete="email"
                             placeholder="Email">
                 </div>
                 <p

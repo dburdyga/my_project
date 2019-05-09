@@ -131,21 +131,18 @@ export default Vue.extend({
     @import '../styles/variables';
     @import '../styles/mixins';
 
-
     p {
         color: $white;
     }
     .table-container{
         margin-top: 25px;
     }
-
     .tasks-header {
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
-
         .title {
             margin-bottom: 0;
         }

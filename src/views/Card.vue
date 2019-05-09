@@ -109,6 +109,9 @@ export default Vue.extend({
         color: $purple;
         font-weight: normal;
         margin-bottom: 30px;
+        @include mobile {
+            font-size: 18px;
+        }
     }
     .card-title::after {
         content: '';
@@ -121,5 +124,4 @@ export default Vue.extend({
         margin-top: 5px;
         color: $grey2;
     }
-
 </style>

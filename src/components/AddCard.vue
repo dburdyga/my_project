@@ -99,7 +99,9 @@
                                     v-model="createdAt"
                                     id="createdAt"
                                     type="text"
-                                    placeholder="Created At">
+                                    placeholder="Date"
+                                    onfocus="(this.type='date')"
+                                   >
                         </div>
                         <p
                                 v-if="$v.createdAt.$dirty && $v.createdAt.$error"
