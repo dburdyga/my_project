@@ -30,7 +30,7 @@ module.exports = {
         .url('http://localhost:8080/register')
         .waitForElementVisible('#app', 5000)
         .assert.elementPresent('.register-form')
-        .setValue('#email.input[type=text]', 'test12@test.com')
+        .setValue('#email.input[type=text]', 'test56@test.com')
         .setValue('#password.input[type=password]', 'test1234')
         .setValue('#passwordConfirm.input[type=password]', 'test1234')
         .click('.button.is-primary')

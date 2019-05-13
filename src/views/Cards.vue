@@ -53,7 +53,7 @@
             <Pagination
                     :numberOfPages="numberOfPages"
                     :requirementsTotal="requirementsTotal"
-                    :requirementsPerPage="4"
+                    :requirementsPerPage="5"
                     @page-selected="changeStartPage"/>
         </div>
         <AddCard v-if="isCardCreationStarted"/>
@@ -82,7 +82,7 @@ export default Vue.extend({
     data() {
       return {
           routeNames: RouteNames,
-          requirementsPerPage: 4,
+          requirementsPerPage: 5,
           startPage: 0,
           search: '',
       };

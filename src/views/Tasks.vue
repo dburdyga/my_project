@@ -14,7 +14,7 @@
                         class="table">
                     <thead>
                     <tr>
-                        <th>Sub Tasks</th>
+                        <th>Title</th>
                         <th>Description</th>
                         <th>Effort</th>
                         <th>Estimator</th>
